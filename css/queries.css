@@ -1,0 +1,27 @@
+@media screen and (max-width: 690px) {
+  .nav__box--item {
+    display: none;
+  }
+  nav {
+    padding: 0.4rem 4rem;
+  }
+  nav::after {
+    display: contents;
+    content: "⋮";
+    color: #b8dfc9;
+    font-size: 1.8rem;
+    font-weight: 1000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --darkMode: true;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    --darkMode: false;
+  }
+}

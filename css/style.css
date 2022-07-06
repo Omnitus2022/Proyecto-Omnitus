@@ -1,0 +1,211 @@
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif, "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  height: 100%;
+  background-color: black;
+  color: var(--textColor);
+}
+
+nav {
+  transition: 400ms;
+  background-color: var(--foregroundColor);
+  color: var(--lightColor);
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  padding: 0.4rem 23%;
+  width: 100%;
+  box-shadow: 0px 1.4px 3.6px -9px rgba(0, 0, 0, 0.61),
+    0px 3.4px 8.6px -9px rgba(0, 0, 0, 0.439),
+    0px 6.4px 16.3px -9px rgba(0, 0, 0, 0.364),
+    0px 11.4px 29px -9px rgba(0, 0, 0, 0.305),
+    0px 21.3px 54.3px -9px rgba(0, 0, 0, 0.246),
+    0px 51px 130px -9px rgba(0, 0, 0, 0.171);
+}
+.logo img {
+  height: 100%;
+}
+.logo {
+  flex-basis: content;
+  height: 2rem;
+}
+
+.nav__box {
+  justify-content: end;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  font-size: larger;
+  gap: 0.9rem;
+}
+.nav__box--item {
+  align-self: center;
+  cursor: pointer;
+  user-select: none;
+}
+.nav__box--item::after {
+  display: block;
+  width: 100%;
+  content: "";
+  background-color: var(--buttonTextColor);
+  height: 2px;
+  transform: scaleX(0);
+  opacity: 0;
+
+  transition: 260ms;
+}
+.nav__box--item:hover::after {
+  transform: scaleX(1);
+  transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.2);
+  opacity: 1;
+}
+.nav__box--item:hover {
+  color: var(--buttonTextColor);
+  transition: 80ms;
+}
+.frontPage {
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  transform-style: preserve-3d;
+  height: 80vh;
+  user-select: none;
+  transform: translateZ(2.5px) scale(0.5) translateY(-190vh);
+}
+.frontPage__box {
+  font-family: "Titillium Web", sans-serif;
+  transform: translateY(calc(50vh - 4rem)) translateX(20vw);
+  width: fit-content;
+  color: var(--buttonTextColor);
+  text-shadow: 0 2px 0.8rem rgb(0, 0, 0);
+  font-size: 3rem;
+}
+.main {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  perspective: 5px;
+}
+
+.main-wrapper__container--subtitle {
+  color: var(--accentColor);
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+.main-wrapper {
+  background-color: var(--backgroundColor);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  transition: 400ms;
+  position: sticky;
+  box-shadow: 0px 0px 14.1px -13px rgba(0, 0, 0, 0.83),
+    0px 0px 35.5px -13px rgba(0, 0, 0, 0.746),
+    0px 0px 68.4px -13px rgba(0, 0, 0, 0.577),
+    0px 0px 121px -13px rgba(0, 0, 0, 0.33),
+    0px 0px 198px -13px rgba(0, 0, 0, 0.117);
+  transform-style: preserve-3d;
+  transform: translateZ(-2.5px) scale(1.5) translateY(50vh);
+  width: 100%;
+  height: 200vh;
+}
+.button {
+  color: var(--buttonTextColor);
+  background-color: var(--accentColor);
+  border-radius: 0.5rem;
+  border-style: none;
+  font-size: 1.5rem;
+  justify-self: center;
+  padding: 0.4rem;
+}
+.arrowScroll {
+  background-color: unset;
+  border: unset;
+  z-index: 4;
+  color: var(--buttonTextColor);
+  animation: infinite;
+  animation-name: arrow;
+  animation-duration: 2s;
+  top: -5rem;
+  left: 1rem;
+
+  font-size: 3rem;
+  transform: translateY(100vh);
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+}
+.invisible {
+  transform: translateY(2rem);
+  opacity: 0;
+  transition: 400ms;
+}
+.fadeIn {
+  transform: translateY(0rem);
+  opacity: 1;
+  transition: 1s;
+}
+
+#still {
+  animation: infinite;
+  animation-name: stillSlide;
+  animation-duration: 10000ms;
+}
+.main-wrapper__container {
+  transform: translateZ(2.5px/2) scale(0.75/2);
+  transform-style: preserve-3d;
+  z-index: 3;
+  top: 20rem;
+  width: 40rem;
+  margin: auto;
+}
+
+.main-carousel__slide {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+.main-carousel__slide img {
+  position: fixed;
+  filter: blur(2.3px) brightness(35%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+.main-carousel {
+  transform-style: preserve-3d;
+  height: 100vh;
+  transform: translateZ(-10px) scale(3);
+  z-index: -1;
+
+  position: relative;
+}
+.nav__switchTheme {
+  border: unset;
+  position: absolute;
+  right: 1rem;
+  background: unset;
+  width: 1.3rem;
+  align-self: center;
+  rotate: -20deg;
+  transition: 300ms;
+}
+.nav__switchTheme img {
+  vertical-align: middle;
+  cursor: pointer;
+}
+.nav__switchTheme:hover {
+  transform: scale(1.15);
+  transition: 200ms;
+}
+
+.nav__switchTheme:active {
+  rotate: 30deg;
+  transform: scale(0.8);
+  transition: 150ms;
+}

@@ -1,0 +1,16 @@
+body {
+  --accentColor: #1b996e;
+  --lightColor: #b8dfc9;
+  --textColor: rgb(18, 18, 20);
+  --backgroundColor: rgb(229, 229, 229);
+  --foregroundColor: #005c4d;
+  --buttonTextColor: rgb(229, 229, 229);
+}
+.dark {
+  --accentColor: #1b996e;
+  --lightColor: #b8dfc9;
+  --textColor: white;
+  --backgroundColor: rgb(18, 18, 20);
+  --foregroundColor: rgb(25, 26, 28);
+  --buttonTextColor: white;
+}

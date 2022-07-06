@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 215.84856 216.06895"
+   version="1.1"
+   id="svg454"
+   width="215.84856"
+   height="216.06895"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{isolation:isolate;}.cls-2{fill:#fff;}.cls-3{opacity:0.18;mix-blend-mode:multiply;}.cls-4{fill:#005c4d;}.cls-5{font-size:15.12px;font-family:FONTSPRINGDEMO-IntegralCFBoldRegular, FONTSPRING DEMO - Integral CF Bold;font-weight:700;}.cls-5,.cls-8,.cls-9{fill:#b7dfc9;}.cls-6{letter-spacing:-0.04em;}.cls-7{letter-spacing:-0.02em;}.cls-9{font-size:36px;font-family:MyriadPro-Regular, Myriad Pro;}.cls-10{fill:#2c2d2d;}.cls-11{fill:#1d996e;}</style>
+  </defs>
+  <g
+     class="cls-1"
+     id="g452"
+     transform="translate(-1.7459708e-4,0.00149723)">
+    <g
+       id="Layer_1-2"
+       data-name="Layer 1"
+       transform="matrix(0.89545685,0,0,0.89545685,-0.14279155,0)">
+      <path
+         class="cls-8"
+         d="M 241.20818,40.215497 V 241.29298 c 0,0 -91.30994,-21.14674 -114.90142,-138.49288 v 0 a 5.7450712,5.7450712 0 0 0 -5.62283,-4.522717 5.6228357,5.6228357 0 0 0 -5.50059,4.522717 v 0 C 91.469619,220.14624 0.15965725,241.29298 0.15965725,241.29298 V 40.215497 A 40.215498,40.215498 0 0 1 40.741871,0 H 200.9927 a 40.215498,40.215498 0 0 1 40.21548,40.215497 z"
+         id="path20"
+         style="stroke-width:12.2236" />
+    </g>
+  </g>
+</svg>
