@@ -103,7 +103,6 @@ nav {
   overflow-y: scroll;
   scroll-behavior: smooth;
   transition: 400ms;
-  position: sticky;
   box-shadow: 0px 0px 14.1px -13px rgba(0, 0, 0, 0.83),
     0px 0px 35.5px -13px rgba(0, 0, 0, 0.746),
     0px 0px 68.4px -13px rgba(0, 0, 0, 0.577),
@@ -208,4 +207,8 @@ nav {
   rotate: 30deg;
   transform: scale(0.8);
   transition: 150ms;
+}
+
+.frontPage__box--title{
+  text-align: center;
 }
