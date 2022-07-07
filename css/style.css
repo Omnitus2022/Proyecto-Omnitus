@@ -69,6 +69,8 @@ nav {
   transition: 80ms;
 }
 .frontPage {
+  display: flex;
+  justify-content: center;
   position: absolute;
   z-index: 2;
   width: 100vw;
