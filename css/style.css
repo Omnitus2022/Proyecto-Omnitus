@@ -9,6 +9,7 @@ body {
     "Trebuchet MS", sans-serif;
   height: 100%;
   background-color: black;
+  overflow: hidden;
   color: var(--textColor);
 }
 
@@ -85,7 +86,7 @@ nav {
   height: 100vh;
   user-select: none;
   transform: translateZ(2.5px) scale(0.5);
-  top: 0; 
+  top: 0;
 }
 
 .frontPage__box {
@@ -107,6 +108,10 @@ nav {
   perspective: 5px;
 }
 
+.main::-webkit-scrollbar,
+.main-wrapper::-webkit-scrollbar {
+  display: none;
+}
 .main-wrapper__container--subtitle {
   color: var(--accentColor);
   font-weight: 400;
@@ -232,7 +237,7 @@ nav {
   transition: 150ms;
 }
 
-.frontPage__box--title{
+.frontPage__box--title {
   text-align: center;
   width: 70%;
 }
