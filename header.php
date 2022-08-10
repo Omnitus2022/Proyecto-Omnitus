@@ -27,9 +27,38 @@
       <ul class="nav__box">
         <li class="nav__box--item">Inicio</li>
         <li class="nav__box--item">Contacto</li>
-        <li class="nav__box--item">Login</li>
+        <li class="nav__box--item" id="open_modal">Login</li>
       </ul>
       <button class="nav__switchTheme">
         <img name="switchTheme" src="svg/moon.svg" />
       </button>
     </nav>
+    <!--    LOG-IN    -->
+    <dialog class="modal">
+      <p class="close_modal">x</p>
+      <form action="php/altaUsuario.php" method="dialog" class="form">
+        <!--    SIGN-UP    -->
+        <h1 class="title_modal">Registrate!</h1>
+        <br />
+        <label>
+          Nombre y Apellido:
+        </label> 
+        <input type="text" name="nom">
+        <br />
+        <label>
+          Contraseña:
+        </label>
+        <input type="text" name="cont">
+        <br />
+        <label>
+          Dirección:
+        </label>
+        <input type="text" name="dir">
+        <br />
+        <label>
+          Telefono:
+        </label>
+        <input type="text" name="tel">  
+        <!--    SIGN-IN    -->
+      </form>
+    </dialog>

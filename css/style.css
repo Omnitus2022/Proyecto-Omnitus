@@ -241,3 +241,38 @@ nav {
   text-align: center;
   width: 70%;
 }
+
+.modal{
+  margin: auto;
+  border: none;
+  border-radius: .7rem;
+}
+
+.form{
+  padding: 15vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modal::backdrop{
+  background-color: var(--backgroundColor);
+}
+
+.close_modal{
+  text-align: center;
+  float: right;
+  margin-left: 5px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: red;
+  width: 5%;
+  opacity: .8;
+  border-radius: .5rem;
+  color: white;
+}
+
+.title_modal{
+  text-align: center;
+  margin-bottom: 5rem;
+}
