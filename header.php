@@ -46,9 +46,14 @@
         <input type="text" name="nom">
         <br />
         <label>
+          Nombre usuario:
+        </label> 
+        <input type="text" name="usu">
+        <br />
+        <label>
           Contraseña:
         </label>
-        <input type="text" name="cont">
+        <input type="text" name="psw">
         <br />
         <label>
           Dirección:
