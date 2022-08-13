@@ -34,11 +34,15 @@
       </button>
     </nav>
     <!--    LOG-IN    -->
+
     <dialog class="modal">
+
+    <!--    SIGN-UP    -->
+    <h1 class="title_modal"><a href="#" class="btn-registro">Registro</a> || <a href="#" class="btn-log">Log-in</a></h1>
+
+    <div class="registro">
       <p class="close_modal">x</p>
-      <form action="php/altaUsuario.php" method="dialog" class="form">
-        <!--    SIGN-UP    -->
-        <h1 class="title_modal">Registrate!</h1>
+      <form action="php/altaUsuario.php" method="post" class="form">
         <br />
         <label>
           Nombre y Apellido:
@@ -64,6 +68,25 @@
           Telefono:
         </label>
         <input type="text" name="tel">  
-        <!--    SIGN-IN    -->
       </form>
+    </div>
+
+
+    <!--    SIGN-IN    -->
+
+    <div class="login">
+      <form action="php/altaUsuaio.php" method="post">
+        <label>
+        Nombre usuario:
+        </label> 
+        <input type="text" name="usu">
+        <br />
+        <label>
+        Contraseña:
+        </label>
+        <input type="text" name="psw">
+        <br />
+      </form>
+    </div>
+
     </dialog>
