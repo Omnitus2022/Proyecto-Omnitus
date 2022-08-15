@@ -249,7 +249,7 @@ nav {
 }
 
 .form{
-  padding: 15vh;
+  padding: 5rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -276,8 +276,36 @@ nav {
 .title_modal{
   text-align: center;
   background: var(--foregroundColor);
+  color: var(--lightColor);
 }
 
 .registro{
   display: none;
 }
+
+.log-input{
+  outline: none;
+  border-radius: 3px;
+  margin: .7rem 0;
+}
+
+.btn-log, .btn-registro{
+  text-decoration: none;
+  color: var(--lightColor);
+}
+
+.env-log, .env-reg{
+  border-radius: 3px;
+  text-decoration: none;
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
+  cursor: pointer;
+  margin: 1rem;
+}
+
+label{
+  text-align: left;
+}
+
+
+

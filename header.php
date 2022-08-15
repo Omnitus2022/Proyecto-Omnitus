@@ -38,36 +38,23 @@
     <dialog class="modal">
 
     <!--    SIGN-UP    -->
-    <h1 class="title_modal"><a href="#" class="btn-registro">Registro</a> || <a href="#" class="btn-log">Log-in</a></h1>
+    <p class="close_modal">x</p>
 
     <div class="registro">
-      <p class="close_modal">x</p>
+      <h1 class="title_modal">Registro:</h1>
       <form action="php/altaUsuario.php" method="post" class="form">
         <br />
-        <label>
-          Nombre y Apellido:
-        </label> 
-        <input type="text" name="nom">
+        <input type="text" name="nom" class="log-input" placeholder="Nombre y Apellido:">
         <br />
-        <label>
-          Nombre usuario:
-        </label> 
-        <input type="text" name="usu">
+        <input type="text" name="usu" class="log-input" placeholder="Nombre usuario:">
         <br />
-        <label>
-          Contraseña:
-        </label>
-        <input type="text" name="psw">
+        <input type="text" name="psw" class="log-input" placeholder="Contraseña:">
         <br />
-        <label>
-          Dirección:
-        </label>
-        <input type="text" name="dir">
+        <input type="text" name="dir" class="log-input" placeholder="Dirección:">
         <br />
-        <label>
-          Telefono:
-        </label>
-        <input type="text" name="tel">  
+        <input type="text" name="tel" class="log-input" placeholder="Telefono:">  
+        <br />
+        <button name="enviarDatos" class="env-reg">Enviar</button>
       </form>
     </div>
 
@@ -75,18 +62,16 @@
     <!--    SIGN-IN    -->
 
     <div class="login">
-      <form action="php/altaUsuaio.php" method="post">
-        <label>
-        Nombre usuario:
-        </label> 
-        <input type="text" name="usu">
+      <h1 class="title_modal">Log-in:</h1>
+      <form action="php/altaUsuaio.php" method="post" class="form">
+        <input type="text" name="usu" class="log-input" placeholder="Nombre usuario:">
         <br />
-        <label>
-        Contraseña:
-        </label>
-        <input type="text" name="psw">
+        <input type="text" name="psw" class="log-input" placeholder="Contraseña:">
         <br />
+        <button class="env-log">Enviar</button>
       </form>
     </div>
+
+    <h3 class="title_modal"><a href="#" class="btn-registro">Registro</a> - <a href="#" class="btn-log">Log-in</a></h3>
 
     </dialog>

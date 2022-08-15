@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_DIALOG['enviardatos'])){
+if(isset($_DIALOG['enviarDatos'])){
 	
 	$usu = $_DIALOG['usu'];
 	$psw = MD5($_DIALOG['psw']); 
