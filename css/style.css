@@ -245,6 +245,7 @@ nav {
 .close_modal{
   text-decoration: none;
   text-align: center;
+<<<<<<< HEAD
   float: right;
   margin-left: 5px;
   margin: 10px;
@@ -255,19 +256,40 @@ nav {
   border-radius: .4rem;
   color: white;
   content: "x";
+=======
+  transform: translateX(-150%);
+  left: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #444;
+  width: 2ch;
+  opacity: .7;
+  border-radius: 1rem;
+  color: white;
+  padding: .2rem;
+  position: absolute;
+>>>>>>> d0b2db7 (Login(trabajo en clase))
 }
 
 .modal{
   margin: auto;
   border: none;
   border-radius: .7rem;
+  width: 25%;
 }
 
+<<<<<<< HEAD
 .form{
   padding: 5rem;
+=======
+.form_log{
+  width: 50%;
+>>>>>>> d0b2db7 (Login(trabajo en clase))
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin: 10% auto;
+  gap: .5rem;
 }
 
 .modal::backdrop{
@@ -279,34 +301,66 @@ nav {
   text-align: center;
   background: var(--foregroundColor);
   color: var(--lightColor);
+<<<<<<< HEAD
+=======
+  padding: .7rem;
+>>>>>>> d0b2db7 (Login(trabajo en clase))
 }
 
 .registro{
   display: none;
 }
 
+<<<<<<< HEAD
 .log-input{
   outline: none;
   margin: .7rem 0;
 }
 
+=======
+>>>>>>> d0b2db7 (Login(trabajo en clase))
 .btn-log, .btn-registro{
   text-decoration: none;
   color: var(--lightColor);
 }
 
 .env-log, .env-reg{
+<<<<<<< HEAD
   border-radius: 3px;
   text-decoration: none;
   color: var(--textColor);
   background-color: var(--backgroundColor);
   cursor: pointer;
   margin: 1rem;
+=======
+  color: var(--buttonTextColor);
+  background-color: var(--foregroundColor);
+  border-style: none;
+  justify-self: center;
+  padding: .5rem;
+  cursor: pointer;
+>>>>>>> d0b2db7 (Login(trabajo en clase))
 }
 
 input{
   padding: .5rem;
+<<<<<<< HEAD
   width: 110%;
 }
 
 
+=======
+  outline: none;
+  border: solid 1px var(--foregroundColor);
+}
+
+input::placeholder{
+  color: var(--foregroundColor);
+  opacity: .5;
+}
+
+
+
+
+
+>>>>>>> d0b2db7 (Login(trabajo en clase))
