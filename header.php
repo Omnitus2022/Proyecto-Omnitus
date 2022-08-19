@@ -38,7 +38,9 @@
     <dialog class="modal">
 
     <!--    SIGN-UP    -->
-    <p class="close_modal">x</p>
+
+    <a class="close_modal">x</a>
+
 
     <div class="registro">
       <h1 class="title_modal">Registro:</h1>
@@ -50,7 +52,11 @@
         <br />
         <input type="text" name="psw" class="log-input" placeholder="Contraseña:">
         <br />
-        <input type="text" name="dir" class="log-input" placeholder="Dirección:">
+        <input type="text" name="dir" class="log-input" placeholder="Calle:">
+        <br />
+        <input type="text" name="dir" class="log-input" placeholder="Número:">
+        <br />
+        <input type="text" name="dir" class="log-input" placeholder="Esquina:">
         <br />
         <input type="text" name="tel" class="log-input" placeholder="Telefono:">  
         <br />

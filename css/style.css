@@ -242,6 +242,21 @@ nav {
   width: 70%;
 }
 
+.close_modal{
+  text-decoration: none;
+  text-align: center;
+  float: right;
+  margin-left: 5px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: red;
+  width: 5%;
+  opacity: .8;
+  border-radius: .4rem;
+  color: white;
+  content: "x";
+}
+
 .modal{
   margin: auto;
   border: none;
@@ -260,19 +275,6 @@ nav {
   opacity: 70%;
 }
 
-.close_modal{
-  text-align: center;
-  float: right;
-  margin-left: 5px;
-  margin: 10px;
-  cursor: pointer;
-  background-color: red;
-  width: 5%;
-  opacity: .8;
-  border-radius: .5rem;
-  color: white;
-}
-
 .title_modal{
   text-align: center;
   background: var(--foregroundColor);
@@ -285,7 +287,6 @@ nav {
 
 .log-input{
   outline: none;
-  border-radius: 3px;
   margin: .7rem 0;
 }
 
@@ -303,9 +304,9 @@ nav {
   margin: 1rem;
 }
 
-label{
-  text-align: left;
+input{
+  padding: .5rem;
+  width: 110%;
 }
-
 
 
