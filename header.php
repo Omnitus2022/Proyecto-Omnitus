@@ -47,19 +47,19 @@
     <div class="registro">
       <h1 class="title_modal">Registro</h1>
       <form action="php/altaUsuario.php" method="post" class="form_log">
-        <input type="text" name="nom" class="log-input" placeholder="Nombre y Apellido:">
+        <input type="text" name="nom" class="log-input" placeholder="Nombre y Apellido">
 
-        <input type="text" name="usu" class="log-input" placeholder="Nombre usuario:">
+        <input type="text" name="usu" class="log-input" placeholder="Nombre usuario">
 
-        <input type="text" name="psw" class="log-input" placeholder="Contraseña:">
+        <input type="text" name="psw" class="log-input" placeholder="Contraseña">
 
-        <input type="text" name="dir" class="log-input" placeholder="Calle:">
+        <input type="text" name="dir" class="log-input" placeholder="Calle">
 
-        <input type="text" name="dir" class="log-input" placeholder="Número:">
+        <input type="text" name="dir" class="log-input" placeholder="Número">
 
-        <input type="text" name="dir" class="log-input" placeholder="Esquina:">
+        <input type="text" name="dir" class="log-input" placeholder="Esquina">
 
-        <input type="text" name="tel" class="log-input" placeholder="Telefono:">  
+        <input type="text" name="tel" class="log-input" placeholder="Telefono">  
 
         <button name="enviarDatos" class="env-reg">Enviar</button>
       </form>
@@ -67,16 +67,16 @@
 
 
     <!--    SIGN-IN    -->
-
+ 
     <div class="login">
-      <h1 class="title_modal">Login</h1>
+    <h1 class="title_modal">Login</h1>
       <form action="php/altaUsuaio.php" method="post" class="form_log">
 
-        <input type="text" name="usu" class="log-input" placeholder="Nombre usuario:">
+        <input type="text" name="usu" class="log-input" placeholder="Nombre usuario">
 
-        <input type="text" name="psw" class="log-input" placeholder="Contraseña:">
+        <input type="text" name="psw" class="log-input" placeholder="Contraseña">
         
-        <button class="env-log">Enviar</button>
+        <button class="env-log ">Enviar</button>
       </form>
     </div>
 

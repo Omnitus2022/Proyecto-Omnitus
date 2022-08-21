@@ -245,15 +245,13 @@ nav {
 .close_modal {
   text-decoration: none;
   text-align: center;
-  transform: translateX(-150%);
+  transform: translateX(-150%) translateY(-2rem);
   left: 100%;
   margin-top: 10px;
   cursor: pointer;
-  background-color: #444;
   width: 2ch;
-  opacity: 0.7;
   border-radius: 1rem;
-  color: white;
+  color: var(--lightColor);
   padding: 0.2rem;
   position: absolute;
 }
@@ -261,16 +259,18 @@ nav {
 .modal {
   margin: auto;
   border: none;
+  padding: 2rem 3rem;
   border-radius: 0.7rem;
-  width: 25%;
+  background-color: var(--foregroundColor);
+  width: fit-content;
 }
 
 .form_log {
-  width: 50%;
+  margin: 1.5rem;
+  width: 20ch;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 10% auto;
   gap: 0.5rem;
 }
 
@@ -281,9 +281,7 @@ nav {
 
 .title_modal {
   text-align: center;
-  background: var(--foregroundColor);
   color: var(--lightColor);
-  padding: 0.7rem;
 }
 
 .registro {
@@ -305,14 +303,15 @@ nav {
   padding: 0.5rem;
   cursor: pointer;
 }
-
 input {
   padding: 0.5rem;
   outline: none;
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
   border: solid 1px var(--foregroundColor);
 }
 
 input::placeholder {
-  color: var(--foregroundColor);
-  opacity: 0.5;
+  color: var(--textColor);
+  opacity: 0.3;
 }
