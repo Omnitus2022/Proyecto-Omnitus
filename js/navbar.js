@@ -17,9 +17,13 @@ closeModal.addEventListener("click", () => {
 btnLog.addEventListener("click", () => {
   log.style.display = "block";
   reg.style.display = "none";
+  btnLog.style.display = "none";
+  btnReg.style.display = "block";
 });
 
 btnReg.addEventListener("click", () => {
   reg.style.display = "block";
   log.style.display = "none";
+  btnLog.style.display = "block";
+  btnReg.style.display = "none";
 });

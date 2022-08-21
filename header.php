@@ -13,11 +13,10 @@
     <link rel="icon" href="svg/logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap"
       rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/fe6b22a47e.js" crossorigin="anonymous"></script>
 
       
@@ -36,12 +35,12 @@
       </button>
     </nav>
     <!--    LOG-IN    -->
-
+  
     <dialog class="modal">
 
     <!--    SIGN-UP    -->
 
-    <i class="fa-solid fa-xmark close_modal"></i>
+    <i class="fa-solid fa-xmark close_modal clickable"></i>
 
 
     <div class="registro">
@@ -80,6 +79,6 @@
       </form>
     </div>
 
-    <h3 class="title_modal"><a href="#" class="btn-registro">Registro</a> - <a href="#" class="btn-log">Login</a></h3>
+    <h3 class="title_modal"><a href="#" class="btn-log clickable">LOGIN</a> <a href="#" class="btn-registro clickable">REGISTRO</a></h3>
 
     </dialog>

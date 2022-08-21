@@ -5,8 +5,7 @@ html {
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif, "Gill Sans MT", Calibri,
-    "Trebuchet MS", sans-serif;
+  font-family: "Poppins", sans-serif;
   height: 100%;
   background-color: black;
   overflow: hidden;
@@ -248,14 +247,20 @@ nav {
   transform: translateX(-150%) translateY(-2rem);
   left: 100%;
   margin-top: 10px;
-  cursor: pointer;
   width: 2ch;
   border-radius: 1rem;
   color: var(--lightColor);
   padding: 0.2rem;
   position: absolute;
 }
-
+.clickable {
+  transition: 250ms;
+}
+.clickable:hover {
+  color: white;
+  cursor: pointer;
+  transition: 250ms;
+}
 .modal {
   margin: auto;
   border: none;
@@ -263,6 +268,9 @@ nav {
   border-radius: 0.7rem;
   background-color: var(--foregroundColor);
   width: fit-content;
+  box-shadow: 0px 0px 23.6px rgba(0, 0, 0, 0.059),
+    0px 0px 42.8px rgba(0, 0, 0, 0.084), 0px 0px 58.9px rgba(0, 0, 0, 0.106),
+    0px 0px 78.6px rgba(0, 0, 0, 0.131), 0px 0px 154px rgba(0, 0, 0, 0.19);
 }
 
 .form_log {
@@ -283,17 +291,22 @@ nav {
   text-align: center;
   color: var(--lightColor);
 }
-
 .registro {
   display: none;
 }
 
 .btn-log,
 .btn-registro {
+  margin: 0 auto;
+  width: fit-content;
+  position: relative;
+  font-weight: 400;
   text-decoration: none;
   color: var(--lightColor);
 }
-
+.btn-log {
+  display: none;
+}
 .env-log,
 .env-reg {
   color: var(--buttonTextColor);
