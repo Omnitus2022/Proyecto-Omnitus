@@ -69,13 +69,13 @@
  
     <div class="login">
     <h1 class="title_modal">Login</h1>
-      <form action="php/altaUsuaio.php" method="post" class="form_log">
+      <form action="php/login.php" method="post" class="form_log">
 
         <input type="text" name="usu" class="log-input" placeholder="Nombre usuario">
 
-        <input type="text" name="psw" class="log-input" placeholder="Contraseña">
+        <input type="text" name="pwd" class="log-input" placeholder="Contraseña">
         
-        <button class="env-log ">Enviar</button>
+        <input type="submit" name="login" class="env-log " value="Enviar">
       </form>
     </div>
 
