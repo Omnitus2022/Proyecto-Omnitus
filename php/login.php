@@ -14,7 +14,7 @@ if(isset($_POST['login'])){
 		
 		
 		if($numfilas>0){
-			$sqlperfil = "SELECT nom, rol FROM usuario WHERE nom = '$usu'";			
+			$sqlperfil = "SELECT nom, rol FROM usuario WHERE nom = '$usu'";
 			
 			$result = $db->query($sqlperfil);
 			$data = $result -> fetch_assoc(); 			
