@@ -5,7 +5,7 @@
 
     <h1 class="cat_title">Catálogo</h1>
 
-    <input type="text" placeholder="Search..." name="search" class="search">
+    <i class="fa-solid fa-magnifying-glass"><input type="text" placeholder="Search..." name="search" class="search"></i>
 
     </div>
 
