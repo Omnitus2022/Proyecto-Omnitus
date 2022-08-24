@@ -12,7 +12,7 @@ body {
   color: var(--textColor);
 }
 
-a{
+a {
   text-decoration: none;
   color: var(--lightColor);
 }
@@ -270,7 +270,7 @@ nav {
   margin: auto;
   border: none;
   padding: 2rem 3rem;
-  border-radius: 0.7rem;
+  border-radius: 0.7rem 0.7rem 0 0;
   background-color: var(--foregroundColor);
   width: fit-content;
   box-shadow: 0px 0px 23.6px rgba(0, 0, 0, 0.059),
@@ -334,7 +334,7 @@ input::placeholder {
   opacity: 0.3;
 }
 
-.cont_wrapper{
+.cont_wrapper {
   display: grid;
   gap: 3rem;
   grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
@@ -342,47 +342,47 @@ input::placeholder {
   overflow: visible;
 }
 
-.card:hover, 
-.card:focus-within{
+.card:hover,
+.card:focus-within {
   transform: scale(1.1);
 }
 
-.card{
+.card {
   background-size: cover;
   color: var(--textColor);
   padding: 8rem 0 0;
   max-width: 40ch;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   overflow: hidden;
   transition: transform 500ms ease;
 }
 
-#card1{
+#card1 {
   background-image: url(/media/farm2.jpg);
   grid-column: x0 / x1;
   grid-row: y1 / y2;
 }
 
-.cont_card{
+.cont_card {
   --padding: 1.5rem;
   padding: var(--padding);
   background: linear-gradient(
-      hsl(0 0% 0% / 0),
-      hsl(20 0% 0% / .3) 20%,
-      hsl(0 0% 0% / .9) 
+    hsl(0 0% 0% / 0),
+    hsl(20 0% 0% / 0.3) 20%,
+    hsl(0 0% 0% / 0.9)
   );
 }
 
-.card_body{
-  color: rgb(255 255 255 / .85);
+.card_body {
+  color: rgb(255 255 255 / 0.85);
 }
 
-.card_title{
+.card_title {
   position: relative;
   width: max-content;
 }
 
-.card_title::after{
+.card_title::after {
   content: "";
   position: absolute;
   height: 3px;
@@ -395,11 +395,11 @@ input::placeholder {
 }
 
 .card:hover .card_title::after,
-.card:focus-within .card_title::after{
+.card:focus-within .card_title::after {
   transform: scaleX(1);
 }
 
-.button_card{
+.button_card {
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
@@ -411,5 +411,5 @@ input::placeholder {
 
 .button_card:hover,
 .button_card:focus {
-  background: var(--buttonTextColor); 
+  background: var(--buttonTextColor);
 }

@@ -77,7 +77,13 @@ function chImg() {
   setTimeout("chImg()", time);
 }
 function onLoad() {
-  chImg();
+  if (
+    window.location.href.endsWith("index.php") ||
+    window.location.href.endsWith("Proyecto-Omnitus/")
+  ) {
+    chImg();
+  }
+
   switchTheme();
   osPreferedTheme();
 }
