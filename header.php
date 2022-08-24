@@ -29,6 +29,7 @@
         <li class="nav__box--item">Inicio</li>
         <li class="nav__box--item">Contacto</li>
         <li class="nav__box--item" id="open_modal">Login</li>
+        <li class="nav__box--item"><a href="catalogo.php">Catalogo</a></li>
       </ul>
       <button class="nav__switchTheme">
         <img name="switchTheme" src="svg/moon.svg" />
