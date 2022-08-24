@@ -1,13 +1,20 @@
 <?php include('header.php') ?>
 
-    <p>a</p>
+<div class="main-wrapper">
+    <div class="front_page_cat">
+
+    <h1 class="cat_title">Catálogo</h1>
+
+    <input type="text" placeholder="Search..." name="search" class="search">
+
+    </div>
 
     <!--    CARDS    -->
     <div class="cont_wrapper">
 
         <div class="card" id="card1">
             <div class="cont_card">
-                <h2 class="card_title">
+               <h2 class="card_title">
                     Something awesome
                 </h2>
                 <p class="card_body">
@@ -18,7 +25,10 @@
         </div>
 
     </div>
+</div>
+
 
     <script src="js/script.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/search.js"></script>
 <?php include('footer.php') ?>

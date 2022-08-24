@@ -26,7 +26,7 @@
     <nav>
       <div class="logo nav__box"><img src="svg/dowselightNobgPng.png" /></div>
       <ul class="nav__box">
-        <li class="nav__box--item">Inicio</li>
+        <li class="nav__box--item"><a href="index.php">Inicio</a></li>
         <li class="nav__box--item">Contacto</li>
         <li class="nav__box--item" id="open_modal">Login</li>
         <li class="nav__box--item"><a href="catalogo.php">Catalogo</a></li>
