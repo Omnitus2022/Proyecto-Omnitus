@@ -335,7 +335,7 @@ input::placeholder {
 
 .cont_wrapper {
   display: grid;
-  grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3] 1fr [x4];
+  grid-template-columns: repeat(auto-fit(1fr));
   background-color: var(--backgroundColor);
   justify-items: center;
 }
@@ -349,6 +349,7 @@ input::placeholder {
   background-size: cover;
   color: var(--textColor);
   padding: .1rem 0 0;
+  width: 100%;
   max-width: 30ch;
   min-width: 10ch;
   border-radius: 0.5rem;
@@ -373,7 +374,6 @@ input::placeholder {
 
 .card_title {
   position: relative;
-  width: max-content;
 }
 
 .card_title::after {

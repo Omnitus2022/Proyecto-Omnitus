@@ -18,7 +18,7 @@
                         Something awesome
                     </h2>
                     <p class="card_body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, architecto alias. Repellat enim cum, eaque fugit veritatis repudiandae ea eveniet.
+                        
                     </p>
                     <a href="#" class="button_card">purchase</a>
                 </div>
@@ -30,7 +30,7 @@
                         Something awesome
                     </h2>
                     <p class="card_body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, architecto alias. Repellat enim cum, eaque fugit veritatis repudiandae ea eveniet.
+                        
                     </p>
                     <a href="#" class="button_card">purchase</a>
                 </div>
@@ -42,7 +42,7 @@
                         papa
                     </h2>
                     <p class="card_body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, architecto alias. Repellat enim cum, eaque fugit veritatis repudiandae ea eveniet.
+                        
                     </p>
                     <a href="#" class="button_card">purchase</a>
                 </div>
@@ -54,7 +54,7 @@
                         Something awesome
                     </h2>
                     <p class="card_body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, architecto alias. Repellat enim cum, eaque fugit veritatis repudiandae ea eveniet.
+                        
                     </p>
                     <a href="#" class="button_card">purchase</a>
                 </div>
