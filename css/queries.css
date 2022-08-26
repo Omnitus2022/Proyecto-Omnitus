@@ -43,11 +43,11 @@
 
 @media (hover){
   .cont_card{
-      transform: translateY(70%);
+      transform: translateY(40%);
       transition: transform 500ms ease;
   }
-  .card:hover .cont_card > *:not(.card_title),
-  .card:focus-within .cont_card > *:not(.card_title){
+  .card:hover .cont_card > *:not(.card_title, .card_precio),
+  .card:focus-within .cont_card > *:not(.card_title, .card_precio){
       opacity: 1;
       transition-delay: 1000ms;
   }

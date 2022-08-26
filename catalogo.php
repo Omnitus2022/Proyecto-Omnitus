@@ -14,8 +14,27 @@
 
             <div class="card">
                 <div class="cont_card">
+                    <div class="card_title">
+                        <h2 class="card_title_name">
+                           Something 
+                        </h2>
+                        <p class="card_precio">US$444</p> 
+                    </div>
+                    
+                    <p class="card_body">
+                        
+                    </p>
+                    <div class="card_cant">
+                        <input type="button" value="-"><input type="text" class="cant_cat"><input type="button" value="+"><a href="#" class="button_card">></a>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cont_card">
                     <h2 class="card_title">
-                        Something awesome
+                        Something <p class="card_precio">US$444</p>
                     </h2>
                     <p class="card_body">
                         
@@ -27,7 +46,7 @@
             <div class="card">
                 <div class="cont_card">
                     <h2 class="card_title">
-                        Something awesome
+                        papa <p class="card_precio">US$444</p>
                     </h2>
                     <p class="card_body">
                         
@@ -39,7 +58,7 @@
             <div class="card">
                 <div class="cont_card">
                     <h2 class="card_title">
-                        papa
+                        Something <p class="card_precio">US$444</p>
                     </h2>
                     <p class="card_body">
                         
@@ -51,7 +70,43 @@
             <div class="card">
                 <div class="cont_card">
                     <h2 class="card_title">
-                        Something awesome
+                        Something  <p class="card_precio">US$444</p>
+                    </h2>
+                    <p class="card_body">
+                        
+                    </p>
+                    <a href="#" class="button_card">purchase</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cont_card">
+                    <h2 class="card_title">
+                        Something <p class="card_precio">US$444</p>
+                    </h2>
+                    <p class="card_body">
+                        
+                    </p>
+                    <a href="#" class="button_card">purchase</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cont_card">
+                    <h2 class="card_title">
+                        Something <p class="card_precio">US$444</p>
+                    </h2>
+                    <p class="card_body">
+                        
+                    </p>
+                    <a href="#" class="button_card">purchase</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cont_card">
+                    <h2 class="card_title">
+                        Something <p class="card_precio">US$444</p>
                     </h2>
                     <p class="card_body">
                         
