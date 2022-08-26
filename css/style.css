@@ -335,8 +335,7 @@ input::placeholder {
 
 .cont_wrapper {
   display: grid;
-  gap: 3rem;
-  grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
+  grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3] 1fr [x4];
   background-color: var(--backgroundColor);
   justify-items: center;
 }
@@ -369,6 +368,7 @@ input::placeholder {
 
 .card_body {
   color: rgb(255 255 255 / 0.85);
+  margin: 10px;
 }
 
 .card_title {

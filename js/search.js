@@ -4,7 +4,7 @@ document.addEventListener("keyup", e=>{
 
         if (e.key === "Escape")e.target = ""
 
-        document.querySelectorAll(".card_title").forEach(producto =>{
+        document.querySelectorAll(".card").forEach(producto =>{
 
             producto.textContent.toLowerCase().includes(e.target.value.toLowerCase())
             ?producto.classList.remove("filtro")

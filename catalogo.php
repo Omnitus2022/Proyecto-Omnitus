@@ -39,6 +39,18 @@
             <div class="card">
                 <div class="cont_card">
                     <h2 class="card_title">
+                        papa
+                    </h2>
+                    <p class="card_body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, architecto alias. Repellat enim cum, eaque fugit veritatis repudiandae ea eveniet.
+                    </p>
+                    <a href="#" class="button_card">purchase</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cont_card">
+                    <h2 class="card_title">
                         Something awesome
                     </h2>
                     <p class="card_body">
