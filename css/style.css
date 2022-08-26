@@ -335,8 +335,9 @@ input::placeholder {
 
 .cont_wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit(1fr));
-  background-color: var(--backgroundColor);
+  margin: 0 20%;
+  grid-template-columns: repeat(auto-fill, minmax(20ch, 1fr));
+  gap: 1rem;
   justify-items: center;
 }
 
@@ -348,11 +349,9 @@ input::placeholder {
 .card {
   background-size: cover;
   color: var(--textColor);
-  padding: .1rem 0 0;
+  padding: 0.1rem 0 0;
   width: 100%;
-  max-width: 30ch;
-  min-width: 10ch;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
   overflow: hidden;
   transition: transform 500ms ease;
 }
@@ -408,30 +407,30 @@ input::placeholder {
   background: var(--buttonTextColor);
 }
 
-.front_page_cat{
+.front_page_cat {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 8rem;
 }
 
-.cat_title{
-  color: var(--textColor); 
+.cat_title {
+  color: var(--textColor);
   text-align: center;
   margin: auto;
   position: absolute;
 }
 
-.search{
+.search {
   margin-right: auto;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   width: 20%;
 }
 
-.fa-magnifying-glass{
+.fa-magnifying-glass {
   margin-top: 1rem;
 }
 
-.filtro{
+.filtro {
   display: none;
 }
