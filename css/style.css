@@ -337,8 +337,8 @@ input::placeholder {
   display: grid;
   gap: 3rem;
   grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
-  grid-template-rows: [y0] 1fr [y1] 1fr [y2] 1fr [y3];
   background-color: var(--backgroundColor);
+  justify-items: center;
 }
 
 .card:hover,
@@ -355,12 +355,6 @@ input::placeholder {
   border-radius: 0.5rem;
   overflow: hidden;
   transition: transform 500ms ease;
-}
-
-#card1 {
-  background-image: url(/media/papa.jpg);
-  grid-column: x1 / x2;
-  grid-row: y0 / y1;
 }
 
 .cont_card {
@@ -417,25 +411,25 @@ input::placeholder {
 .front_page_cat{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  margin-bottom: 8rem;
 }
 
 .cat_title{
   color: var(--textColor); 
   text-align: center;
-}
-
-.cat_title::after {
-  content: "";
-  left: 0;
-  width: 20%;
+  margin: auto;
   position: absolute;
-  height: 3px;
-  background: var(--lightColor);
 }
 
 .search{
-  width: 80%;
-  height: 18%;
+  margin-right: auto;
+  margin-top: .5rem;
+  width: 20%;
+}
+
+.fa-magnifying-glass{
+  margin-top: 1rem;
 }
 
 .filtro{
