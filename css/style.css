@@ -343,29 +343,49 @@ input::placeholder {
 
 .card:hover,
 .card:focus-within {
-  transform: scale(1.1);
+  transform: scale(1.04);
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.45),
+    0px 0px 30px rgba(0, 0, 0, 0.063);
 }
 
 .card {
-  background-size: cover;
+  position: relative;
   color: var(--textColor);
-  padding: .1rem 0 0;
+  padding: 0.1rem 0 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7497199563419117) 0%,
+    rgba(0, 0, 0, 0.237114914325105) 98%
+  );
   width: 100%;
   border-radius: 0.5rem 0.5rem 0 0;
   overflow: hidden;
-  transition: transform 500ms ease;
-  box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
-}
+  transition: all 500ms ease;
 
+  box-shadow: 0px 0px 7.5px -1px rgba(0, 0, 0, 0.23),
+    0px 0px 30px -1px rgba(0, 0, 0, 0.032);
+}
+.card::before {
+  top: 0;
+  left: 0;
+  content: "";
+  background-image: url("https://media.nutrition.org/wp-content/uploads/2022/06/Potatoes-blog-1030x687.jpg");
+  background-size: cover;
+  opacity: 0.2;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .cont_card {
+  display: flex;
+  height: 100%;
+  gap: 0.6rem;
+  flex-direction: column;
   --padding: 1rem;
   padding: var(--padding);
-
-}
-
-.card_body {
-  color: rgb(255 255 255 / 0.85);
-  margin: 10px;
+  transition: all 500ms ease;
 }
 
 .card_title {
@@ -374,12 +394,14 @@ input::placeholder {
   color: rgb(255 255 255 / 0.85);
 }
 
-.card_precio{
+.card_precio {
+  font-size: 1.4rem;
   font-weight: 700;
 }
 
-.card_title_name{
-  font-weight: 100;
+.card_title_name {
+  font-size: 1.1rem;
+  font-weight: 400;
 }
 
 .card_title::after {
@@ -442,13 +464,21 @@ input::placeholder {
   display: none;
 }
 
-.card_cant{
+.card_cant {
+  display: none;
+  flex-direction: row;
+  opacity: 0;
+  overflow: hidden;
+  width: 100%;
+  transition: all 500ms ease;
+  gap: 3px;
+}
+.card_cant--inputs {
   display: flex;
   flex-direction: row;
   width: 100%;
-  gap: 3px;
 }
 
-.cant_cat{
+.cant_cat {
   width: 2rem;
 }

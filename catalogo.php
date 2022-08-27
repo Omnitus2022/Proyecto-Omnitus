@@ -21,11 +21,9 @@
                         <p class="card_precio">US$444</p> 
                     </div>
                     
-                    <p class="card_body">
-                        
-                    </p>
                     <div class="card_cant">
-                        <input type="button" value="-"><input type="text" class="cant_cat"><input type="button" value="+"><a href="#" class="button_card">></a>
+                    <div class="card_cant--inputs"><input type="button" value="-"><input type="text" class="cant_cat"><input type="button" value="+"></div>    
+                    <input class="button_card" value=">">
                     </div>
                     
                 </div>
