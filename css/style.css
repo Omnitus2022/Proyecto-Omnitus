@@ -516,3 +516,6 @@ input::placeholder {
   transform: translateX(-100%);
   fill: var(--lightColor);
 }
+
+.cant--inputs_ctl {
+}
