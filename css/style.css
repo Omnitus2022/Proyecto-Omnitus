@@ -350,6 +350,9 @@ input::placeholder {
 
 .card {
   position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-basis: content;
   color: var(--textColor);
   padding: 0.1rem 0 0;
   background: rgb(0, 0, 0);
@@ -381,10 +384,12 @@ input::placeholder {
 .cont_card {
   display: flex;
   height: 100%;
-  gap: 0.6rem;
+  flex-basis: 0.001;
+  justify-content: end;
+  gap: 0;
   flex-direction: column;
-  --padding: 1rem;
-  padding: var(--padding);
+  padding: 1rem;
+  -moz-transition: all 500ms ease;
   transition: all 500ms ease;
 }
 
@@ -408,9 +413,10 @@ input::placeholder {
   content: "";
   position: absolute;
   height: 3px;
-  left: calc(var(--padding) * -1);
+  left: calc(1rem * -1);
   bottom: -2px;
-  width: calc(100% + var(--padding));
+  transform: scaleX(0);
+  width: calc(100% + 1rem);
   background: var(--lightColor);
   transform-origin: left;
   transition: transform 500ms ease;
@@ -465,26 +471,47 @@ input::placeholder {
 }
 
 .card_cant {
-  display: none;
+  display: flex;
   flex-direction: row;
   opacity: 0;
   overflow: hidden;
   width: 100%;
-  transition: all 500ms ease;
   gap: 3px;
+  max-height: 0;
+  transition: all 500ms ease;
 }
 .card_cant--inputs {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
-
+.card_cant > * {
+  height: 2rem;
+}
 .cant_cat {
   width: 2rem;
 }
+.card_cant > label {
+  display: block;
+}
+.card:hover .card_cant,
+.card:focus-within .card_cant {
+  max-height: 100%;
+  opacity: 1;
+  -moz-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+.card:hover .cont_card,
+.card:focus-within .cont_card {
+  gap: 0.6rem;
+  -moz-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
 
-.sh-cart{
-  width: 30%;
+.sh-cart {
+  width: 2rem;
   position: absolute;
+  aspect-ratio: 1/1;
+  transform: translateX(-100%);
   fill: var(--lightColor);
 }
