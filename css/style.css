@@ -253,7 +253,7 @@ nav {
   margin-top: 10px;
   width: 2ch;
   border-radius: 1rem;
-  color: var(--lightColor);
+  fill: var(--lightColor);
   padding: 0.2rem;
   position: absolute;
 }
@@ -481,4 +481,10 @@ input::placeholder {
 
 .cant_cat {
   width: 2rem;
+}
+
+.sh-cart{
+  width: 30%;
+  position: absolute;
+  fill: var(--lightColor);
 }
