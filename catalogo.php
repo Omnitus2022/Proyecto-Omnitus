@@ -23,8 +23,9 @@
                     
                     <div class="card_cant">
                     <div class="card_cant--inputs"><input type="button" value="-"><input type="text" class="cant_cat"><input type="button" value="+"></div>    
-                    <button class="button_card"><i class="fa-solid fa-cart-circle-plus"></i></button>
                     </div>
+                    
+                    <input class="button_card fa-solid fa-cart-circle-plus" type="button">
                     
                 </div>
             </div>
