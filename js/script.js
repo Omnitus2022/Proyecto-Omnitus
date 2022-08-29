@@ -30,11 +30,15 @@ images[3] = "media/farm4.jpg";
 
 function osPreferedTheme() {
   if (darkMode == "true") {
-    document.body.classList.toggle("dark");
+    switchTheme();
     darkMode = "";
   }
 }
 function switchTheme() {
+  chThemeIcon();
+  document.body.classList.toggle("dark");
+}
+function chThemeIcon() {
   if (dark == false) {
     document.switchTheme.src = "svg/sun.svg";
     dark = true;
@@ -42,7 +46,6 @@ function switchTheme() {
     document.switchTheme.src = "svg/moon.svg";
     dark = false;
   }
-  document.body.classList.toggle("dark");
 }
 //scroll arrow
 function scrollDown() {
@@ -83,8 +86,7 @@ function onLoad() {
   ) {
     chImg();
   }
-
-  switchTheme();
+  chThemeIcon();
   osPreferedTheme();
 }
 
