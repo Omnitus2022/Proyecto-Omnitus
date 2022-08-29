@@ -320,7 +320,7 @@ nav {
   padding: 0.5rem;
   cursor: pointer;
 }
-input {
+.log-input {
   padding: 0.5rem;
   outline: none;
   color: var(--textColor);
@@ -328,7 +328,7 @@ input {
   border: solid 1px var(--foregroundColor);
 }
 
-input::placeholder {
+.log-input::placeholder {
   color: var(--textColor);
   opacity: 0.3;
 }
@@ -428,21 +428,6 @@ input::placeholder {
   transform: scaleX(1);
 }
 
-.button_card {
-  cursor: pointer;
-  display: inline-block;
-  text-decoration: none;
-  color: black;
-  background: var(--lightColor);
-  padding: 0.5em 1.25em;
-  border-radius: 0.25em;
-}
-
-.button_card:hover,
-.button_card:focus {
-  background: var(--buttonTextColor);
-}
-
 .front_page_cat {
   display: flex;
   flex-direction: row;
@@ -473,6 +458,7 @@ input::placeholder {
 
 .card_cant {
   display: flex;
+  z-index: 2;
   flex-direction: row;
   opacity: 0;
   overflow: hidden;
@@ -486,6 +472,7 @@ input::placeholder {
   flex-direction: row;
   width: 100%;
 }
+
 .card_cant > * {
   height: 2rem;
 }
@@ -508,14 +495,54 @@ input::placeholder {
   -moz-transition: all 500ms ease;
   transition: all 500ms ease;
 }
-
-.sh-cart {
-  width: 2rem;
-  position: absolute;
-  aspect-ratio: 1/1;
-  transform: translateX(-100%);
-  fill: var(--lightColor);
+.button_card {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  background: none;
+  fill: white;
+  height: 100%;
+  padding: 0.3rem;
+  border-radius: 0.25em;
 }
 
-.cant--inputs_ctl {
+/* Esconde input dentro del label*/
+.card_cant label > input {
+  display: none;
+}
+
+.cant--inputs_prev {
+  border-radius: 25% 0 0 25%;
+}
+.cant--inputs_next {
+  border-radius: 0 25% 25% 0;
+}
+
+.cant--inputs_prev,
+.cant--inputs_next {
+  cursor: pointer;
+  aspect-ratio: 1/1;
+  border: none;
+  background-color: white;
+}
+
+/*esconder flechas al input type number*/
+
+.cant--inputs_field::-webkit-outer-spin-button,
+.cant--inputs_field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cant--inputs_field {
+  -moz-appearance: textfield;
+  outline: none;
+  border: none;
+
+  text-align: center;
+}
+
+input {
+  color: var(--textColor);
 }
