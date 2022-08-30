@@ -2,15 +2,19 @@ body {
   --accentColor: #1b996e;
   --lightColor: #b8dfc9;
   --textColor: rgb(18, 18, 20);
+  --placeholderColor: rgb(18, 18, 20, 0.4);
   --backgroundColor: rgb(229, 229, 229);
   --foregroundColor: #005c4d;
   --buttonTextColor: rgb(229, 229, 229);
+  --shadowColor: rgba(0, 0, 0, 0.06);
 }
 .dark {
   --accentColor: #1b996e;
   --lightColor: #b8dfc9;
   --textColor: white;
+  --placeholderColor: rgb(255, 255, 255, 0.4);
   --backgroundColor: rgb(18, 18, 20);
   --foregroundColor: rgb(25, 26, 28);
   --buttonTextColor: white;
+  --shadowColor: rgba(0, 0, 0, 0.3);
 }
