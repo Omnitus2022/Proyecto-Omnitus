@@ -540,6 +540,7 @@ nav {
 input {
   color: var(--textColor);
 }
+
 .searchbar {
   display: flex;
   height: 2.6rem;
@@ -549,6 +550,7 @@ input {
   align-items: center;
   padding: 0.5rem 0.8rem;
 }
+
 .search {
   height: 2.6rem;
   width: 100%;
@@ -556,8 +558,45 @@ input {
   border: none;
   outline: none;
 }
+
 .magnifier {
   fill: var(--placeholderColor);
   aspect-ratio: 1/1;
   height: 80%;
+}
+
+.option_modal{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-apparence: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0;
+  padding: 0.5rem;
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
+  border: solid 1px var(--foregroundColor);
+  text-align: center;
+  width: 100%;
+}
+.modal_container > label > input{
+    display: none;
+}
+.modal_container > label > svg{
+background-color: var(--lightColor);
+  aspect-ratio: 1/1;
+  border-radius: .6rem;
+  height: 100%;
+}
+.modal_container > label {
+  aspect-ratio: 1/1;
+}
+.modal_container > label > svg g{
+  fill: var(--foregroundColor);
+}
+.modal_container{
+  display: flex;
+  gap: .6rem;
+  flex-basis: 100%;
 }

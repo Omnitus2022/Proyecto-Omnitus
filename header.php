@@ -27,8 +27,8 @@
       <div class="logo nav__box"><img src="svg/dowselightNobgPng.png" /></div>
       <ul class="nav__box">
         <li class="nav__box--item"><a href="index.php">Inicio</a></li>
-        <li class="nav__box--item">Contacto</li>
-        <li class="nav__box--item" id="open_modal">Login</li>
+        <li class="nav__box--item"><a href="#">Contacto</a></li>
+        <li class="nav__box--item" id="open_modal"><a href="#">Login</a> </li>
         <li class="nav__box--item"><a href="catalogo.php">Catalogo</a></li>
       </ul>
       <button class="nav__switchTheme">
@@ -76,7 +76,27 @@
 
         <input type="text" name="pwd" class="log-input" placeholder="Contraseña">
         
-        <input type="submit" name="login" class="env-log " value="Enviar">
+        <div class="modal_container">
+          <select class="option_modal" name="" id="">
+            <option value="">A</option>
+            <option value="">B</option>
+            <option value="">C</option>
+            <option value="">D</option>
+          </select>
+          <label>
+          <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+            <g id="web-app" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="login" fill="#000000">
+                    <path d="M9.58578644,11 L7.05025253,8.46446609 L8.46446609,7.05025253 L13.4142136,12 L8.46446609,16.9497475 L7.05025253,15.5355339 L9.58578644,13 L3,13 L3,11 L9.58578644,11 Z M11,3 C16.3333333,3 19,3 19,3 C20.1000004,3 21,3.9000001 21,5 C21,5 21,19 21,19 C21,20.1000004 20.1000004,21 19,21 C19,21 16.3333333,21 11,21 L11,19 L19,19 L19,5 L11,5 L11,3 Z" id="Shape"></path>
+                </g>
+            </g>
+          </svg>
+            <input type="submit" name="login" class="env-log " value="Enviar">
+          </label>
+          
+        </div>
+
       </form>
     </div>
 
