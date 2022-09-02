@@ -565,7 +565,7 @@ input {
   height: 80%;
 }
 
-.option_modal{
+.option_modal {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-apparence: none;
@@ -576,27 +576,35 @@ input {
   padding: 0.5rem;
   color: var(--textColor);
   background-color: var(--backgroundColor);
-  border: solid 1px var(--foregroundColor);
+  border: solid 2px var(--foregroundColor);
   text-align: center;
   width: 100%;
 }
-.modal_container > label > input{
-    display: none;
+.modal_container > label > input {
+  display: none;
 }
-.modal_container > label > svg{
-background-color: var(--lightColor);
+.modal_container > label > svg {
+  background-color: var(--lightColor);
+  fill: var(--foregroundColor);
   aspect-ratio: 1/1;
-  border-radius: .6rem;
+
   height: 100%;
+  padding: 0.3rem;
+  border: 0;
+  outline: 0;
 }
 .modal_container > label {
   aspect-ratio: 1/1;
+  align-self: center;
+  height: 2rem;
+  border: 0;
+  outline: 0;
 }
-.modal_container > label > svg g{
-  fill: var(--foregroundColor);
-}
-.modal_container{
+
+.modal_container {
   display: flex;
-  gap: .6rem;
-  flex-basis: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  max-height: 2rem;
 }
