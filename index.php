@@ -65,5 +65,5 @@
       </div>
     </section>
     <script src="js/script.js"></script>
-    <script src="js/Logusu.js"></script>
+    <script src="js/LogUsu.js"></script>
 <?php include('footer.php') ?>
