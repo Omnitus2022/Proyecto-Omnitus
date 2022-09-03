@@ -89,7 +89,9 @@ function onLoad() {
   chThemeIcon();
   osPreferedTheme();
 }
-
+document.querySelector(".main").addEventListener("scroll", () => {
+  console.log("nya");
+});
 document
   .querySelector(".nav__switchTheme")
   .addEventListener("click", switchTheme);

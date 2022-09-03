@@ -9,12 +9,12 @@ if(isset($_POST['login'])){
 	if($usu!="" && $pwd!=""){	
 	
 		
-		$sql = "SELECT * FROM usuario WHERE nom = '$usu' AND pwd ='$pwd'";		
+		$sql = "SELECT * FROM Usuario WHERE nom = '$usu' AND pwd ='$pwd'";		
 		$numfilas = mysqli_num_rows($db->query($sql));
 		
 		
 		if($numfilas>0){
-			$sqlperfil = "SELECT nom, rol FROM usuario WHERE nom = '$usu'";
+			$sqlperfil = "SELECT nom, esEmpresa, esDirectivo, esAdmin, esHuerta, esRepartidor, esInformatico FROM Usuario WHERE nom = '$usu'";
 			
 			$result = $db->query($sqlperfil);
 			$data = $result -> fetch_assoc(); 			
