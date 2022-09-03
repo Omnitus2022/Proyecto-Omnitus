@@ -587,7 +587,6 @@ input {
   background-color: var(--lightColor);
   fill: var(--foregroundColor);
   aspect-ratio: 1/1;
-
   height: 100%;
   padding: 0.3rem;
   border: 0;
