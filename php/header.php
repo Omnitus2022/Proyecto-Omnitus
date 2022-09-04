@@ -29,7 +29,7 @@
         <li class="nav__box--item"><a href="index.php">Inicio</a></li>
         <li class="nav__box--item"><a href="#">Contacto</a></li>
         <li class="nav__box--item" id="open_modal"><a href="#">Login</a> </li>
-        <li class="nav__box--item"><a href="catalogo.php">Catalogo</a></li>
+        <li class="nav__box--item"><a href="php/views/catalogo.php">Catalogo</a></li>
       </ul>
       <button class="nav__switchTheme">
         <img name="switchTheme" src="svg/moon.svg" />

@@ -1,4 +1,5 @@
-<?php include('header.php') ?> 
+<?php
+ include('/header.php') ?> 
 <div class="main-wrapper" style="transform: scale(1); margin-top: 44.8px;">
     <div class="main-wrapper_container">
 
@@ -44,7 +45,7 @@
 </div>
 
 
-<script src="js/script.js"></script>
+<script src="<?php echo $_SERVER['DOCUMENT_ROOT'].'/Proyecto-Omnitus/'.'js/script.js' ?>"></script>
 <script src="js/navbar.js"></script>
 <script src="js/search.js"></script>
-<?php include('footer.php') ?>
+<?php include(dirname(__FILE__,3).'/footer.php') ?>
