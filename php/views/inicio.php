@@ -64,6 +64,6 @@
         </div>
       </div>
     </section>
-    <script src="js/script.js"></script>
-    <script src="js/LogUsu.js"></script>
+    <script src="/Proyecto-Omnitus/js/script.js"></script>
+    <script src="/Proyecto-Omnitus/js/LogUsu.js"></script>
 <?php include($PATH.'php/footer.php') ?>

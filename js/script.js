@@ -23,10 +23,10 @@ target.forEach((element) => {
   observer.observe(element);
 });
 
-images[0] = "media/farm1.webp";
-images[1] = "media/farm2.jpg";
-images[2] = "media/farm3.jpg";
-images[3] = "media/farm4.jpg";
+images[0] = "/Proyecto-Omnitus/media/farm1.webp";
+images[1] = "/Proyecto-Omnitus/media/farm2.jpg";
+images[2] = "/Proyecto-Omnitus/media/farm3.jpg";
+images[3] = "/Proyecto-Omnitus/media/farm4.jpg";
 
 function osPreferedTheme() {
   if (darkMode == "true") {
@@ -40,10 +40,10 @@ function switchTheme() {
 }
 function chThemeIcon() {
   if (dark == false) {
-    document.switchTheme.src = "svg/sun.svg";
+    document.switchTheme.src = "/Proyecto-Omnitus/svg/sun.svg";
     dark = true;
   } else {
-    document.switchTheme.src = "svg/moon.svg";
+    document.switchTheme.src = "/Proyecto-Omnitus/svg/moon.svg";
     dark = false;
   }
 }

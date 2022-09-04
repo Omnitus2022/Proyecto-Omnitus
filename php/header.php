@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dowse | Inicio</title>
-    <link rel="stylesheet" href="css/resets.css" />
-    <link rel="stylesheet" href="css/variables.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/queries.css" />
-    <link rel="icon" href="svg/logo.svg" />
+    <link rel="stylesheet" href="/Proyecto-Omnitus/css/resets.css" />
+    <link rel="stylesheet" href="/Proyecto-Omnitus/css/variables.css" />
+    <link rel="stylesheet" href="/Proyecto-Omnitus/css/style.css" />
+    <link rel="stylesheet" href="/Proyecto-Omnitus/css/animations.css" />
+    <link rel="stylesheet" href="/Proyecto-Omnitus/css/queries.css" />
+    <link rel="icon" href="/Proyecto-Omnitus/svg/logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,15 +25,15 @@
   <body>
     <!--    NAVBAR    -->
     <nav>
-      <div class="logo nav__box"><img src="svg/dowselightNobgPng.png" /></div>
+      <div class="logo nav__box"><img src="/Proyecto-Omnitus/svg/dowselightNobgPng.png" /></div>
       <ul class="nav__box">
-        <li class="nav__box--item"><a href="index.php">Inicio</a></li>
+        <li class="nav__box--item"><a href="/Proyecto-Omnitus/index.php">Inicio</a></li>
         <li class="nav__box--item"><a href="#">Contacto</a></li>
         <li class="nav__box--item" id="open_modal"><a href="#">Login</a> </li>
-        <li class="nav__box--item"><a href="php/views/catalogo.php">Catalogo</a></li>
+        <li class="nav__box--item"><a href="/Proyecto-Omnitus/php/views/catalogo.php">Catálogo</a></li>
       </ul>
       <button class="nav__switchTheme">
-        <img name="switchTheme" src="svg/moon.svg" />
+        <img name="switchTheme" src="/Proyecto-Omnitus/svg/moon.svg" />
       </button>
     </nav>
     <!--    LOG-IN    -->

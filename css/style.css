@@ -357,12 +357,7 @@ nav {
   color: var(--textColor);
   height: 10rem;
   padding: 0.1rem 0 0;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.7497199563419117) 0%,
-    rgba(0, 0, 0, 0.237114914325105) 98%
-  );
+
   width: 100%;
   border-radius: 0.5rem 0.5rem 0 0;
   overflow: hidden;
@@ -371,13 +366,27 @@ nav {
   box-shadow: 0px 0px 7.5px -1px rgba(0, 0, 0, 0.23),
     0px 0px 30px -1px rgba(0, 0, 0, 0.032);
 }
+.card > img {
+  top: 0;
+  left: 0;
+  content: "";
+  opacity: 0.5;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 .card::before {
   top: 0;
   left: 0;
   content: "";
-  background-image: url("https://media.nutrition.org/wp-content/uploads/2022/06/Potatoes-blog-1030x687.jpg");
-  background-size: cover;
-  opacity: 0.2;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7497199563419117) 0%,
+    rgba(0, 0, 0, 0.237114914325105) 98%
+  );
   position: absolute;
   display: block;
   width: 100%;
@@ -399,6 +408,13 @@ nav {
   position: relative;
   width: max-content;
   color: rgb(255 255 255 / 0.85);
+}
+.card_title > span:nth-child(2) {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  gap: 3px;
+  font-size: 0.8rem;
 }
 
 .card_precio {
