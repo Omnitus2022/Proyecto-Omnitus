@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dowse | Inicio</title>
+    <title>Dowse | <?php echo $TITLE?></title>
     <link rel="stylesheet" href="/Proyecto-Omnitus/css/resets.css" />
     <link rel="stylesheet" href="/Proyecto-Omnitus/css/variables.css" />
     <link rel="stylesheet" href="/Proyecto-Omnitus/css/style.css" />
@@ -47,7 +47,7 @@
 
     <div class="registro">
       <h1 class="title_modal">Registro</h1>
-      <form action="php/altaUsuario.php" method="post" class="form_log">
+      <form action="/Proyecto-Omnitus/php/registro.php" method="post" class="form_log">
         <input type="text" name="nom" class="log-input" placeholder="Nombre y Apellido">
 
         <input type="text" name="usu" class="log-input" placeholder="Nombre usuario">
@@ -71,7 +71,7 @@
  
     <div class="login">
     <h1 class="title_modal">Login</h1>
-      <form action="php/login.php" method="post" class="form_log">
+      <form action="/Proyecto-Omnitus/php/login.php" method="post" class="form_log">
 
         <input type="text" name="usu" class="log-input" placeholder="Nombre usuario">
 

@@ -1,6 +1,6 @@
 
 <?php
- $PATH = $_SERVER['DOCUMENT_ROOT'].'/Proyecto-Omnitus/';
+
  include($PATH.'/php/header.php') ?> 
 <div class="main-wrapper" style="transform: scale(1); margin-top: 44.8px;">
     <div class="main-wrapper_container">
