@@ -29,7 +29,7 @@
     
             echo '            
             <div class="card">
-            <img src="'.$v["imgUrl"].'">
+            <img style="background-image:url('.$v["imgUrl"].')">
             <div class="cont_card">
                 <div class="card_title">
                     <h2 class="card_title_name">
@@ -53,7 +53,7 @@
         ?>
 
             <div class="card">
-                <img src="https://media.nutrition.org/wp-content/uploads/2022/06/Potatoes-blog-1030x687.jpg">
+                <img style="" src="https://media.nutrition.org/wp-content/uploads/2022/06/Potatoes-blog-1030x687.jpg">
                 <div class="cont_card">
                     <div class="card_title">
                         <h2 class="card_title_name">
