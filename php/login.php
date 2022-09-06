@@ -7,9 +7,6 @@ if(isset($_POST['login'])){
 	$usu = $_POST['usu'];
 	$pwd = MD5($_POST['pwd']);
 	
-	echo $usu;
-	echo "pwd:";
-	echo $pwd;
 	if($usu!="" && $pwd!=""){	
 		require("db/db.php");
 		$db = db::connect();
@@ -20,19 +17,18 @@ if(isset($_POST['login'])){
 		
 		if($numfilas>0){
 
-			$sqlperfil = "SELECT * FROM Usuario WHERE nom = '$nom'";
+			$sqlperfil = "SELECT * FROM Usuario WHERE nom = '$usu'";
 			$result = $db->query($sqlperfil);
-			$data = $result->fetch_assoc(); 		
-			var_dump($data);
+			$data = $result->fetch_assoc();
 			
-			header($PATH.'php/controllers/autogestion_controller.php');
+			header('location:/Proyecto-Omnitus/php/controllers/autogestion_controller.php');
 			session_start();
 			$_SESSION['usu'] = $data['nom'];
 			$_SESSION['perfil'] = $data['rol'];	
 			$_SESSION['esEmpresa'] = $data['esEmpresa'];	
-			$_SESSION['esDirectivo'] = $data['esDirectivo'];	
-			$_SESSION['esAdmin'] = $data['esAdmin'];	
-			$_SESSION['esHuerta'] = $data['esHuerta'];	
+			$_SESSION['esDirectivo'] = $data['esDirectivo'];
+			$_SESSION['esAdmin'] = $data['esAdmin'];
+			$_SESSION['esHuerta'] = $data['esHuerta'];
 			$_SESSION['esRepartidor'] = $data['esRepartidor'];	
 			$_SESSION['esInformatico'] = $data['esInformatico'];	
 

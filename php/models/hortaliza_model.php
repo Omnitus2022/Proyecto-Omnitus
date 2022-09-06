@@ -14,6 +14,16 @@ class hortaliza_model{
         while($filas=$consulta->fetch_assoc()){
             $this->hortaliza[]=$filas;
         }
-        return $this->hortaliza[0];
+        return $this->hortaliza[$id-1];
+    }
+    public function insertHortaliza($n, $u, $tG, $tC, $mI, $mF){
+			
+        $sql = "INSERT INTO `Hortaliza` (`idHortaliza`, `nombre`, `unidad`, `tGerminacion`, `tCosecha`, `mesInicio`, `mesFin`) VALUES (NULL, $n, $u, $tG, $tC, $mI, $mF)";
+        if($this->db->query($sql)){
+            return true;
+        }else{
+            return false;
+        }
+        
     }
 }

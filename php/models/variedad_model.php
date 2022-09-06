@@ -14,6 +14,14 @@ class variedad_model{
         while($filas=$consulta->fetch_assoc()){
             $this->variedad[]=$filas;
         }
-        return $this->variedad[0];
+        return $this->variedad[$id-1];
+    }
+    public function insertVariedad($idH, $nV, $p, $img){
+        $sql = "INSERT INTO `Variedad` (`idVariedad`, `idHortaliza`, `nombreVariedad`, `precio`, `imgUrl`) VALUES (NULL, $idH, $nV, $p, $img) ";
+        if($this->db->query($sql)){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
