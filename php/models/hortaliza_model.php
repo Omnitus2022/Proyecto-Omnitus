@@ -26,7 +26,7 @@ class hortaliza_model{
         return $this->hortaliza;
     }
     public function insertHortaliza($n, $u, $tG, $tC, $mI, $mF){
-        if ($u=="") {
+        if (!$u) {
             $u=0;
         }else {
             $u=1;

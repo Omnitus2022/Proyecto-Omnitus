@@ -612,3 +612,43 @@ input {
   border: 0;
   outline: 0;
 }
+.container__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 8rem;
+  margin: 4rem 20% 1rem 20%;
+}
+.gestionHortalizas form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-basis: 100%;
+}
+.gestionHortalizas > section {
+  gap: 2rem;
+  display: flex;
+}
+.formBtn {
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  background-color: var(--foregroundColor);
+  color: var(--lightColor);
+}
+.formCombo {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-apparence: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0;
+  padding: 0.5rem;
+  color: var(--textColor);
+  background-color: var(--shadowColor);
+  text-align: center;
+  width: 100%;
+}
+.formCombo::after {
+}

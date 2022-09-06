@@ -17,7 +17,14 @@ class variedad_model{
         return $this->variedad[$id-1];
     }
     public function insertVariedad($idH, $nV, $p, $img){
-        $sql = "INSERT INTO `Variedad` (`idVariedad`, `idHortaliza`, `nombreVariedad`, `precio`, `imgUrl`) VALUES (NULL, $idH, $nV, $p, $img) ";
+        if ($nV=="") {
+            $nV="NULL";
+        }
+        if ($img=="") {
+            $img="NULL";
+        }
+        $sql = "INSERT INTO `Variedad` (`idVariedad`, `idHortaliza`, `nombreVariedad`, `precio`, `imgUrl`) VALUES (NULL, $idH, '$nV', $p, '$img') ";
+        
         if($this->db->query($sql)){
             return true;
         }else{
