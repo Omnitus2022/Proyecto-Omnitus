@@ -14,7 +14,7 @@ class hortaliza_model{
         while($filas=$consulta->fetch_assoc()){
             $this->hortaliza[]=$filas;
         }
-        return $this->hortaliza[$id-1];
+        return $this->hortaliza;
     }
     public function listarHortalizas(){
         $sql = "SELECT * FROM Hortaliza";

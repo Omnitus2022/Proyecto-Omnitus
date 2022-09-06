@@ -9,7 +9,7 @@
         
             <form action="/Proyecto-Omnitus/php/POST/gestionHortalizas.php" method="post">
             <h2>Hortaliza</h2>  
-                <input class="inputC" placeholder="Nombre" type="text" name="nom">
+                <input class="inputC" placeholder="Nombre*" type="text" name="nom">
                 
                 <input class="inputC" placeholder="Tiempo de Germinación (Días)" type="text" name="tG">
                 <input class="inputC" placeholder="Tiempo de Cosecha (Días)" type="text" name="tC">
@@ -36,7 +36,7 @@
                 </select>
 
                 <input class="inputC" placeholder="Nombre" type="text" name="nV">
-                <input class="inputC" placeholder="Precio" type="text" name="p">
+                <input class="inputC" placeholder="Precio*" type="text" name="p">
                 <input class="inputC" placeholder="Link de la imagen" type="text" name="img">
                 <input class="formBtn clickable" type="submit" value="Enviar" name="variedad">
 

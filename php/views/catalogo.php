@@ -1,7 +1,11 @@
 
 <?php
 
- include($PATH.'/php/header.php') ?> 
+ include($PATH.'/php/header.php');
+ $j=0;
+ $i=0;
+ ?> 
+ 
 <div class="main-wrapper" style="transform: scale(1); margin-top: 44.8px;">
     <div class="main-wrapper_container">
 
@@ -20,13 +24,16 @@
 
         <?php 
         foreach ($dataStock as $dS) {
-            $v = $variedad->getVariedad($dS["idVariedad"]);
-            $h = $hortaliza->getHortaliza($v["idHortaliza"]);
+            
+            $v = $variedad->getVariedad(intval($dS["idVariedad"]))[$i];
+            $h = $hortaliza->getHortaliza(intval($v["idHortaliza"]))[$j];
+            $i++;
+            $j++;
             $unidad = "KG";
             if ($h["unidad"]) {
                 $unidad = "U";
             }
-    
+            
             echo '            
             <div class="card">
             <img style="background-image:url('.$v["imgUrl"].')">

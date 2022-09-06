@@ -1,7 +1,6 @@
-login
 <?php
 $PATH = $_SERVER['DOCUMENT_ROOT'].'/Proyecto-Omnitus/';
-require("db/db.php");
+require($PATH."php/db/db.php");
 if(isset($_POST['login'])){
 	
 	$usu = $_POST['usu'];
@@ -21,7 +20,7 @@ if(isset($_POST['login'])){
 			$result = $db->query($sqlperfil);
 			$data = $result->fetch_assoc();
 			
-			header('location:/Proyecto-Omnitus/php/controllers/autogestion_controller.php');
+			header('location:/Proyecto-Omnitus/php/controllers/redirect_controller.php');
 			session_start();
 			$_SESSION['usu'] = $data['nom'];
 			$_SESSION['perfil'] = $data['rol'];	
@@ -32,9 +31,7 @@ if(isset($_POST['login'])){
 			$_SESSION['esRepartidor'] = $data['esRepartidor'];	
 			$_SESSION['esInformatico'] = $data['esInformatico'];	
 
-			if ($_SESSION['esInformatico']) {
-				// Redirect
-			}
+
 		}else{
 			echo "<script>alert(\"Usuario y/o contraseña incorrectos.\");window.location='../index.php';</script>";
 			exit;

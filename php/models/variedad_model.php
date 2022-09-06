@@ -14,16 +14,20 @@ class variedad_model{
         while($filas=$consulta->fetch_assoc()){
             $this->variedad[]=$filas;
         }
-        return $this->variedad[$id-1];
+        return $this->variedad;
     }
     public function insertVariedad($idH, $nV, $p, $img){
         if ($nV=="") {
             $nV="NULL";
+        }else{
+            $nV = "'".$nV."'";
         }
         if ($img=="") {
             $img="NULL";
+        }else{
+            $img = "'".$img."'";
         }
-        $sql = "INSERT INTO `Variedad` (`idVariedad`, `idHortaliza`, `nombreVariedad`, `precio`, `imgUrl`) VALUES (NULL, $idH, '$nV', $p, '$img') ";
+        $sql = "INSERT INTO `Variedad` (`idVariedad`, `idHortaliza`, `nombreVariedad`, `precio`, `imgUrl`) VALUES (NULL, $idH, $nV, $p, $img) ";
         
         if($this->db->query($sql)){
             return true;
