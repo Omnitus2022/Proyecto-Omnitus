@@ -47,7 +47,7 @@
 
     <div class="registro">
       <h1 class="title_modal">Registro</h1>
-      <form action="/Proyecto-Omnitus/php/registro.php" method="post" class="form_log">
+      <form action="/Proyecto-Omnitus/php/POST/registro.php" method="post" class="form_log">
         <input type="text" name="nom" class="log-input" placeholder="Nombre y Apellido">
 
         <input type="text" name="usu" class="log-input" placeholder="Nombre usuario">
@@ -71,7 +71,7 @@
  
     <div class="login">
     <h1 class="title_modal">Login</h1>
-      <form action="/Proyecto-Omnitus/php/login.php" method="post" class="form_log">
+      <form action="/Proyecto-Omnitus/php/POST/login.php" method="post" class="form_log">
 
         <input type="text" name="usu" class="log-input" placeholder="Nombre usuario">
 
