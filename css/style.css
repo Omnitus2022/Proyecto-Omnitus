@@ -330,10 +330,18 @@ nav {
 }
 
 .log-input::placeholder {
-  color: var(--textColor);
-  opacity: 0.3;
+  color: var(--placeholderColor);
 }
-
+.inputC {
+  padding: 0.5rem;
+  outline: none;
+  color: var(--textColor);
+  background-color: var(--shadowColor);
+  border: none;
+}
+.inputC::placeholder {
+  color: var(--placeholderColor);
+}
 .cont_wrapper {
   display: grid;
   margin: 0 20%;

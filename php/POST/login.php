@@ -1,14 +1,14 @@
 login
 <?php
 $PATH = $_SERVER['DOCUMENT_ROOT'].'/Proyecto-Omnitus/';
-
+require("db/db.php");
 if(isset($_POST['login'])){
 	
 	$usu = $_POST['usu'];
 	$pwd = MD5($_POST['pwd']);
 	
 	if($usu!="" && $pwd!=""){	
-		require("db/db.php");
+		
 		$db = db::connect();
 		
 		$sql = "SELECT * FROM Usuario WHERE nom = '$usu' AND pwd ='$pwd'";		
