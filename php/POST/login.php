@@ -19,17 +19,15 @@ if(isset($_POST['login'])){
 			$sqlperfil = "SELECT * FROM Usuario WHERE nom = '$usu'";
 			$result = $db->query($sqlperfil);
 			$data = $result->fetch_assoc();
-			
-			header('location:/Proyecto-Omnitus/php/controllers/redirect_controller.php');
 			session_start();
 			$_SESSION['usu'] = $data['nom'];
-			$_SESSION['perfil'] = $data['rol'];	
 			$_SESSION['esEmpresa'] = $data['esEmpresa'];	
 			$_SESSION['esDirectivo'] = $data['esDirectivo'];
 			$_SESSION['esAdmin'] = $data['esAdmin'];
 			$_SESSION['esHuerta'] = $data['esHuerta'];
 			$_SESSION['esRepartidor'] = $data['esRepartidor'];	
 			$_SESSION['esInformatico'] = $data['esInformatico'];	
+			require_once($PATH.'php/controllers/redirect_controller.php');
 
 
 		}else{

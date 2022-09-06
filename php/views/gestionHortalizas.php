@@ -1,6 +1,21 @@
 <?php include($PATH.'/php/header.php') ;
 
+if(empty($_SESSION['usu'])){
+    
+    echo "<script>window.location='/Proyecto-Omnitus/index.php';</script>";
+    
+}else{
+    
+    if($_SESSION['esInformatico']){
+        echo "<script>alert(\"No tienes los permisos para ver esta página.\");window.location='/Proyecto-Omnitus/php/views/redirect.php';</script>";
+    }else{
+        echo $_SESSION['usuario'];
+    }
+    
+}
 ?> 
+
+
 <div class="main-wrapper" style="transform: scale(1); margin-top: 44.8px;">
     <div class="main-wrapper_container">
         <div class="container__content gestionHortalizas">
