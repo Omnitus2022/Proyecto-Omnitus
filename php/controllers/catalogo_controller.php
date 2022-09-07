@@ -11,4 +11,5 @@ $variedad = new variedad_model();
 $hortaliza = new hortaliza_model();
 $dataStock = $stock->getStock();
 
+session_start();
 require_once($PATH.'php/views/catalogo.php');

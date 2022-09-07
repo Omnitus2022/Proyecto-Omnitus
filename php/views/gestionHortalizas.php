@@ -1,15 +1,13 @@
 <?php include($PATH.'/php/header.php') ;
-
+session_start();
 if(empty($_SESSION['usu'])){
     
     echo "<script>window.location='/Proyecto-Omnitus/index.php';</script>";
     
 }else{
     
-    if($_SESSION['esInformatico']){
+    if(!$_SESSION['esInformatico']){
         echo "<script>alert(\"No tienes los permisos para ver esta página.\");window.location='/Proyecto-Omnitus/php/views/redirect.php';</script>";
-    }else{
-        echo $_SESSION['usuario'];
     }
     
 }

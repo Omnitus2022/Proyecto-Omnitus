@@ -46,7 +46,7 @@ if(empty($_SESSION['usu'])){
             if ($_SESSION['esInformatico']) {
                 echo '<a class="clickable" href="">Gestionar Usuarios</a>';
                 echo '<a class="clickable" href="">Gestionar Huertas</a>';
-                echo '<a class="clickable" href="">Gestionar Productos</a>';
+                echo '<a class="clickable" href="/Proyecto-Omnitus/php/controllers/gestionHortalizas_controller.php">Gestionar Productos</a>';
 
             }
         }

@@ -8,4 +8,6 @@
 $variedad = new variedad_model();
 $hortaliza = new hortaliza_model();
 
+session_start();
 require_once($PATH.'php/views/gestionHortalizas.php');
+

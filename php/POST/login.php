@@ -13,7 +13,6 @@ if(isset($_POST['login'])){
 		$sql = "SELECT * FROM Usuario WHERE nom = '$usu' AND pwd ='$pwd'";		
 		$numfilas = mysqli_num_rows($db->query($sql));
 		
-		
 		if($numfilas>0){
 
 			$sqlperfil = "SELECT * FROM Usuario WHERE nom = '$usu'";
@@ -29,9 +28,8 @@ if(isset($_POST['login'])){
 			$_SESSION['esInformatico'] = $data['esInformatico'];	
 			require_once($PATH.'php/controllers/redirect_controller.php');
 
-
 		}else{
-			echo "<script>alert(\"Usuario y/o contraseña incorrectos.\");window.location='../index.php';</script>";
+			echo "<script>alert(\"Usuario y/o contraseña incorrectos.\");window.location='/Proyecto-Omnitus/index.php';</script>";
 			exit;
 		}
 		

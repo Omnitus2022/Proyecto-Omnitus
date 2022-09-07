@@ -88,3 +88,4 @@
     <h3 class="title_modal"><a href="#" class="btn-log clickable">LOGIN</a> <a href="#" class="btn-registro clickable">REGISTRO</a></h3>
 
     </dialog>
+ 
