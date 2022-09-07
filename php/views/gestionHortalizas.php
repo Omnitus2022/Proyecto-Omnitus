@@ -1,5 +1,4 @@
 <?php include($PATH.'/php/header.php') ;
-session_start();
 if(empty($_SESSION['usu'])){
     
     echo "<script>window.location='/Proyecto-Omnitus/index.php';</script>";

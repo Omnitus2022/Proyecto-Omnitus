@@ -15,7 +15,6 @@ const observer = new IntersectionObserver(
     entries.forEach((entry) => {
       entry.target.classList.toggle("fadeIn", entry.isIntersecting);
     });
-    console.log(entries);
   },
   { threshold: 0.6 }
 );

@@ -79,7 +79,28 @@ nav {
   color: var(--buttonTextColor);
   transition: 80ms;
 }
-
+.svgBtn {
+  position: absolute;
+  transform: translateX(100%) translateX(0.9rem);
+  top: 0.4rem;
+  height: 100%;
+  display: flex;
+  justify-items: center;
+}
+.svgBtn > a {
+  display: contents;
+}
+.svgBtn svg {
+  fill: var(--foregroundColor);
+  max-height: 1.6rem;
+  border-radius: 4px;
+  padding: 0.24rem 0;
+  aspect-ratio: 1/1;
+  background-color: var(--lightColor);
+}
+.svgBtn::after {
+  display: none;
+}
 .frontPage {
   display: flex;
   justify-content: center;
@@ -600,7 +621,8 @@ input {
   fill: var(--foregroundColor);
   aspect-ratio: 1/1;
   height: 100%;
-  padding: 0.3rem;
+  width: 2rem;
+  padding: 0.4rem;
   border: 0;
   border-radius: 0.15rem;
   outline: 0;

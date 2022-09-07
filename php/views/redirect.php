@@ -8,7 +8,6 @@ include($PATH.'php/header.php');
         <div class="container__content">
     <?php 
 
-session_start();
 
 
 if(empty($_SESSION['usu'])){
