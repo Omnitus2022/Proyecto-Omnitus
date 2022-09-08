@@ -14,9 +14,6 @@
   }
   .frontPage__box--title {
     display: block;
-    width: 80%;
-    margin-left: -2rem;
-    margin-top: -1rem;
     font-size: 3rem;
   }
   .main-wrapper__container {

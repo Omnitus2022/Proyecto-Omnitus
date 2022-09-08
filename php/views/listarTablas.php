@@ -12,7 +12,7 @@ if(empty($_SESSION['usu'])){
     }
 }
 ?>
-<div class="main-wrapper" style="transform: scale(1); margin-top: 44.8px;">
+<div class="main-wrapper" style="transform: scale(1); padding-top: 44.8px;">
     <div class="main-wrapper_container">
         <div class="container__content">
 
