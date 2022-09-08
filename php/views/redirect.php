@@ -23,30 +23,30 @@ if(empty($_SESSION['usu'])){
                 echo "<script>window.location='/Proyecto-Omnitus/php/controllers/catalogo_controller.php';</script>";
             }
             if ($_SESSION['esDirectivo']) {
-                echo '<a class="clickable" href="">Estadísticas</a>';
-                echo '<a class="clickable" href="">Gestión de Huertas</a>';
-                echo '<a class="clickable" href="">Gestión de Metas</a>';
-                echo '<a class="clickable" href="">Gestión de Stock</a>';
+                echo '<a class="redirectLinks" href="">Estadísticas</a>';
+                echo '<a class="redirectLinks" href="">Gestión de Huertas</a>';
+                echo '<a class="redirectLinks" href="">Gestión de Metas</a>';
+                echo '<a class="redirectLinks" href="">Gestión de Stock</a>';
 
             }
             if ($_SESSION['esAdmin']) {
-                echo '<a class="clickable" href="">Gestión de Pedidos</a>';
-                echo '<a class="clickable" href="">Gestión de Clientes</a>';
-                echo '<a class="clickable" href="">Gestión de Admin</a>';
+                echo '<a class="redirectLinks" href="">Gestión de Pedidos</a>';
+                echo '<a class="redirectLinks" href="">Gestión de Clientes</a>';
+                echo '<a class="redirectLinks" href="">Gestión de Admin</a>';
             }
             if ($_SESSION['esHuerta']) {
-                echo '<a class="clickable" href="">Estado de Cultivos</a>';
-                echo '<a class="clickable" href="">Ingreso de Cultivos</a>';
-                echo '<a class="clickable" href="">Estadísticas de Cultivos</a>';
+                echo '<a class="redirectLinks" href="">Estado de Cultivos</a>';
+                echo '<a class="redirectLinks" href="">Ingreso de Cultivos</a>';
+                echo '<a class="redirectLinks" href="">Estadísticas de Cultivos</a>';
             }
             if ($_SESSION['esRepartidor']) {
-                echo '<a class="clickable" href="">Entrega de Pedidos</a>';
+                echo '<a class="redirectLinks" href="">Entrega de Pedidos</a>';
             }
             if ($_SESSION['esInformatico']) {
-                echo '<a class="clickable" href="">Gestionar Usuarios</a>';
-                echo '<a class="clickable" href="">Gestionar Huertas</a>';
-                echo '<a class="clickable" href="/Proyecto-Omnitus/php/controllers/gestionHortalizas_controller.php">Gestionar Productos</a>';
-                echo '<a class="clickable" href="/Proyecto-Omnitus/php/controllers/listarTablas_controller.php">Listar tablas</a>';
+                echo '<a class="redirectLinks" href="">Gestionar Usuarios</a>';
+                echo '<a class="redirectLinks" href="">Gestionar Huertas</a>';
+                echo '<a class="redirectLinks" href="/Proyecto-Omnitus/php/controllers/gestionHortalizas_controller.php">Gestionar Productos</a>';
+                echo '<a class="redirectLinks" href="/Proyecto-Omnitus/php/controllers/listarTablas_controller.php">Listar tablas</a>';
 
             }
         }

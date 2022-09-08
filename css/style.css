@@ -35,13 +35,20 @@ nav {
     0px 51px 130px -9px rgba(0, 0, 0, 0.171);
 }
 
-.logo img {
+.logo * {
   height: 100%;
+  transition: all 250ms;
 }
 
 .logo {
-  flex-basis: content;
+  flex-basis: auto;
+  max-width: min-content;
   height: 2rem;
+}
+.logo:hover * {
+  fill: white;
+  cursor: pointer;
+  transition: all 250ms;
 }
 
 .nav__box {
@@ -205,12 +212,6 @@ nav {
 }
 .carousel__slide.hide {
   opacity: 0;
-}
-
-#still {
-  animation: infinite;
-  animation-name: stillSlide;
-  animation-duration: 10000ms;
 }
 
 .main-wrapper__container {
@@ -692,4 +693,7 @@ input {
 }
 .table td {
   font-size: 0.8rem;
+}
+.redirectLinks {
+  color: var(--accentColor);
 }

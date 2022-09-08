@@ -16,4 +16,12 @@ class stock_model{
         }
         return $this->stock;
     }
+    public function insertStock($idV, $v){
+        $sql = "INSERT INTO `Stock` (`idVariedad`, `volumen`) VALUES ($idV, $v)";
+        if($this->db->query($sql)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
