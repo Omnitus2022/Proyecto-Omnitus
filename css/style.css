@@ -83,7 +83,7 @@ nav {
   position: absolute;
   transform: translateX(100%) translateX(0.9rem);
   top: 0.4rem;
-  height: 100%;
+  height: fit-content;
   display: flex;
   justify-items: center;
 }
@@ -92,7 +92,7 @@ nav {
 }
 .svgBtn svg {
   fill: var(--foregroundColor);
-  max-height: 1.6rem;
+  max-height: 2rem;
   border-radius: 4px;
   padding: 0.24rem 0;
   aspect-ratio: 1/1;
@@ -100,6 +100,8 @@ nav {
 }
 .svgBtn::after {
   display: none;
+  content: none;
+  height: none;
 }
 .frontPage {
   display: flex;
@@ -671,4 +673,16 @@ input {
   background-color: var(--shadowColor);
   text-align: center;
   width: 100%;
+}
+.table {
+  text-align: center;
+  border-collapse: collapse;
+}
+.table,
+.table td,
+.table th {
+  border: 2px var(--textColor) solid;
+}
+.table td {
+  font-size: 0.8rem;
 }

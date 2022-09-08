@@ -25,7 +25,7 @@ if(isset($_POST['login'])){
 			$_SESSION['esAdmin'] = $data['esAdmin'];
 			$_SESSION['esHuerta'] = $data['esHuerta'];
 			$_SESSION['esRepartidor'] = $data['esRepartidor'];	
-			$_SESSION['esInformatico'] = $data['esInformatico'];	
+			$_SESSION['esInformatico'] = $data['esInformatico'];
 			require_once($PATH.'php/controllers/redirect_controller.php');
 
 		}else{

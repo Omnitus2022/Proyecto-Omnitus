@@ -2,7 +2,6 @@
 <?php
 
  include($PATH.'/php/header.php');
- $j=0;
  $i=0;
  ?> 
  
@@ -26,9 +25,8 @@
         foreach ($dataStock as $dS) {
             
             $v = $variedad->getVariedad(intval($dS["idVariedad"]))[$i];
-            $h = $hortaliza->getHortaliza(intval($v["idHortaliza"]))[$j];
+            $h = $hortaliza->getHortaliza(intval($v["idHortaliza"]))[$i];
             $i++;
-            $j++;
             $unidad = "KG";
             if ($h["unidad"]) {
                 $unidad = "U";
