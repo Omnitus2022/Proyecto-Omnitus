@@ -6,8 +6,11 @@ include($PATH.'php/header.php') ?>
       <!--    CAROUSEL    -->
       <div class="main-carousel">
         <div class="main-carousel__slide">
-          <img name="slide1" />
-          <img name="slide2" id="still" />
+        <img class="" src="/Proyecto-Omnitus/media/farm1.webp"/>
+          
+          <img class="carousel__slide" src="/Proyecto-Omnitus/media/farm4.jpg"/>
+          <img class="carousel__slide" src="/Proyecto-Omnitus/media/farm3.jpg"/>
+          <img class="carousel__slide" src="/Proyecto-Omnitus/media/farm2.jpg"/>
           
         </div>
       </div>
@@ -68,4 +71,5 @@ include($PATH.'php/header.php') ?>
     </section>
     <script src="/Proyecto-Omnitus/js/script.js"></script>
     <script src="/Proyecto-Omnitus/js/LogUsu.js"></script>
+    <script src="/Proyecto-Omnitus/js/inicio.js"></script>
 <?php include($PATH.'php/footer.php') ?>

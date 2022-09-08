@@ -199,6 +199,13 @@ nav {
   opacity: 1;
   transition: 1s;
 }
+.carousel__slide {
+  opacity: 1;
+  transition: all 2.5s;
+}
+.carousel__slide.hide {
+  opacity: 0;
+}
 
 #still {
   animation: infinite;
