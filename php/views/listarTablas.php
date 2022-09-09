@@ -38,8 +38,7 @@ foreach ($tNames as $tName) {
     }
     echo '</tr>';
     foreach ($t as $tRow) {
-        
-            
+           
             echo '<tr>';
             foreach ($tRow as $tVal) {
                 echo '<td>'.$tVal.'</td>';

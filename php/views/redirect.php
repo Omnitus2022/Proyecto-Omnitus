@@ -15,13 +15,11 @@ if(empty($_SESSION['usu'])){
 
     
 }else {
-    echo "<h2>👋 Hola ".$_SESSION['usu'].", seleccione opción:</h2>";
-    if (!($_SESSION['esEmpresa'] || $_SESSION['esDirectivo'] ||$_SESSION['esAdmin'] || $_SESSION['esHuerta'] || $_SESSION['esRepartidor'] || $_SESSION['esInformatico'])) {
+    
+    if (!($_SESSION['esEmpresa'] || $_SESSION['esDirectivo'] ||$_SESSION['esAdmin'] || $_SESSION['esHuerta'] || $_SESSION['esRepartidor'] || $_SESSION['esInformatico'])||$_SESSION['esEmpresa']) {
         echo "<script>window.location='/Proyecto-Omnitus/php/controllers/catalogo_controller.php';</script>";
     }else{
-            if ($_SESSION['esEmpresa']) {
-                echo "<script>window.location='/Proyecto-Omnitus/php/controllers/catalogo_controller.php';</script>";
-            }
+        echo "<h2>👋 Hola ".$_SESSION['usu'].", seleccione opción:</h2>";
             if ($_SESSION['esDirectivo']) {
                 echo '<a class="redirectLinks" href="">Estadísticas</a>';
                 echo '<a class="redirectLinks" href="">Gestión de Huertas</a>';
@@ -43,7 +41,7 @@ if(empty($_SESSION['usu'])){
                 echo '<a class="redirectLinks" href="">Entrega de Pedidos</a>';
             }
             if ($_SESSION['esInformatico']) {
-                echo '<a class="redirectLinks" href="">Gestionar Usuarios</a>';
+                echo '<a class="redirectLinks" href="/Proyecto-Omnitus/php/controllers/gestionUsuarios_controller.php">Gestionar Usuarios</a>';
                 echo '<a class="redirectLinks" href="">Gestionar Huertas</a>';
                 echo '<a class="redirectLinks" href="/Proyecto-Omnitus/php/controllers/gestionHortalizas_controller.php">Gestionar Productos</a>';
                 echo '<a class="redirectLinks" href="/Proyecto-Omnitus/php/controllers/listarTablas_controller.php">Listar tablas</a>';

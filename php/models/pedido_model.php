@@ -17,11 +17,21 @@ class pedido_model{
         return $this->pedido;
     }
     public function insertPedido($idC, $rec, $imp, $mP, $est, $fP, $fE, $hPrefI, $hPrefF,  $recib){
-        # rec
-        #fE
-        #hPrefI
-        #hPrefF
-        #recib
+        if ($rec=="") {
+            $rec="NULL";
+        }
+        if ($fE=="") {
+            $fE="NULL";
+        }
+        if ($hPrefI=="") {
+            $hPrefI="NULL";
+        }
+        if ($hPrefF=="") {
+            $hPrefF="NULL";
+        }
+        if ($recib=="") {
+            $recib="NULL";
+        }
         $sql = "INSERT INTO `Pedido` (`numPedido`, `idCliente`, `reclamo`, `importe`, `metodoPago`, `estadoPedido`, `fechaPedido`, `fechaEntrega`, `horaPrefInicio`, `horaPrefFinal`, `recibidor`) VALUES (NULL, '$idC', '$rec', '$imp', '$mP', '$est', '$fP', '$fE', '$hPrefI', '$PrefF', '$recib') ";
         if($this->db->query($sql)){
             return true;

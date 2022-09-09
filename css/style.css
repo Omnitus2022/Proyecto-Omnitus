@@ -109,7 +109,6 @@ nav {
 .svgBtn::after {
   display: none;
   content: none;
-  height: none;
 }
 .frontPage {
   display: flex;
@@ -213,9 +212,11 @@ nav {
 .carousel__slide.hide {
   opacity: 0;
 }
-
+.displayNone {
+  display: none;
+}
 .main-wrapper__container {
-  transform: translateZ(2.5px/2) scale(0.75/2);
+  transform: translateZ(1.25px) scale(0.8);
   transform-style: preserve-3d;
   z-index: 3;
   width: 40rem;
@@ -651,13 +652,13 @@ input {
   margin-bottom: 8rem;
   margin: 4rem 20% 1rem 20%;
 }
-.gestionHortalizas form {
+.gestionForm form {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
   flex-basis: 100%;
 }
-.gestionHortalizas > section {
+.gestionForm > section {
   gap: 2rem;
   display: flex;
 }

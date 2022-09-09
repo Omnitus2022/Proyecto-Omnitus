@@ -1,17 +1,11 @@
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 720px) {
   .nav__box--item {
     display: none;
   }
   nav {
     padding: 0.4rem 4rem;
   }
-  nav::after {
-    display: contents;
-    content: "⋮";
-    color: #b8dfc9;
-    font-size: 1.8rem;
-    font-weight: 1000;
-  }
+
   .frontPage__box--title {
     display: block;
     font-size: 3rem;
@@ -22,6 +16,9 @@
   .modal {
     width: 60%;
     margin: auto;
+  }
+  .logoPaths {
+    display: none;
   }
 }
 
