@@ -10,10 +10,15 @@ const target = document.querySelectorAll(".invisible");
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      entry.target.classList.toggle("fadeIn", entry.isIntersecting);
+      if (!entry.isIntersecting) {
+        return;
+      }
+      console.log(entry);
+      entry.target.classList.toggle("fadeIn");
+      observer.unobserve(entry.target);
     });
   },
-  { threshold: 0.6 }
+  { threshold: 0.2 }
 );
 target.forEach((element) => {
   observer.observe(element);
