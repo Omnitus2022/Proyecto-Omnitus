@@ -13,8 +13,7 @@ const observer = new IntersectionObserver(
       if (!entry.isIntersecting) {
         return;
       }
-      console.log(entry);
-      entry.target.classList.toggle("fadeIn");
+      entry.target.classList.add("fadeIn");
       observer.unobserve(entry.target);
     });
   },

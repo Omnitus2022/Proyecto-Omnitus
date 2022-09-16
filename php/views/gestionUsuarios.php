@@ -47,7 +47,6 @@ if(empty($_SESSION['usu'])){
                 <input class="formBtn clickable" type="submit" value="Enviar" name="usuario">
 
             </form>
-            
 
             </section>
         </div>
