@@ -9,3 +9,13 @@ document.addEventListener("keyup", (e) => {
     });
   }
 });
+function increase(c) {
+  c.getElementsByClassName("cant--inputs_field")[0].value++;
+}
+
+function decrease(c) {
+  if (c.getElementsByClassName("cant--inputs_field")[0].value == 0) {
+    return;
+  }
+  c.getElementsByClassName("cant--inputs_field")[0].value--;
+}
