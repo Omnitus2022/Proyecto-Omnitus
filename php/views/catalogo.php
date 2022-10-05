@@ -40,11 +40,11 @@
                     <h2 class="card_title_name">
                        '.$h["nombre"].' '.$v["nombreVariedad"].'
                     </h2>
-                    <span><p class="card_precio">'.$v["precio"].' $</p> <p>/ '.$unidad.'</p></span>
+                    <span><p class="card_precio">'.$v["precio"].' $</p> <p class="card_unidad">/ '.$unidad.'</p></span>
                 </div>
                 
                 <div class="card_cant">
-                <div class="card_cant--inputs"><input class="cant--inputs_prev" type="button" value="-" onclick="decrease(c'.$v["idVariedad"].')"><input type="number" class="cant_cat cant--inputs_field" value="0"><input class="cant--inputs_next" type="button" value="+" onclick="increase(c'.$v["idVariedad"].')"></div>    
+                <div class="card_cant--inputs"><input class="cant--inputs_prev" type="button" value="-" onclick="decrease(c'.$v["idVariedad"].', '.$v["precio"].')"><input type="number" class="cant_cat cant--inputs_field" value="0" onchange="cantidad(c'.$v["idVariedad"].', '.$v["precio"].')"><input class="cant--inputs_next" type="button" value="+" onclick="increase(c'.$v["idVariedad"].', '.$v["precio"].')"></div>    
                 <label>
                     <input type="button">
                     <svg class="button_card" 
