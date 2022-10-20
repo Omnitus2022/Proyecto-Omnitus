@@ -5,7 +5,7 @@ class db{
         $conn->query("SET NAMES 'utf8'");
 
         if ($conn -> connect_errno) {
-            echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+            echo "Failed to connect to MySQL: " . $conn -> connect_error;
             exit();
           }
         return $conn;

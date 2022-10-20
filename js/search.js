@@ -14,6 +14,8 @@ function increase(c, p) {
   cantidad(c, p);
 }
 
+// use querySelector
+
 function decrease(c, p) {
   if (c.getElementsByClassName("cant--inputs_field")[0].value == 0) {
     return;

@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  db:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+  www:
+    depends_on:
+      - db
+    image: php:apache
+    volumes:
+      - "../Proyecto-Omnitus/:/var/www/html/Proyecto-Omnitus"
+    ports:
+      - 4030:80
+      - 2020:443
