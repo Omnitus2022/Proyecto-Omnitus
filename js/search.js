@@ -28,7 +28,8 @@ function decrease(c, p) {
 function cantidad(c, p) {
   let product = c.getElementsByClassName("cant--inputs_field")[0].value;
 
-  if (c.getElementsByClassName("cant--inputs_field")[0].value == 0) {
+  if (c.getElementsByClassName("cant--inputs_field")[0].value <= 0) {
+    c.getElementsByClassName("cant--inputs_field")[0].value = 0;
     product = 1;
   }
 
