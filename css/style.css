@@ -784,4 +784,9 @@ input {
 }
 
 .shoppingCart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transform: translateY(-4rem);
+  background-color: var(--foregroundColor);
 }
