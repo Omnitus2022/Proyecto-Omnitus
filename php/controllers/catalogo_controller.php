@@ -12,6 +12,8 @@ $hortaliza = new hortaliza_model();
 $dataStock = $stock->getStock();
 
 session_start();
-$_SESSION["products"] = array();
+if (!isset($_SESSION["products"])) {
+    $_SESSION["products"] = array();
+}
 
 require_once($PATH . 'php/views/catalogo.php');

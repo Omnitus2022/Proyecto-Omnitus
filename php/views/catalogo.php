@@ -65,10 +65,7 @@ $i = 0;
 <div class="bottomArea">
     <!-- SHOPPING CART -->
     <div class="shoppingCart">
-        <h2>Productos</h2>
-        <div>
 
-        </div>
         <div class="shoppingCart-total">
             <p></p>
         </div>
