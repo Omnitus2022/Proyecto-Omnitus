@@ -104,7 +104,7 @@ nav {
 
 .svgBtn svg {
   fill: var(--foregroundColor);
-  max-height: 2rem;
+  height: 2rem;
   border-radius: 4px;
   padding: 0.24rem 0;
   aspect-ratio: 1/1;
@@ -620,6 +620,7 @@ nav {
 .cant--inputs_field::-webkit-outer-spin-button,
 .cant--inputs_field::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  display: none;
   margin: 0;
 }
 
@@ -749,8 +750,12 @@ input {
 .main-wrapper__container--flexbox {
   flex-basis: content;
   transform: translateZ(1.25px) scale(0.8);
+  background-color: var(--foregroundColor);
+  border-radius: 2rem ;
   transform-style: preserve-3d;
   z-index: 3;
+  max-height: 40ch;
+  padding: 3rem;
   width: 100%;
   margin: auto;
 }
@@ -758,6 +763,7 @@ input {
 .main-wrapper__container--flexbox > div {
   display: flex;
   justify-content: space-evenly;
+  gap: 3rem;
   width: 100%;
   flex-direction: row;
 }
@@ -820,7 +826,9 @@ input {
   position: relative;
   padding: 2rem;
   flex-direction: column;
+  color: white;
   max-width: 32ch;
+  max-height: 40ch;
   border-radius: 0.8rem 0 0 0;
   gap: 0.6rem;
   background-color: var(--foregroundColor);
@@ -828,6 +836,7 @@ input {
     0px 0px 7px rgba(0, 0, 0, 0.145), 0px 0px 18.2px rgba(0, 0, 0, 0.198),
     0px 0px 80px rgba(0, 0, 0, 0.47);
 }
+
 .shoppingCart::before {
   display: block;
   content: "";
@@ -843,12 +852,46 @@ input {
 .shoppingCart > * {
   z-index: 10;
 }
-
 .shoppingCart__product {
   display: flex;
   flex-direction: row;
+  height: 1.1rem;
   gap: 1rem;
+}
+.shoppingCart__product-name, .shoppingCart__product-qty, .shoppingCart__product-remove{
+  height: 100%;
 }
 .shoppingCart__product-name {
   margin-right: auto;
+  height: fit-content;
+}
+.shoppingCart__product-remove > svg{
+  aspect-ratio: 1/1;
+height: fit-content;
+}
+.shoppingCart__product-remove{
+  text-decoration: none;
+  text-align: center;
+  width: 2ch;
+  fill: var(--lightColor);
+  padding: 0.2rem;
+height: 100%;
+}
+
+.main-wrapper__container--flexbox > div > div {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-wrapper__container--flexbox h1, .main-wrapper__container--flexbox p{
+  text-align: center;
+  color: var(--buttonTextColor);
+}
+
+.main-wrapper__container--flexbox svg{
+  fill: var(--buttonTextColor);
+  aspect-ratio: 1/1;
+  max-height: 7.5rem;
 }

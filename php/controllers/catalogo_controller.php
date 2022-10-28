@@ -16,4 +16,5 @@ if (!isset($_SESSION["products"])) {
     $_SESSION["products"] = array();
 }
 
+
 require_once($PATH . 'php/views/catalogo.php');

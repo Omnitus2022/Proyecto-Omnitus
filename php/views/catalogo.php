@@ -83,4 +83,4 @@ $i = 0;
 <script src="/Proyecto-Omnitus/js/LogUsu.js"></script>
 <script src="/Proyecto-Omnitus/js/search.js"></script>
 <script src="/Proyecto-Omnitus/js/catalogo.js"></script>
-<?php include($PATH . '/footer.php') ?>
+<?php include($PATH . 'php/footer.php') ?>

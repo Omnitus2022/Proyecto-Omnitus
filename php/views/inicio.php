@@ -30,10 +30,9 @@ include($PATH . 'php/header.php') ?>
     <br />
     <div class="main-wrapper__container--flexbox invisible">
       <div>
-        <div>
-          <h1 class="invisible"><svg viewBox="0 -64 640 640" xmlns="http://www.w3.org/2000/svg">
+        <div class="invisible"><svg viewBox="0 -64 640 640" xmlns="http://www.w3.org/2000/svg">
               <path d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H112C85.5 0 64 21.5 64 48v48H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h272c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h208c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h208c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H64v128c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z" />
-            </svg>
+            </svg>          <h1 >
             Envíos a domicilio
           </h1>
           <p>Manejamos un sistema de envíos rápido y confiable que asegura sus envíos en tiempo y
@@ -41,7 +40,7 @@ include($PATH . 'php/header.php') ?>
             en menos de 24 horas de su pedido.
           </p>
         </div>
-        <div>
+        <div class="invisible">
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
             <g>
               <g>
@@ -91,14 +90,14 @@ include($PATH . 'php/header.php') ?>
             <g>
             </g>
           </svg>
-          <h1 class="invisible">Productos de calidad
+          <h1>Productos de calidad
           </h1>
           <p>Tenemos un equipo de control de calidad que aseguran la calidad de los productos
             que llegan
             a su mesa.
           </p>
         </div>
-        <div>
+        <div class="invisible">
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve">
             <g>
               <g>
@@ -162,7 +161,7 @@ include($PATH . 'php/header.php') ?>
             </g>
           </svg>
 
-          <h1 class="invisible">Productos orgánicos
+          <h1>Productos orgánicos
           </h1>
           <p>Nuestros productos son 100% orgánicos llevados desde la huerta a tu casa, no usamos productos químicos ni Herbicidas que afectan la calidad de los productos.</p>
         </div>
