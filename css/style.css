@@ -172,7 +172,7 @@ nav {
   transform-style: preserve-3d;
   transform: translateZ(-2.5px) scale(1.5) translateY(50vh);
   width: 100%;
-  height: 200vh;
+  padding-block-end: 20rem;
 }
 
 .button {
@@ -751,7 +751,7 @@ input {
   flex-basis: content;
   transform: translateZ(1.25px) scale(0.8);
   background-color: var(--foregroundColor);
-  border-radius: 2rem ;
+  border-radius: 2rem;
   transform-style: preserve-3d;
   z-index: 3;
   max-height: 40ch;
@@ -825,10 +825,10 @@ input {
   display: flex;
   position: relative;
   padding: 2rem;
+  height: 38ch;
   flex-direction: column;
   color: white;
-  max-width: 32ch;
-  max-height: 40ch;
+  width: 35ch;
   border-radius: 0.8rem 0 0 0;
   gap: 0.6rem;
   background-color: var(--foregroundColor);
@@ -858,24 +858,26 @@ input {
   height: 1.1rem;
   gap: 1rem;
 }
-.shoppingCart__product-name, .shoppingCart__product-qty, .shoppingCart__product-remove{
+.shoppingCart__product-name,
+.shoppingCart__product-qty,
+.shoppingCart__product-remove {
   height: 100%;
 }
 .shoppingCart__product-name {
   margin-right: auto;
   height: fit-content;
 }
-.shoppingCart__product-remove > svg{
+.shoppingCart__product-remove > svg {
   aspect-ratio: 1/1;
-height: fit-content;
+  height: fit-content;
 }
-.shoppingCart__product-remove{
+.shoppingCart__product-remove {
   text-decoration: none;
   text-align: center;
   width: 2ch;
   fill: var(--lightColor);
   padding: 0.2rem;
-height: 100%;
+  height: 100%;
 }
 
 .main-wrapper__container--flexbox > div > div {
@@ -885,12 +887,13 @@ height: 100%;
   justify-content: center;
 }
 
-.main-wrapper__container--flexbox h1, .main-wrapper__container--flexbox p{
+.main-wrapper__container--flexbox h1,
+.main-wrapper__container--flexbox p {
   text-align: center;
   color: var(--buttonTextColor);
 }
 
-.main-wrapper__container--flexbox svg{
+.main-wrapper__container--flexbox svg {
   fill: var(--buttonTextColor);
   aspect-ratio: 1/1;
   max-height: 7.5rem;
