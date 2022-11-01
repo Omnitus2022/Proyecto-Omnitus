@@ -1,6 +1,7 @@
 <?php
-session_start();
-
+if (!isset($_SESSION)) {
+    session_start();
+}
 echo '<h2>Productos</h2>
 <div>
 ';

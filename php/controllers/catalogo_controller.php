@@ -11,10 +11,11 @@ $variedad = new variedad_model();
 $hortaliza = new hortaliza_model();
 $dataStock = $stock->getStock();
 
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 if (!isset($_SESSION["products"])) {
     $_SESSION["products"] = array();
 }
-
 
 require_once($PATH . 'php/views/catalogo.php');
