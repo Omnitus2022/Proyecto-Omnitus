@@ -771,13 +771,14 @@ input {
 .bottomArea {
   position: fixed;
   top: 100vh;
-  translate: 0 -100%;
+  left: 100vw;
+  translate: -100% -100%;
   gap: 1rem;
   padding: 1.5rem 0;
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
-  width: 100%;
+  width: fit-content;
 }
 
 .showCart {
@@ -785,7 +786,10 @@ input {
   display: flex;
   aspect-ratio: 1/1;
   width: 4rem;
+  left: 100%;
+  position: relative;
   border: none;
+  transition: left 200ms ease;
   justify-content: start;
   translate: 1rem;
   border-radius: 0.8rem 0 0 0.8rem;
@@ -796,6 +800,7 @@ input {
     0px 0px 7px rgba(0, 0, 0, 0.145), 0px 0px 18.2px rgba(0, 0, 0, 0.198),
     0px 0px 80px rgba(0, 0, 0, 0.47);
 }
+
 .showCart > * {
   z-index: 10;
 }
@@ -823,6 +828,8 @@ input {
 
 .shoppingCart {
   display: flex;
+  transition: left 200ms ease;
+  left: 100%;
   position: relative;
   padding: 2rem;
   height: 38ch;
