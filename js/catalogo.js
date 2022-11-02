@@ -1,4 +1,17 @@
 const catalogo = () => {
+  $.ajax({
+    url: "/Proyecto-Omnitus/php/controllers/session.php",
+    type: "POST",
+    success: function (result) {
+      if (result == "success") {
+        console.log("====================================");
+        console.log("something");
+        console.log("====================================");
+      } else {
+        document.querySelector(".modal").showModal();
+      }
+    },
+  });
   $(".showCart").css(
     "left",
     "calc(100% - " + $(".showCart").width() + "px - 2.8rem)"
@@ -39,6 +52,10 @@ const catalogo = () => {
       });
     }
   });
+  $(".loadlater").each(async function (index, element) {
+    $(element).css("background-image", $(element).data("src"));
+  });
+
   $(".shoppingCart").load("../models/carrito.php");
 };
 $(document).ready(catalogo);

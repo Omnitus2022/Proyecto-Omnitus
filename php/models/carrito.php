@@ -18,5 +18,6 @@ foreach ($_SESSION["products"] as $prod) {
 </div>
 </div>';
 
+
     echo '</div>';
 }

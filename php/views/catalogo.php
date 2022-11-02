@@ -35,7 +35,7 @@ $i = 0;
 
                 echo '            
             <div class="card" id="c' . $v["idVariedad"] . '">
-            <img style="background-image:url(' . $v["imgUrl"] . ')">
+            <img class="loadlater" data-src="url(' . $v["imgUrl"] . ')">
             <div class="cont_card">
                 <div class="card_title">
                     <h2 class="card_title_name">
@@ -78,9 +78,9 @@ $i = 0;
     </button>
 
 </div>
-
+<script src="/Proyecto-Omnitus/js/catalogo.js"></script>
 <script src="/Proyecto-Omnitus/js/script.js"></script>
 <script src="/Proyecto-Omnitus/js/LogUsu.js"></script>
 <script src="/Proyecto-Omnitus/js/search.js"></script>
-<script src="/Proyecto-Omnitus/js/catalogo.js"></script>
+
 <?php include($PATH . 'php/footer.php') ?>
