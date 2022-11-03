@@ -1,17 +1,4 @@
 const catalogo = () => {
-  $.ajax({
-    url: "/Proyecto-Omnitus/php/controllers/session.php",
-    type: "POST",
-    success: function (result) {
-      if (result == "success") {
-        console.log("====================================");
-        console.log("something");
-        console.log("====================================");
-      } else {
-        document.querySelector(".modal").showModal();
-      }
-    },
-  });
   $(".showCart").css(
     "left",
     "calc(100% - " + $(".showCart").width() + "px - 2.8rem)"
@@ -29,7 +16,7 @@ const catalogo = () => {
     });
   });
   $(function () {
-    $(".showCart").click(function () {
+    $(".showCart path").click(function () {
       $(".shoppingCart").css("left", "100%");
       $(".showCart").css(
         "left",
@@ -44,7 +31,7 @@ const catalogo = () => {
 
     let cQty = $("#" + cId + " .cant_cat")[0].value;
     if (cQty != 0) {
-      $(".shoppingCart").load("../models/agregarCarrito.php", {
+      $(".shoppingCart-content").load("../models/agregarCarrito.php", {
         id: cId,
         nombre: cNom,
         cantidad: cQty,
@@ -52,10 +39,25 @@ const catalogo = () => {
       });
     }
   });
+  $(".shoppingCart--btn").click(function () {
+    $.ajax({
+      url: "/Proyecto-Omnitus/php/controllers/session.php",
+      type: "POST",
+      success: function (result) {
+        if (result == "success") {
+          console.log("====================================");
+          console.log("something");
+          console.log("====================================");
+        } else {
+          document.querySelector(".modal").showModal();
+        }
+      },
+    });
+  });
   $(".loadlater").each(async function (index, element) {
     $(element).css("background-image", $(element).data("src"));
   });
 
-  $(".shoppingCart").load("../models/carrito.php");
+  $(".shoppingCart-content").load("../models/carrito.php");
 };
 $(document).ready(catalogo);

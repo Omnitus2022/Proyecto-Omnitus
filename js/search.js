@@ -9,34 +9,37 @@ document.addEventListener("keyup", (e) => {
     });
   }
 });
-function increase(c, p) {
-  c.getElementsByClassName("cant--inputs_field")[0].value++;
-  cantidad(c, p);
+function increase(c, p, l) {
+  c.querySelector(".cant--inputs_field").value++;
+  cantidad(c, p, l);
 }
 
 // use querySelector
 
 function decrease(c, p) {
-  if (c.getElementsByClassName("cant--inputs_field")[0].value == 0) {
+  if (c.querySelector(".cant--inputs_field").value == 0) {
     return;
   }
-  c.getElementsByClassName("cant--inputs_field")[0].value--;
+  c.querySelector(".cant--inputs_field").value--;
 
   cantidad(c, p);
 }
 
-function cantidad(c, p) {
-  let product = c.getElementsByClassName("cant--inputs_field")[0].value;
+function cantidad(c, p, l) {
+  let product = c.querySelector(".cant--inputs_field").value;
 
-  if (c.getElementsByClassName("cant--inputs_field")[0].value <= 0) {
-    c.getElementsByClassName("cant--inputs_field")[0].value = 0;
+  if (c.querySelector(".cant--inputs_field").value <= 0) {
+    c.querySelector(".cant--inputs_field").value = 0;
     product = 1;
+  } else if (product > l) {
+    c.querySelector(".cant--inputs_field").value = l;
+    product = l;
   }
 
-  c.getElementsByClassName("card_precio")[0].innerText = `${p * product} $`;
-  if (c.getElementsByClassName("cant--inputs_field")[0].value > 1) {
-    c.getElementsByClassName("card_unidad")[0].style.opacity = 0;
+  c.querySelector(".card_precio").innerText = `${p * product} $`;
+  if (c.querySelector(".cant--inputs_field").value > 1) {
+    c.querySelector(".card_unidad").style.opacity = 0;
   } else {
-    c.getElementsByClassName("card_unidad")[0].style.opacity = 1;
+    c.querySelector(".card_unidad").style.opacity = 1;
   }
 }
