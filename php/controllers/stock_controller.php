@@ -9,4 +9,7 @@ require_once($PATH . 'php/models/variedad_model.php');
 $stock = new stock_model();
 $variedad = new variedad_model();
 
+if (!isset($_SESSION)) {
+    session_start();
+}
 require_once($PATH . 'php/views/gestionStock.php');

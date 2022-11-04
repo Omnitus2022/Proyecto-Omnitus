@@ -20,7 +20,7 @@ include($PATH . 'php/header.php');
                     echo "<h2>👋 Hola " . $_SESSION['usu'] . ", seleccione opción:</h2>";
                     if ($_SESSION['esDirectivo']) {
                         echo '<a class="redirectLinks" href="">Estadísticas</a>';
-                        echo '<a class="redirectLinks" href="">Gestión de Huertas</a>';
+                        echo '<a class="redirectLinks" href="/Proyecto-Omnitus/php/controllers/gestionHuerta_controller.php">Gestión de Huertas</a>';
                         echo '<a class="redirectLinks" href="">Gestión de Metas</a>';
                         echo '<a class="redirectLinks" href="/Proyecto-Omnitus/php/controllers/stock_controller.php">Gestión de Stock</a>';
                     }

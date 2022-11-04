@@ -12,5 +12,7 @@ $cliente = new cliente_model();
 $cWeb = new cWeb_model();
 $cEmpresa = new cEmpresa_model();
 
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 require_once($PATH . 'php/views/gestionUsuarios.php');
