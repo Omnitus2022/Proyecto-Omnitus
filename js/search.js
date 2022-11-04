@@ -5,13 +5,9 @@ function quitarAcentos(str) {
     í: "i",
     ó: "o",
     ú: "u",
-    Á: "A",
-    É: "E",
-    Í: "I",
-    Ó: "O",
-    Ú: "U",
   };
   let arr = str
+    .toLowerCase()
     .split("")
     .map((letra) => acentos[letra] || letra)
     .join("");
