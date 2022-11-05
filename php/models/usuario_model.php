@@ -19,6 +19,28 @@ class usuario_model
         }
         return $this->usuario;
     }
+
+    public static function getOneUsuario($nom)
+    {
+        $db = db::connect();
+        $sql = "SELECT * FROM Usuario WHERE nom = '$nom'";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $usuario[] = $filas;
+        }
+        return $usuario[0];
+    }
+
+    public function update($nom, $pwd)
+    {   //  RETURN SUCCESS
+        $sql = "UPDATE Usuario 
+        SET 
+            pwd = $pwd
+        WHERE
+            nom = $nom;";
+        $this->db->query($sql);
+    }
     public function insertUsuario($idC, $nom, $pwd, $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf)
     {
         $pwdSec = MD5($pwd);

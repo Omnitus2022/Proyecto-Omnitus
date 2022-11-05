@@ -29,6 +29,17 @@ class cliente_model
         }
         return $this->cliente;
     }
+    public static function getOneCliente($id)
+    {
+        $db = db::connect();
+        $sql = "SELECT * FROM Cliente WHERE idCliente = '$id'";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $cliente[] = $filas;
+        }
+        return $cliente[0];
+    }
     public function insertCliente($m, $nP, $c, $esq)
     {
         $sql = "INSERT INTO `Cliente` (`idCliente`, `email`, `numeroPuerta`, `calle`, `esquina`) VALUES (NULL, '$m', $nP, '$c', '$esq')";
@@ -37,5 +48,17 @@ class cliente_model
         } else {
             return false;
         }
+    }
+    public static function esEmpresa($id)
+    {
+        $esEmpresa = false;
+        $db = db::connect();
+        $sql = "SELECT idCliente FROM cEmpresa WHERE idCliente = '$id'";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $cliente[] = $filas;
+        }
+        return $cliente[0];
     }
 }

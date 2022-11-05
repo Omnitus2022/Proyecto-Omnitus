@@ -45,17 +45,21 @@ const catalogo = () => {
       type: "POST",
       success: function (result) {
         if (result == "success") {
-          console.log("====================================");
-          console.log("something");
-          console.log("====================================");
+          document.querySelector(".confirmarCompra").showModal();
+          $(".confirmarCompra > .modal-content").load("../models/carrito.php");
         } else {
           document.querySelector(".modal").showModal();
         }
       },
     });
   });
+
   $(".loadlater").each(async function (index, element) {
     $(element).css("background-image", $(element).data("src"));
+  });
+
+  $(".confirmarCompra .close_modal").click(function () {
+    document.querySelector(".confirmarCompra").close();
   });
 
   $(".shoppingCart-content").load("../models/carrito.php");

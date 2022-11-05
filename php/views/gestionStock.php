@@ -24,7 +24,7 @@ if (empty($_SESSION['usu'])) {
                         <?php
                         $var = $variedad->listarVariedades();
                         foreach ($var as $v) {
-                            echo '<option value="' . $v["idVariedad"] . '">' . $v["idVariedad"] . ' (' . $v["nombreVariedad"] . ')</option>';
+                            echo '<option value="' . $v["idVaMarty Lobdell - Study Less Study Smartriedad"] . '">' . $v["idVariedad"] . ' (' . $v["nombreVariedad"] . ')</option>';
                         }
                         ?>
                     </select>
