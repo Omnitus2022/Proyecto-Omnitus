@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 04-11-2022 a las 11:16:14
+-- Tiempo de generación: 05-11-2022 a las 11:28:44
 -- Versión del servidor: 8.0.28-0ubuntu0.20.04.3
 -- Versión de PHP: 7.4.3
 
@@ -79,17 +79,6 @@ INSERT INTO `Cliente` (`idCliente`, `email`, `numeroPuerta`, `calle`, `esquina`)
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `clienteHacePedido`
---
-
-CREATE TABLE `clienteHacePedido` (
-  `numPedido` int NOT NULL,
-  `idCliente` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `cWeb`
 --
 
@@ -112,6 +101,19 @@ INSERT INTO `cWeb` (`idCliente`, `CI`, `nombre`, `apellido`) VALUES
 (26, 23543556, 'Carlos', 'Rámirez'),
 (27, 54325655, 'Martina', 'Goncalves'),
 (28, 23456332, 'Dave', 'List');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `estadosPedido`
+--
+
+CREATE TABLE `estadosPedido` (
+  `numPedido` int NOT NULL,
+  `estado` varchar(16) NOT NULL DEFAULT 'Pendiente',
+  `fechaInicio` date NOT NULL,
+  `fechaFin` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -189,25 +191,24 @@ INSERT INTO `Hortaliza` (`idHortaliza`, `nombre`, `unidad`, `tGerminacion`, `tCo
 CREATE TABLE `Huerta` (
   `idHuerta` int NOT NULL,
   `nombreHuerta` varchar(32) NOT NULL,
-  `tamanoHuerta` varchar(12) NOT NULL,
-  `metaCantidad` int DEFAULT '0'
+  `tamanoHuerta` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `Huerta`
 --
 
-INSERT INTO `Huerta` (`idHuerta`, `nombreHuerta`, `tamanoHuerta`, `metaCantidad`) VALUES
-(1, 'Paraíso verde', 'Grande', 400),
-(2, 'Eco huerta', 'Mediana', 200),
-(3, 'A sembrar vecinos', 'Mediana', 240),
-(4, 'Mi corazón verde', 'Mediana', 270),
-(5, 'la caserita', 'Pequeña', 80),
-(6, 'Mundo verde', 'Grande', 470),
-(7, 'huertalizas', 'Grande', 450),
-(8, 'Mi pequeña huerta', 'Pequeña', 70),
-(9, 'Vida en el huerto', 'Mediana', 260),
-(10, 'La huerta ingeniosa', 'Mediana', 230);
+INSERT INTO `Huerta` (`idHuerta`, `nombreHuerta`, `tamanoHuerta`) VALUES
+(1, 'Paraíso verde', 'Grande'),
+(2, 'Eco huerta', 'Mediana'),
+(3, 'A sembrar vecinos', 'Mediana'),
+(4, 'Mi corazón verde', 'Mediana'),
+(5, 'la caserita', 'Pequeña'),
+(6, 'Mundo verde', 'Grande'),
+(7, 'huertalizas', 'Grande'),
+(8, 'Mi pequeña huerta', 'Pequeña'),
+(9, 'Vida en el huerto', 'Mediana'),
+(10, 'La huerta ingeniosa', 'Mediana');
 
 -- --------------------------------------------------------
 
@@ -235,7 +236,8 @@ CREATE TABLE `huertaCultivo` (
   `idVariedad` int NOT NULL,
   `fecha` date NOT NULL,
   `cantidadPlantada` int NOT NULL,
-  `estadoCultivo` varchar(12) NOT NULL
+  `estadoCultivo` varchar(12) NOT NULL,
+  `metaCantidad` int NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -250,7 +252,6 @@ CREATE TABLE `Pedido` (
   `reclamo` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `importe` int NOT NULL,
   `metodoPago` varchar(16) NOT NULL,
-  `estadoPedido` varchar(16) NOT NULL,
   `fechaPedido` date NOT NULL,
   `fechaEntrega` date DEFAULT NULL,
   `horaPrefInicio` time DEFAULT NULL,
@@ -310,6 +311,18 @@ INSERT INTO `Stock` (`idVariedad`, `volumen`) VALUES
 (14, 150),
 (15, 200),
 (16, 220);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `totalCooperativa`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `totalCooperativa` (
+`idHuerta` int
+,`idVariedad` int
+,`subTotal` decimal(32,0)
+);
 
 -- --------------------------------------------------------
 
@@ -387,6 +400,15 @@ INSERT INTO `Variedad` (`idVariedad`, `idHortaliza`, `nombreVariedad`, `precio`,
 (15, 16, 'rojo', 40, NULL, 'https://imagenes.laestrella.com.pa/files/image_990_491/uploads/2021/02/20/60319d8e3971f.jpeg'),
 (16, 13, NULL, 43, NULL, 'https://www.revistainternos.com.ar/v2/wp-content/uploads/2021/05/InterNos-Maqueta-Foto-Portada-Notas-choclo.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `totalCooperativa`
+--
+DROP TABLE IF EXISTS `totalCooperativa`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`omnitus`@`%` SQL SECURITY DEFINER VIEW `totalCooperativa`  AS  select `huertaCosecha`.`idHuerta` AS `idHuerta`,`huertaCosecha`.`idVariedad` AS `idVariedad`,sum(`huertaCosecha`.`cantidadCosecha`) AS `subTotal` from `huertaCosecha` where (month(`huertaCosecha`.`fecha`) = month(curdate())) group by `huertaCosecha`.`idHuerta`,`huertaCosecha`.`idVariedad` ;
+
 --
 -- Índices para tablas volcadas
 --
@@ -412,18 +434,17 @@ ALTER TABLE `Cliente`
   ADD PRIMARY KEY (`idCliente`);
 
 --
--- Indices de la tabla `clienteHacePedido`
---
-ALTER TABLE `clienteHacePedido`
-  ADD PRIMARY KEY (`numPedido`),
-  ADD KEY `idCliente` (`idCliente`);
-
---
 -- Indices de la tabla `cWeb`
 --
 ALTER TABLE `cWeb`
   ADD PRIMARY KEY (`idCliente`),
   ADD UNIQUE KEY `CI` (`CI`);
+
+--
+-- Indices de la tabla `estadosPedido`
+--
+ALTER TABLE `estadosPedido`
+  ADD KEY `numPedido` (`numPedido`);
 
 --
 -- Indices de la tabla `Feria`
@@ -602,17 +623,16 @@ ALTER TABLE `cEmpresa`
   ADD CONSTRAINT `cEmpresa_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `Cliente` (`idCliente`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Filtros para la tabla `clienteHacePedido`
---
-ALTER TABLE `clienteHacePedido`
-  ADD CONSTRAINT `clienteHacePedido_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `Cliente` (`idCliente`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `clienteHacePedido_ibfk_2` FOREIGN KEY (`numPedido`) REFERENCES `Pedido` (`numPedido`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
 -- Filtros para la tabla `cWeb`
 --
 ALTER TABLE `cWeb`
   ADD CONSTRAINT `cWeb_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `Cliente` (`idCliente`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Filtros para la tabla `estadosPedido`
+--
+ALTER TABLE `estadosPedido`
+  ADD CONSTRAINT `estadosPedido_ibfk_1` FOREIGN KEY (`numPedido`) REFERENCES `Pedido` (`numPedido`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Filtros para la tabla `feriaVende`
