@@ -48,7 +48,6 @@ if (empty($_SESSION['usu'])) {
             }
             ?>
 
-
         </div>
     </div>
 </div>

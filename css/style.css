@@ -908,3 +908,8 @@ input {
   aspect-ratio: 1/1;
   max-height: 7.5rem;
 }
+
+.main-wrapper__container--flexbox > div > div {
+  flex: 1 1 0;
+  width: 0;
+}
