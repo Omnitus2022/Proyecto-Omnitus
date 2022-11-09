@@ -1,4 +1,7 @@
 <?php
+
+use PhpMyAdmin\Sql;
+
 class usuario_model
 {
     private $db;
@@ -32,16 +35,67 @@ class usuario_model
         return $usuario[0];
     }
 
-    public function update($nom, $pwd)
-    {   //  RETURN SUCCESS
+    public static function updatePassword($nom, $pwd)
+    {
+        $db = db::connect();
+        $pwdSec = MD5($pwd);
         $sql = "UPDATE Usuario 
         SET 
-            pwd = $pwd
+            pwd = '$pwdSec'
         WHERE
-            nom = $nom;";
-        $this->db->query($sql);
+            nom = '$nom'";
+        $db->query($sql);
     }
-    public function insertUsuario($idC, $nom, $pwd, $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf)
+    public static function updateUsuario($idC, $nom, $pwd, $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf, $idH)
+    {
+        $db = db::connect();
+        $pwdSec = MD5($pwd);
+        if (!$esEmp) {
+            $esEmp = "NULL";
+        } else {
+            $esEmp = 1;
+        }
+        if (!$esDir) {
+            $esDir = "NULL";
+        } else {
+            $esDir = 1;
+        }
+        if (!$esAdm) {
+            $esAdm = "NULL";
+        } else {
+            $esAdm = 1;
+        }
+        if (!$esHue) {
+            $esHue = "NULL";
+        } else {
+            $esHue = 1;
+        }
+        if (!$esRep) {
+            $esRep = "NULL";
+        } else {
+            $esRep = 1;
+        }
+        if (!$esInf) {
+            $esInf = "NULL";
+        } else {
+            $esInf = 1;
+        }
+        $sql = "UPDATE Usuario 
+        SET 
+            idCliente = '$idC',
+            pwd = '$pwdSec',
+            esEmpresa = '$esEmp',
+            esDirectivo = '$esDir',
+            esAdmin = '$esAdm',
+            esHuerta = '$esHue',
+            esRepartidor = '$esRep',
+            esInformatico = '$esInf',
+            idHuerta = '$idH'
+        WHERE
+            nom = '$nom'";
+        $db->query($sql);
+    }
+    public function insertUsuario($idC, $nom, $pwd, $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf, $idH)
     {
         $pwdSec = MD5($pwd);
         if (!$esEmp) {
@@ -75,7 +129,7 @@ class usuario_model
             $esInf = 1;
         }
 
-        $sql = "INSERT INTO `Usuario` (`idCliente`, `nom`, `pwd`, `esEmpresa`, `esDirectivo`, `esAdmin`, `esHuerta`, `esRepartidor`, `esInformatico`) VALUES ('$idC', '$nom', '$pwdSec', $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf) ";
+        $sql = "INSERT INTO `Usuario` (`idCliente`, `nom`, `pwd`, `esEmpresa`, `esDirectivo`, `esAdmin`, `esHuerta`, `esRepartidor`, `esInformatico`, `idHuerta`) VALUES ('$idC', '$nom', '$pwdSec', $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf) ";
         if ($this->db->query($sql)) {
             return true;
         } else {

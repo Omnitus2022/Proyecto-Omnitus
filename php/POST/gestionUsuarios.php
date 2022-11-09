@@ -29,6 +29,25 @@ if (isset($_POST['createUsuario'])) {
     }
 }
 
+if (isset($_POST['updateUsuario'])) {
+    $idC = $_POST["idC_u"];
+    $nomUsu = $_POST["nomUsu_u"];
+    $pwdUsu = $_POST["pwdUsu_u"];
+    $esEmp = isset($_POST["esEmp_u"]);
+    $esDir = isset($_POST["esDir_u"]);
+    $esAdm = isset($_POST["esAdm_u"]);
+    $esHue = isset($_POST["esHue_u"]);
+    $esRep = isset($_POST["esRep_u"]);
+    $esInf = isset($_POST["esInf_u"]);
+    if ($nomUsu != "") {
+        $usuario->updateUsuario($idC, $nomUsu, $pwdUsu, $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf);
+        echo "<script>alert(\"Datos ingresados con éxito.\");window.location='../controllers/gestionUsuarios_controller.php';</script>";
+    } else {
+        echo "<script>alert(\"Asegúrese de que los datos sean correctos.\");window.location='../controllers/gestionUsuarios_controller.php';</script>";
+        exit;
+    }
+}
+
 if (isset($_POST['deleteUsuario'])) {
 
     $nomUsu = $_POST["nomUsu_d"];

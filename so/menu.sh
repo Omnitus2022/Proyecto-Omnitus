@@ -1,4 +1,4 @@
-function menu() {
+menu() {
     clear
     echo "1 - Menú ABM"
     echo "2 - Respaldo BD"

@@ -1,0 +1,10 @@
+Options -Indexes
+AuthUserFile /user/safe_location/.htpasswd
+
+AuthGroupFile /dev/null
+
+AuthName "Please Enter Password"
+
+AuthType Basic
+
+Require valid-user

@@ -49,7 +49,7 @@ if (empty($_SESSION['usu'])) {
                 <form action="/Proyecto-Omnitus/php/POST/gestionUsuarios.php" method="post">
                     <h2>Actualizar Usuario</h2>
 
-                    <input class="inputC" placeholder="Nombre*" type="text" name="nomUsu">
+                    <input class="inputC" placeholder="Nombre*" type="text" name="nomUsu_u">
                     <select class="formCombo" name="idC_u">
                         <option value="">- - - Id del Cliente - - -</option>
                         <?php
@@ -62,7 +62,6 @@ if (empty($_SESSION['usu'])) {
                             echo '<option value=' . $c["idCliente"] . '>' . $c["idCliente"] . ' - ' . $cliWeb["nombre"] . '</option>';
                         }
                         ?>
-
                     </select>
                     <input class="inputC" placeholder="Contraseña*" type="password" name="pwdUsu_u">
                     <label>¿Es Empresa? <input type="checkbox" name="esEmp_u"></label>
