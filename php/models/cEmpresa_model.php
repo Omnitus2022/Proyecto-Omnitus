@@ -21,9 +21,9 @@ class cEmpresa_model
         }
         return $cEmpresa[0];
     }
-    public function getCEmpresa()
+    public function getCEmpresa($idC)
     {
-        $sql = "SELECT * FROM CEmpresa";
+        $sql = "SELECT * FROM cEmpresa WHERE idCliente = $idC";
         $consulta = $this->db->query($sql);
 
         while ($filas = $consulta->fetch_assoc()) {

@@ -4,7 +4,7 @@ const catalogo = () => {
     "calc(100% - " + $(".showCart").width() + "px - 2.8rem)"
   );
   $(".bottomArea").on("click", ".shoppingCart__product-remove", function () {
-    $(".shoppingCart").load("../models/quitarCarrito.php", {
+    $(".shoppingCart-content").load("../models/quitarCarrito.php", {
       id: $(this).attr("productId"),
     });
   });

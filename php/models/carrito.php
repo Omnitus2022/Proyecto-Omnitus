@@ -5,7 +5,9 @@ if (!isset($_SESSION)) {
 echo '<h2>Productos</h2>
 <div>
 ';
+$TOTAL = 0;
 foreach ($_SESSION["products"] as $prod) {
+    $TOTAL += intval($prod["precio"]);
     echo '
 <div class="shoppingCart__product">
 <div class="shoppingCart__product-name">' . $prod["nombre"] . '</div>
@@ -18,6 +20,6 @@ foreach ($_SESSION["products"] as $prod) {
 </div>
 </div>';
 
-
     echo '</div>';
 }
+$_SESSION["importeTotal"] = $TOTAL;

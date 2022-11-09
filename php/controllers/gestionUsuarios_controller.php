@@ -8,13 +8,11 @@ require_once($PATH . 'php/models/cWeb_model.php');
 require_once($PATH . 'php/models/cEmpresa_model.php');
 require_once($PATH . 'php/models/huerta_model.php');
 
-
 $usuario = new usuario_model();
 $huerta = new huerta_model();
 $cliente = new cliente_model();
 $cWeb = new cWeb_model();
 $cEmpresa = new cEmpresa_model();
-
 
 if (!isset($_SESSION)) {
     session_start();

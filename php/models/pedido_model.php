@@ -1,41 +1,51 @@
 <?php
-class pedido_model{
+class pedido_model
+{
     private $db;
     private $pedido;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->db = db::connect();
         $this->pedido = array();
     }
-    public function getPedido(){
+    public function getPedido()
+    {
         $sql = "SELECT * FROM Pedido";
         $consulta = $this->db->query($sql);
 
-        while($filas=$consulta->fetch_assoc()){
-            $this->pedido[]=$filas;
+        while ($filas = $consulta->fetch_assoc()) {
+            $this->pedido[] = $filas;
         }
         return $this->pedido;
     }
-    public function insertPedido($idC, $rec, $imp, $mP, $est, $fP, $fE, $hPrefI, $hPrefF,  $recib){
-        if ($rec=="") {
-            $rec="NULL";
+    public static function insertVariedad($numP, $idV, $cant)
+    {
+        $db = db::connect();
+        $sql = "INSERT INTO `pedidoVariedad` (`idVariedad`, `numPedido`, `cantidad`) VALUES ('$idV', '$numP', '$cant') ";
+        $db->query($sql);
+    }
+    public function insertPedido($numP, $idC, $rec, $imp, $mP, $fP, $fE, $hPrefI, $hPrefF,  $recib)
+    {
+        if ($rec == "") {
+            $rec = "NULL";
         }
-        if ($fE=="") {
-            $fE="NULL";
+        if ($fE == "") {
+            $fE = "NULL";
         }
-        if ($hPrefI=="") {
-            $hPrefI="NULL";
+        if ($hPrefI == "") {
+            $hPrefI = "NULL";
         }
-        if ($hPrefF=="") {
-            $hPrefF="NULL";
+        if ($hPrefF == "") {
+            $hPrefF = "NULL";
         }
-        if ($recib=="") {
-            $recib="NULL";
+        if ($recib == "") {
+            $recib = "NULL";
         }
-        $sql = "INSERT INTO `Pedido` (`numPedido`, `idCliente`, `reclamo`, `importe`, `metodoPago`, `estadoPedido`, `fechaPedido`, `fechaEntrega`, `horaPrefInicio`, `horaPrefFinal`, `recibidor`) VALUES (NULL, '$idC', '$rec', '$imp', '$mP', '$est', '$fP', '$fE', '$hPrefI', '$PrefF', '$recib') ";
-        if($this->db->query($sql)){
+        $sql = "INSERT INTO `Pedido` (`numPedido`, `idCliente`, `reclamo`, `importe`, `metodoPago`, `fechaPedido`, `fechaEntrega`, `horaPrefInicio`, `horaPrefFinal`, `recibidor`) VALUES ('$numP', '$idC', '$rec', '$imp', '$mP', '$fP', '$fE', '$hPrefI', '$hPrefF', '$recib') ";
+        if ($this->db->query($sql)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

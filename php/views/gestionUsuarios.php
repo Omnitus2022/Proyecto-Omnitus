@@ -1,5 +1,5 @@
 <?php include($PATH . '/php/header.php');
-$cCount = 0;
+
 if (empty($_SESSION['usu'])) {
 
     echo "<script>window.location='/Proyecto-Omnitus/index.php';</script>";
@@ -11,7 +11,6 @@ if (empty($_SESSION['usu'])) {
 }
 ?>
 
-
 <div class="main-wrapper" style="transform: scale(1); padding-top: 44.8px;">
     <div class="main-wrapper_container">
         <div class="container__content gestionForm">
@@ -22,10 +21,11 @@ if (empty($_SESSION['usu'])) {
                         <option value="">- - - Id del Cliente - - -</option>
                         <?php
                         $cli = $cliente->listarClientes();
-
+                        $Count = 0;
                         foreach ($cli as $c) {
-                            $cliWeb = $cWeb->getCWeb($c["idCliente"])[$cCount];
-                            $cCount++;
+                            $cliWeb = $cWeb->getCWeb($c["idCliente"])[$Count];
+                            $cliEmp = $cEmpresa->getCEmpresa($c["idCliente"])[$Count];
+                            $Count++;
 
                             echo '<option value=' . $c["idCliente"] . '>' . $c["idCliente"] . ' - ' . $cliWeb["nombre"] . '</option>';
                         }
@@ -41,7 +41,6 @@ if (empty($_SESSION['usu'])) {
                     <label>¿Es Huerta? <input type="checkbox" name="esHue_c"></label>
                     <label>¿Es Repartidor? <input type="checkbox" namephpmyadmin="esRep_c"></label>
                     <label>¿Es Informático? <input type="checkbox" name="esInf_c"></label>
-
                     <input class="formBtn clickable" type="submit" value="Enviar" name="createUsuario">
 
                 </form>
@@ -54,10 +53,11 @@ if (empty($_SESSION['usu'])) {
                         <option value="">- - - Id del Cliente - - -</option>
                         <?php
                         $cli = $cliente->listarClientes();
-
+                        $Count = 0;
                         foreach ($cli as $c) {
-                            $cliWeb = $cWeb->getCWeb($c["idCliente"])[$cCount];
-                            $cCount++;
+                            $cliWeb = $cWeb->getCWeb($c["idCliente"])[$Count];
+                            $cliEmp = $cEmpresa->getCEmpresa($c["idCliente"])[$Count];
+                            $Count++;
 
                             echo '<option value=' . $c["idCliente"] . '>' . $c["idCliente"] . ' - ' . $cliWeb["nombre"] . '</option>';
                         }
@@ -68,8 +68,20 @@ if (empty($_SESSION['usu'])) {
                     <label>¿Es Directivo? <input type="checkbox" name="esDir_u"></label>
                     <label>¿Es Administrador? <input type="checkbox" name="esAdm_u"></label>
                     <label>¿Es Huerta? <input type="checkbox" name="esHue_u"></label>
+                    <?php
+                    // $h = $huerta->listarHuertas();
+                    // $Count = 0;
+
+                    // foreach ($cli as $c) {
+                    //     $cliWeb = $cWeb->getCWeb($c["idCliente"])[$Count];
+                    //     $Count++;
+
+                    //     echo '<option value=' . $c["idCliente"] . '>' . $c["idCliente"] . ' - ' . $cliWeb["nombre"] . '</option>';
+                    // }
+                    ?>
                     <label>¿Es Repartidor? <input type="checkbox" name="esRep_u"></label>
                     <label>¿Es Informático? <input type="checkbox" name="esInf_u"></label>
+
 
                     <input class="formBtn clickable" type="submit" value="Enviar" name="updateUsuario">
 

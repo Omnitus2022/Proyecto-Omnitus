@@ -129,7 +129,7 @@ class usuario_model
             $esInf = 1;
         }
 
-        $sql = "INSERT INTO `Usuario` (`idCliente`, `nom`, `pwd`, `esEmpresa`, `esDirectivo`, `esAdmin`, `esHuerta`, `esRepartidor`, `esInformatico`, `idHuerta`) VALUES ('$idC', '$nom', '$pwdSec', $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf) ";
+        $sql = "INSERT INTO `Usuario` (`idCliente`, `nom`, `pwd`, `esEmpresa`, `esDirectivo`, `esAdmin`, `esHuerta`, `esRepartidor`, `esInformatico`, `idHuerta`) VALUES ('$idC', '$nom', '$pwdSec', $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf, $idH) ";
         if ($this->db->query($sql)) {
             return true;
         } else {
