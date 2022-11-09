@@ -10,6 +10,7 @@ require_once($PATH . 'php/models/huerta_model.php');
 
 
 $usuario = new usuario_model();
+$huerta = new huerta_model();
 $cliente = new cliente_model();
 $cWeb = new cWeb_model();
 $cEmpresa = new cEmpresa_model();
