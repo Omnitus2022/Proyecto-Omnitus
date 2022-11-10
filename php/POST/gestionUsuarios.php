@@ -29,7 +29,6 @@ if (isset($_POST['createUsuario'])) {
         exit;
     }
 }
-
 if (isset($_POST['updateUsuario'])) {
     $idC = $_POST["idC_u"];
     $nomUsu = $_POST["nomUsu_u"];

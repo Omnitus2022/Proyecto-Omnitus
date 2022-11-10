@@ -90,6 +90,10 @@ $i = 0;
 
     </div>
     <form action="/Proyecto-Omnitus/php/POST/hacerPedido.php" method="post">
+        <label>¿Dentro de que horas puede recibir los productos?
+            <input type="time" name="horaPrefInicio">
+            <input type="time" name="horaPrefFinal">
+        </label>
         <select name="metodoPago">
             <option value="0">Tarjeta de Crédito</option>
             <option value="1">Tarjeta de Débito</option>

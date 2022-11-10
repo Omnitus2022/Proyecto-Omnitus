@@ -15,7 +15,7 @@ if (isset($_POST["hacerPedido"])) {
     $importe = $_SESSION["importeTotal"];
     $metodoPago = $_POST["metodoPago"];
     $fechaPedido = date('Y-m-d');
-    $horaPrefInicio = $_POST["horaPrefFinal"];
+    $horaPrefInicio = $_POST["horaPrefInicio"];
     $horaPrefFinal = $_POST["horaPrefFinal"];
 
     $pedido->insertPedido($numPedido, $idCliente, "", $importe, $metodoPago, $fechaPedido, "", $horaPrefInicio, $horaPrefFinal, "");

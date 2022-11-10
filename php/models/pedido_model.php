@@ -35,14 +35,20 @@ class pedido_model
         }
         if ($hPrefI == "") {
             $hPrefI = "NULL";
+        } else {
+            $hPrefI = "'$hPrefI'";
         }
         if ($hPrefF == "") {
             $hPrefF = "NULL";
+        } else {
+            $hPrefF = "'$hPrefF'";
         }
         if ($recib == "") {
             $recib = "NULL";
+        } else {
+            $recib = "'$recib'";
         }
-        $sql = "INSERT INTO `Pedido` (`numPedido`, `idCliente`, `reclamo`, `importe`, `metodoPago`, `fechaPedido`, `fechaEntrega`, `horaPrefInicio`, `horaPrefFinal`, `recibidor`) VALUES ('$numP', '$idC', '$rec', '$imp', '$mP', '$fP', '$fE', '$hPrefI', '$hPrefF', '$recib') ";
+        $sql = "INSERT INTO `Pedido` (`numPedido`, `idCliente`, `reclamo`, `importe`, `metodoPago`, `fechaPedido`, `fechaEntrega`, `horaPrefInicio`, `horaPrefFinal`, `recibidor`) VALUES ('$numP', '$idC', $rec, $imp, '$mP', '$fP', $fE, $hPrefI, $hPrefF, $recib) ";
         if ($this->db->query($sql)) {
             return true;
         } else {
