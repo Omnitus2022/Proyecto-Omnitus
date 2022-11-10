@@ -30,9 +30,10 @@ class huerta_model
         }
         return $this->huerta;
     }
-    public function insertHuerta($nH, $tH, $m)
+    public function insertHuerta($nH, $tH)
     {
-        $sql = "INSERT INTO `Huerta` (`idHuerta`, `nombreHuerta`, `tamanoHuerta`, `metaCantidad`) VALUES (NULL, '$nH', '$tH', $m) ";
+        $sql = "INSERT INTO Huerta (`idHuerta`, `nombreHuerta`, `tamanoHuerta`) VALUES (NULL, '$nH', '$tH') ";
+
         if ($this->db->query($sql)) {
             return true;
         } else {

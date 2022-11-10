@@ -19,6 +19,18 @@ class pedido_model
         }
         return $this->pedido;
     }
+
+    public static function listarPedidosCliente($idCliente)
+    {
+        $db = db::connect();
+        $sql = "SELECT * FROM Pedido WHERE idCliente = '$idCliente'";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $pedido[] = $filas;
+        }
+        return $pedido;
+    }
     public static function insertVariedad($numP, $idV, $cant)
     {
         $db = db::connect();

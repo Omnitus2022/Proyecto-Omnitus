@@ -16,16 +16,34 @@ if (empty($_SESSION['usu'])) {
         <div class="container__content gestionForm">
             <section>
                 <form action="/Proyecto-Omnitus/php/POST/gestionHuerta.php" method="post">
-                    <h2>Huerta</h2>
-                    <input class="inputC" placeholder="Nombre de la huerta*" type="text" name="nomH">
-                    <select class="formCombo" name="idV">
-                        <option value="">Pequeña</option>
-                        <option value="">Mediana</option>
-                        <option value="">Grande</option>
+                    <h2>Añadir Huerta</h2>
+                    <input class="inputC" placeholder="Nombre de la huerta*" type="text" name="nomH_c">
+                    <select class="formCombo" name="tamH_c">
+                        <option value="Pequeña">Pequeña</option>
+                        <option value="Mediana">Mediana</option>
+                        <option value="Grande">Grande</option>
                     </select>
-                    <input class="inputC" placeholder="Meta anual" type="text" name="metaC">
-                    <input class="formBtn clickable" type="submit" value="Enviar" name="huerta">
+                    <input class="formBtn clickable" type="submit" value="Enviar" name="createHuerta">
                 </form>
+
+                <form action="/Proyecto-Omnitus/php/POST/gestionHuerta.php" method="post">
+                    <h2>Actualizar Huerta</h2>
+                    <input class="inputC" placeholder="Nombre de la huerta*" type="text" name="nomH_u">
+                    <select class="formCombo" name="tamH_u">
+                        <option value="Pequeña">Pequeña</option>
+                        <option value="Mediana">Mediana</option>
+                        <option value="Grande">Grande</option>
+                    </select>
+                    <input class="formBtn clickable" type="submit" value="Enviar" name="updateHuerta">
+                </form>
+
+                <h2>Eliminar Huerta</h2>
+
+                <form action="/Proyecto-Omnitus/php/POST/gestionHuerta.php" method="post">
+                    <input class="inputC" placeholder="Id de la huerta*" type="text" name="idH_d">
+                    <input class="formBtn clickable" type="submit" value="Enviar" name="deleteHuerta">
+                </form>
+
             </section>
         </div>
     </div>

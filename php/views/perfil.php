@@ -8,7 +8,7 @@ include($PATH . 'php/header.php');
         <div class="container__content">
             <form action="/Proyecto-Omnitus/php/POST/perfil.php" method="post">
                 <h2>Datos</h2>
-                <label>Nombre de usuario: <input class="inputC" placeholder="Nombre" type="text" name="nomUsu" value="<?php echo $usu['nom'] ?>">
+                <label>Nombre de usuario: <input class="inputC" placeholder="Nombre" type="text" name="nomUsu" value="<?php echo $_SESSION['usu'] ?>">
                 </label>
                 <label>Email: <input class="inputC" placeholder="Nombre" type="text" name="nomUsu" value="<?php echo $cli['email'] ?>">
                 </label>

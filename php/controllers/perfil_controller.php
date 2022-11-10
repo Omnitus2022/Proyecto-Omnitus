@@ -17,8 +17,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-$usu = $usuario->getOneUsuario($_SESSION['usu']);
-$cId = $usu['idCliente'];
+$cId = $_SESSION['idClienteAsociado'];
 $cli = $cliente->getOneCliente($cId);
 
 $cW = $cWeb->getOneCWeb($cId);
