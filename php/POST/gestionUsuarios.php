@@ -20,7 +20,12 @@ if (isset($_POST['createUsuario'])) {
     $esHue = isset($_POST["esHue_c"]);
     $esRep = isset($_POST["esRep_c"]);
     $esInf = isset($_POST["esInf_c"]);
-    $idHuerta = isset($_POST["idH_c"]);
+    if ($esHue) {
+        $idHuerta = $_POST["idH_u"];
+    } else {
+        $idHuerta = "";
+    }
+
     if ($nomUsu != "" && $pwdUsu != "") {
         $usuario->insertUsuario($idC, $nomUsu, $pwdUsu, $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf, $idHuerta);
         echo "<script>alert(\"Datos ingresados con éxito.\");window.location='../controllers/gestionUsuarios_controller.php';</script>";
@@ -31,6 +36,7 @@ if (isset($_POST['createUsuario'])) {
 }
 if (isset($_POST['updateUsuario'])) {
     $idC = $_POST["idC_u"];
+    echo $idC;
     $nomUsu = $_POST["nomUsu_u"];
     $pwdUsu = $_POST["pwdUsu_u"];
     $esEmp = isset($_POST["esEmp_u"]);
@@ -39,7 +45,12 @@ if (isset($_POST['updateUsuario'])) {
     $esHue = isset($_POST["esHue_u"]);
     $esRep = isset($_POST["esRep_u"]);
     $esInf = isset($_POST["esInf_u"]);
-    $idHuerta = isset($_POST["idH_u"]);
+    if ($esHue) {
+        $idHuerta = $_POST["idH_u"];
+    } else {
+        $idHuerta = "";
+    }
+
     if ($nomUsu != "") {
         $usuario->updateUsuario($idC, $nomUsu, $pwdUsu, $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf, $idHuerta);
         echo "<script>alert(\"Datos ingresados con éxito.\");window.location='../controllers/gestionUsuarios_controller.php';</script>";

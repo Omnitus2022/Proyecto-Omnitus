@@ -53,46 +53,52 @@ class usuario_model
         if (!$esEmp) {
             $esEmp = "NULL";
         } else {
-            $esEmp = 1;
+            $esEmp = '1';
         }
         if (!$esDir) {
             $esDir = "NULL";
         } else {
-            $esDir = 1;
+            $esDir = '1';
         }
         if (!$esAdm) {
             $esAdm = "NULL";
         } else {
-            $esAdm = 1;
+            $esAdm = '1';
         }
         if (!$esHue) {
             $esHue = "NULL";
         } else {
-            $esHue = 1;
+            $esHue = '1';
         }
         if (!$esRep) {
             $esRep = "NULL";
         } else {
-            $esRep = 1;
+            $esRep = '1';
         }
         if (!$esInf) {
             $esInf = "NULL";
         } else {
-            $esInf = 1;
+            $esInf = '1';
+        }
+        if (!$idH) {
+            $idH = "NULL";
+        } else {
+            $idH = "'$idH'";
         }
         $sql = "UPDATE Usuario 
         SET 
             idCliente = '$idC',
             pwd = '$pwdSec',
-            esEmpresa = '$esEmp',
-            esDirectivo = '$esDir',
-            esAdmin = '$esAdm',
-            esHuerta = '$esHue',
-            esRepartidor = '$esRep',
-            esInformatico = '$esInf',
-            idHuerta = '$idH'
+            esEmpresa = $esEmp,
+            esDirectivo = $esDir,
+            esAdmin = $esAdm,
+            esHuerta = $esHue,
+            esRepartidor = $esRep,
+            esInformatico = $esInf,
+            idHuerta = $idH
         WHERE
             nom = '$nom'";
+        echo $sql;
         $db->query($sql);
     }
     public function insertUsuario($idC, $nom, $pwd, $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf, $idH)
