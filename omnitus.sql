@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 5.1.1deb5ubuntu1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 05-11-2022 a las 11:28:44
--- Versión del servidor: 8.0.28-0ubuntu0.20.04.3
--- Versión de PHP: 7.4.3
+-- Host: localhost:3306
+-- Generation Time: Nov 10, 2022 at 09:21 PM
+-- Server version: 8.0.29-0ubuntu0.22.04.2
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `omnitus`
+-- Database: `omnitus`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Asocia`
+-- Table structure for table `Asocia`
 --
 
 CREATE TABLE `Asocia` (
@@ -36,7 +35,7 @@ CREATE TABLE `Asocia` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cEmpresa`
+-- Table structure for table `cEmpresa`
 --
 
 CREATE TABLE `cEmpresa` (
@@ -48,7 +47,7 @@ CREATE TABLE `cEmpresa` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Cliente`
+-- Table structure for table `Cliente`
 --
 
 CREATE TABLE `Cliente` (
@@ -60,7 +59,7 @@ CREATE TABLE `Cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Volcado de datos para la tabla `Cliente`
+-- Dumping data for table `Cliente`
 --
 
 INSERT INTO `Cliente` (`idCliente`, `email`, `numeroPuerta`, `calle`, `esquina`) VALUES
@@ -79,7 +78,7 @@ INSERT INTO `Cliente` (`idCliente`, `email`, `numeroPuerta`, `calle`, `esquina`)
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cWeb`
+-- Table structure for table `cWeb`
 --
 
 CREATE TABLE `cWeb` (
@@ -90,7 +89,7 @@ CREATE TABLE `cWeb` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Volcado de datos para la tabla `cWeb`
+-- Dumping data for table `cWeb`
 --
 
 INSERT INTO `cWeb` (`idCliente`, `CI`, `nombre`, `apellido`) VALUES
@@ -105,11 +104,10 @@ INSERT INTO `cWeb` (`idCliente`, `CI`, `nombre`, `apellido`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `estadosPedido`
+-- Table structure for table `estadosPedido`
 --
 
 CREATE TABLE `estadosPedido` (
-  `numPedido` int NOT NULL,
   `estado` varchar(16) NOT NULL DEFAULT 'Pendiente',
   `fechaInicio` date NOT NULL,
   `fechaFin` date DEFAULT NULL
@@ -118,7 +116,7 @@ CREATE TABLE `estadosPedido` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Feria`
+-- Table structure for table `Feria`
 --
 
 CREATE TABLE `Feria` (
@@ -130,7 +128,7 @@ CREATE TABLE `Feria` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `feriaVende`
+-- Table structure for table `feriaVende`
 --
 
 CREATE TABLE `feriaVende` (
@@ -143,7 +141,7 @@ CREATE TABLE `feriaVende` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Hortaliza`
+-- Table structure for table `Hortaliza`
 --
 
 CREATE TABLE `Hortaliza` (
@@ -157,7 +155,7 @@ CREATE TABLE `Hortaliza` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Volcado de datos para la tabla `Hortaliza`
+-- Dumping data for table `Hortaliza`
 --
 
 INSERT INTO `Hortaliza` (`idHortaliza`, `nombre`, `unidad`, `tGerminacion`, `tCosecha`, `mesInicio`, `mesFin`) VALUES
@@ -185,7 +183,7 @@ INSERT INTO `Hortaliza` (`idHortaliza`, `nombre`, `unidad`, `tGerminacion`, `tCo
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Huerta`
+-- Table structure for table `Huerta`
 --
 
 CREATE TABLE `Huerta` (
@@ -195,7 +193,7 @@ CREATE TABLE `Huerta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Volcado de datos para la tabla `Huerta`
+-- Dumping data for table `Huerta`
 --
 
 INSERT INTO `Huerta` (`idHuerta`, `nombreHuerta`, `tamanoHuerta`) VALUES
@@ -213,7 +211,7 @@ INSERT INTO `Huerta` (`idHuerta`, `nombreHuerta`, `tamanoHuerta`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `huertaCosecha`
+-- Table structure for table `huertaCosecha`
 --
 
 CREATE TABLE `huertaCosecha` (
@@ -227,7 +225,7 @@ CREATE TABLE `huertaCosecha` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `huertaCultivo`
+-- Table structure for table `huertaCultivo`
 --
 
 CREATE TABLE `huertaCultivo` (
@@ -243,11 +241,11 @@ CREATE TABLE `huertaCultivo` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Pedido`
+-- Table structure for table `Pedido`
 --
 
 CREATE TABLE `Pedido` (
-  `numPedido` int NOT NULL,
+  `numPedido` varchar(52) NOT NULL,
   `idCliente` int NOT NULL,
   `reclamo` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `importe` int NOT NULL,
@@ -259,33 +257,55 @@ CREATE TABLE `Pedido` (
   `recibidor` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `Pedido`
+--
+
+INSERT INTO `Pedido` (`numPedido`, `idCliente`, `reclamo`, `importe`, `metodoPago`, `fechaPedido`, `fechaEntrega`, `horaPrefInicio`, `horaPrefFinal`, `recibidor`) VALUES
+('P_636ceb0593d89', 23, NULL, 390, '2', '2022-11-10', NULL, '02:34:00', '12:03:00', NULL),
+('P_636d7515493e1', 22, NULL, 380, '0', '2022-11-10', NULL, '00:33:00', '12:31:00', NULL),
+('P_636d769eb9d48', 22, NULL, 1004, '2', '2022-11-10', NULL, '00:32:00', '12:34:00', NULL),
+('P_636d89483bf66', 22, NULL, 285, '0', '2022-11-10', NULL, NULL, NULL, NULL),
+('P_636d89b7989ff', 22, NULL, 32790, '0', '2022-11-10', NULL, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pedidoTraslado`
+-- Table structure for table `pedidoTraslado`
 --
 
 CREATE TABLE `pedidoTraslado` (
   `idTraslado` int NOT NULL,
-  `numPedido` int NOT NULL
+  `numPedido` varchar(52) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pedidoVariedad`
+-- Table structure for table `pedidoVariedad`
 --
 
 CREATE TABLE `pedidoVariedad` (
   `idVariedad` int NOT NULL,
-  `numPedido` int NOT NULL,
+  `numPedido` varchar(52) NOT NULL,
   `cantidad` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `pedidoVariedad`
+--
+
+INSERT INTO `pedidoVariedad` (`idVariedad`, `numPedido`, `cantidad`) VALUES
+(5, 'P_636d7515493e1', 4),
+(6, 'P_636ceb0593d89', 3),
+(11, 'P_636d89483bf66', 3),
+(12, 'P_636d89483bf66', 4),
+(13, 'P_636ceb0593d89', 3);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Stock`
+-- Table structure for table `Stock`
 --
 
 CREATE TABLE `Stock` (
@@ -294,7 +314,7 @@ CREATE TABLE `Stock` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Volcado de datos para la tabla `Stock`
+-- Dumping data for table `Stock`
 --
 
 INSERT INTO `Stock` (`idVariedad`, `volumen`) VALUES
@@ -315,31 +335,28 @@ INSERT INTO `Stock` (`idVariedad`, `volumen`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `totalCooperativa`
--- (Véase abajo para la vista actual)
+-- Stand-in structure for view `totalCooperativa`
+-- (See below for the actual view)
 --
 CREATE TABLE `totalCooperativa` (
-`idHuerta` int
-,`idVariedad` int
-,`subTotal` decimal(32,0)
 );
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Traslado`
+-- Table structure for table `Traslado`
 --
 
 CREATE TABLE `Traslado` (
   `idTraslado` int NOT NULL,
-  `repartidor` varchar(32) NOT NULL,
+  `repartidor` varchar(58) NOT NULL,
   `estadoTraslado` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Usuario`
+-- Table structure for table `Usuario`
 --
 
 CREATE TABLE `Usuario` (
@@ -356,17 +373,18 @@ CREATE TABLE `Usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Volcado de datos para la tabla `Usuario`
+-- Dumping data for table `Usuario`
 --
 
 INSERT INTO `Usuario` (`idCliente`, `nom`, `pwd`, `esEmpresa`, `esDirectivo`, `esAdmin`, `esHuerta`, `esRepartidor`, `esInformatico`, `idHuerta`) VALUES
-(1, 'Carlos', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL, 1, 1, NULL, NULL, NULL),
-(23, 'rafa', 'c20ad4d76fe97759aa27a0c99bff6710', NULL, 1, NULL, NULL, NULL, 1, NULL);
+(29, 'Carlos', '25d55ad283aa400af464c76d713c07ad', 1, 1, NULL, NULL, 1, 1, NULL),
+(22, 'rafa', 'c20ad4d76fe97759aa27a0c99bff6710', NULL, 1, 1, 1, 1, 1, 7),
+(22, 'test', 'c20ad4d76fe97759aa27a0c99bff6710', NULL, NULL, NULL, 1, NULL, 1, 7);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Variedad`
+-- Table structure for table `Variedad`
 --
 
 CREATE TABLE `Variedad` (
@@ -379,7 +397,7 @@ CREATE TABLE `Variedad` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Volcado de datos para la tabla `Variedad`
+-- Dumping data for table `Variedad`
 --
 
 INSERT INTO `Variedad` (`idVariedad`, `idHortaliza`, `nombreVariedad`, `precio`, `descuento`, `imgUrl`) VALUES
@@ -403,76 +421,76 @@ INSERT INTO `Variedad` (`idVariedad`, `idHortaliza`, `nombreVariedad`, `precio`,
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `totalCooperativa`
+-- Structure for view `totalCooperativa`
 --
 DROP TABLE IF EXISTS `totalCooperativa`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`omnitus`@`%` SQL SECURITY DEFINER VIEW `totalCooperativa`  AS  select `huertaCosecha`.`idHuerta` AS `idHuerta`,`huertaCosecha`.`idVariedad` AS `idVariedad`,sum(`huertaCosecha`.`cantidadCosecha`) AS `subTotal` from `huertaCosecha` where (month(`huertaCosecha`.`fecha`) = month(curdate())) group by `huertaCosecha`.`idHuerta`,`huertaCosecha`.`idVariedad` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`omnitus`@`%` SQL SECURITY DEFINER VIEW `totalCooperativa`  AS SELECT `huertaCosecha`.`idHuerta` AS `idHuerta`, `huertaCosecha`.`idVariedad` AS `idVariedad`, sum(`huertaCosecha`.`cantidadCosecha`) AS `subTotal` FROM `huertaCosecha` WHERE (month(`huertaCosecha`.`fecha`) = month(curdate())) GROUP BY `huertaCosecha`.`idHuerta`, `huertaCosecha`.`idVariedad` ;
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `Asocia`
+-- Indexes for table `Asocia`
 --
 ALTER TABLE `Asocia`
   ADD PRIMARY KEY (`idVariedad`,`idAsocia`),
   ADD KEY `idAsocia` (`idAsocia`);
 
 --
--- Indices de la tabla `cEmpresa`
+-- Indexes for table `cEmpresa`
 --
 ALTER TABLE `cEmpresa`
   ADD PRIMARY KEY (`idCliente`),
   ADD UNIQUE KEY `RUT` (`RUT`);
 
 --
--- Indices de la tabla `Cliente`
+-- Indexes for table `Cliente`
 --
 ALTER TABLE `Cliente`
   ADD PRIMARY KEY (`idCliente`);
 
 --
--- Indices de la tabla `cWeb`
+-- Indexes for table `cWeb`
 --
 ALTER TABLE `cWeb`
   ADD PRIMARY KEY (`idCliente`),
   ADD UNIQUE KEY `CI` (`CI`);
 
 --
--- Indices de la tabla `estadosPedido`
+-- Indexes for table `estadosPedido`
 --
 ALTER TABLE `estadosPedido`
-  ADD KEY `numPedido` (`numPedido`);
+  ADD PRIMARY KEY (`estado`,`fechaInicio`);
 
 --
--- Indices de la tabla `Feria`
+-- Indexes for table `Feria`
 --
 ALTER TABLE `Feria`
   ADD PRIMARY KEY (`idFeria`);
 
 --
--- Indices de la tabla `feriaVende`
+-- Indexes for table `feriaVende`
 --
 ALTER TABLE `feriaVende`
   ADD PRIMARY KEY (`idFeria`,`idVariedad`),
   ADD KEY `idVariedad` (`idVariedad`);
 
 --
--- Indices de la tabla `Hortaliza`
+-- Indexes for table `Hortaliza`
 --
 ALTER TABLE `Hortaliza`
   ADD PRIMARY KEY (`idHortaliza`);
 
 --
--- Indices de la tabla `Huerta`
+-- Indexes for table `Huerta`
 --
 ALTER TABLE `Huerta`
   ADD PRIMARY KEY (`idHuerta`);
 
 --
--- Indices de la tabla `huertaCosecha`
+-- Indexes for table `huertaCosecha`
 --
 ALTER TABLE `huertaCosecha`
   ADD PRIMARY KEY (`idCosecha`),
@@ -480,7 +498,7 @@ ALTER TABLE `huertaCosecha`
   ADD KEY `idVariedad` (`idVariedad`);
 
 --
--- Indices de la tabla `huertaCultivo`
+-- Indexes for table `huertaCultivo`
 --
 ALTER TABLE `huertaCultivo`
   ADD PRIMARY KEY (`idCultivo`),
@@ -488,40 +506,41 @@ ALTER TABLE `huertaCultivo`
   ADD KEY `idVariedad` (`idVariedad`);
 
 --
--- Indices de la tabla `Pedido`
+-- Indexes for table `Pedido`
 --
 ALTER TABLE `Pedido`
   ADD PRIMARY KEY (`numPedido`),
   ADD KEY `idCliente` (`idCliente`);
 
 --
--- Indices de la tabla `pedidoTraslado`
+-- Indexes for table `pedidoTraslado`
 --
 ALTER TABLE `pedidoTraslado`
-  ADD PRIMARY KEY (`idTraslado`,`numPedido`),
+  ADD PRIMARY KEY (`idTraslado`),
   ADD KEY `numPedido` (`numPedido`);
 
 --
--- Indices de la tabla `pedidoVariedad`
+-- Indexes for table `pedidoVariedad`
 --
 ALTER TABLE `pedidoVariedad`
-  ADD PRIMARY KEY (`idVariedad`,`numPedido`),
+  ADD PRIMARY KEY (`idVariedad`),
   ADD KEY `numPedido` (`numPedido`);
 
 --
--- Indices de la tabla `Stock`
+-- Indexes for table `Stock`
 --
 ALTER TABLE `Stock`
   ADD PRIMARY KEY (`idVariedad`);
 
 --
--- Indices de la tabla `Traslado`
+-- Indexes for table `Traslado`
 --
 ALTER TABLE `Traslado`
-  ADD PRIMARY KEY (`idTraslado`);
+  ADD PRIMARY KEY (`idTraslado`),
+  ADD KEY `repartidor` (`repartidor`);
 
 --
--- Indices de la tabla `Usuario`
+-- Indexes for table `Usuario`
 --
 ALTER TABLE `Usuario`
   ADD PRIMARY KEY (`nom`),
@@ -529,167 +548,161 @@ ALTER TABLE `Usuario`
   ADD KEY `Usuario_ibfk_1` (`idHuerta`);
 
 --
--- Indices de la tabla `Variedad`
+-- Indexes for table `Variedad`
 --
 ALTER TABLE `Variedad`
   ADD PRIMARY KEY (`idVariedad`),
   ADD KEY `idHortaliza` (`idHortaliza`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `Cliente`
+-- AUTO_INCREMENT for table `Cliente`
 --
 ALTER TABLE `Cliente`
   MODIFY `idCliente` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT de la tabla `cWeb`
+-- AUTO_INCREMENT for table `cWeb`
 --
 ALTER TABLE `cWeb`
   MODIFY `idCliente` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT de la tabla `Feria`
+-- AUTO_INCREMENT for table `Feria`
 --
 ALTER TABLE `Feria`
   MODIFY `idFeria` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `Hortaliza`
+-- AUTO_INCREMENT for table `Hortaliza`
 --
 ALTER TABLE `Hortaliza`
   MODIFY `idHortaliza` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT de la tabla `Huerta`
+-- AUTO_INCREMENT for table `Huerta`
 --
 ALTER TABLE `Huerta`
-  MODIFY `idHuerta` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idHuerta` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT de la tabla `huertaCosecha`
+-- AUTO_INCREMENT for table `huertaCosecha`
 --
 ALTER TABLE `huertaCosecha`
   MODIFY `idCosecha` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `huertaCultivo`
+-- AUTO_INCREMENT for table `huertaCultivo`
 --
 ALTER TABLE `huertaCultivo`
   MODIFY `idCultivo` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `Pedido`
---
-ALTER TABLE `Pedido`
-  MODIFY `numPedido` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `pedidoVariedad`
+-- AUTO_INCREMENT for table `pedidoVariedad`
 --
 ALTER TABLE `pedidoVariedad`
-  MODIFY `idVariedad` int NOT NULL AUTO_INCREMENT;
+  MODIFY `idVariedad` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT de la tabla `Traslado`
+-- AUTO_INCREMENT for table `Traslado`
 --
 ALTER TABLE `Traslado`
   MODIFY `idTraslado` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `Variedad`
+-- AUTO_INCREMENT for table `Variedad`
 --
 ALTER TABLE `Variedad`
   MODIFY `idVariedad` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `Asocia`
+-- Constraints for table `Asocia`
 --
 ALTER TABLE `Asocia`
   ADD CONSTRAINT `Asocia_ibfk_1` FOREIGN KEY (`idAsocia`) REFERENCES `Variedad` (`idVariedad`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `Asocia_ibfk_2` FOREIGN KEY (`idVariedad`) REFERENCES `Variedad` (`idVariedad`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Filtros para la tabla `cEmpresa`
+-- Constraints for table `cEmpresa`
 --
 ALTER TABLE `cEmpresa`
   ADD CONSTRAINT `cEmpresa_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `Cliente` (`idCliente`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Filtros para la tabla `cWeb`
+-- Constraints for table `cWeb`
 --
 ALTER TABLE `cWeb`
   ADD CONSTRAINT `cWeb_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `Cliente` (`idCliente`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Filtros para la tabla `estadosPedido`
---
-ALTER TABLE `estadosPedido`
-  ADD CONSTRAINT `estadosPedido_ibfk_1` FOREIGN KEY (`numPedido`) REFERENCES `Pedido` (`numPedido`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Filtros para la tabla `feriaVende`
+-- Constraints for table `feriaVende`
 --
 ALTER TABLE `feriaVende`
   ADD CONSTRAINT `feriaVende_ibfk_1` FOREIGN KEY (`idVariedad`) REFERENCES `Variedad` (`idVariedad`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `feriaVende_ibfk_2` FOREIGN KEY (`idFeria`) REFERENCES `Feria` (`idFeria`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Filtros para la tabla `huertaCosecha`
+-- Constraints for table `huertaCosecha`
 --
 ALTER TABLE `huertaCosecha`
   ADD CONSTRAINT `huertaCosecha_ibfk_1` FOREIGN KEY (`idHuerta`) REFERENCES `Huerta` (`idHuerta`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `huertaCosecha_ibfk_2` FOREIGN KEY (`idVariedad`) REFERENCES `Variedad` (`idVariedad`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Filtros para la tabla `huertaCultivo`
+-- Constraints for table `huertaCultivo`
 --
 ALTER TABLE `huertaCultivo`
   ADD CONSTRAINT `huertaCultivo_ibfk_1` FOREIGN KEY (`idHuerta`) REFERENCES `Huerta` (`idHuerta`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `huertaCultivo_ibfk_2` FOREIGN KEY (`idVariedad`) REFERENCES `Variedad` (`idVariedad`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Filtros para la tabla `Pedido`
+-- Constraints for table `Pedido`
 --
 ALTER TABLE `Pedido`
   ADD CONSTRAINT `Pedido_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `Cliente` (`idCliente`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Filtros para la tabla `pedidoTraslado`
+-- Constraints for table `pedidoTraslado`
 --
 ALTER TABLE `pedidoTraslado`
   ADD CONSTRAINT `pedidoTraslado_ibfk_1` FOREIGN KEY (`idTraslado`) REFERENCES `Traslado` (`idTraslado`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `pedidoTraslado_ibfk_2` FOREIGN KEY (`numPedido`) REFERENCES `Pedido` (`numPedido`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Filtros para la tabla `pedidoVariedad`
+-- Constraints for table `pedidoVariedad`
 --
 ALTER TABLE `pedidoVariedad`
   ADD CONSTRAINT `pedidoVariedad_ibfk_1` FOREIGN KEY (`idVariedad`) REFERENCES `Variedad` (`idVariedad`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `pedidoVariedad_ibfk_2` FOREIGN KEY (`numPedido`) REFERENCES `Pedido` (`numPedido`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Filtros para la tabla `Stock`
+-- Constraints for table `Stock`
 --
 ALTER TABLE `Stock`
   ADD CONSTRAINT `Stock_ibfk_1` FOREIGN KEY (`idVariedad`) REFERENCES `Variedad` (`idVariedad`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Filtros para la tabla `Usuario`
+-- Constraints for table `Traslado`
+--
+ALTER TABLE `Traslado`
+  ADD CONSTRAINT `Traslado_ibfk_1` FOREIGN KEY (`repartidor`) REFERENCES `Usuario` (`nom`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `Usuario`
 --
 ALTER TABLE `Usuario`
   ADD CONSTRAINT `Usuario_ibfk_1` FOREIGN KEY (`idHuerta`) REFERENCES `Huerta` (`idHuerta`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `Usuario_ibfk_2` FOREIGN KEY (`idCliente`) REFERENCES `Cliente` (`idCliente`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Filtros para la tabla `Variedad`
+-- Constraints for table `Variedad`
 --
 ALTER TABLE `Variedad`
   ADD CONSTRAINT `Variedad_ibfk_1` FOREIGN KEY (`idHortaliza`) REFERENCES `Hortaliza` (`idHortaliza`) ON DELETE RESTRICT ON UPDATE RESTRICT;
