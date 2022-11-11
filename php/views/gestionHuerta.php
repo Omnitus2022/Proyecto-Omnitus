@@ -28,6 +28,16 @@ if (empty($_SESSION['usu'])) {
 
                 <form action="/Proyecto-Omnitus/php/POST/gestionHuerta.php" method="post">
                     <h2>Actualizar Huerta</h2>
+                    <select class="formCombo" name="idH_u">
+                        <option value="">- - - Id de la Huerta - - -</option>
+                        <?php
+                        $hue = $huerta->listarHuertas();
+
+                        foreach ($hort as $h) {
+                            echo '<option value="' . $h["idHuerta"] . '">' . $h["idHortaliza"] . ' (' . $h["nombre"] . ')</option>';
+                        }
+                        ?>
+                    </select>
                     <input class="inputC" placeholder="Nombre de la huerta*" type="text" name="nomH_u">
                     <select class="formCombo" name="tamH_u">
                         <option value="Pequeña">Pequeña</option>
