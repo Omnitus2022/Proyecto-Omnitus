@@ -19,15 +19,16 @@ class pedido_model
         }
         return $this->pedido;
     }
-    public function getOnePedido($nP)
+    public static function getOnePedido($nP)
     {
+        $db = db::connect();
         $sql = "SELECT * FROM Pedido WHERE numPedido = '$nP'";
-        $consulta = $this->db->query($sql);
+        $consulta = $db->query($sql);
 
         while ($filas = $consulta->fetch_assoc()) {
-            $this->pedido[] = $filas;
+            $pedido[] = $filas;
         }
-        return $this->pedido[0];
+        return $pedido[0];
     }
 
     public static function listarPedidosCliente($idCliente)
@@ -61,6 +62,14 @@ class pedido_model
     }
     public function insertPedido($numP, $idC, $rec, $imp, $mP, $fP, $fE, $hPrefI, $hPrefF,  $recib)
     {
+        if ($mP == 0) {
+            $mP = "Tarjeta de Crédito";
+        } elseif ($mP == 1) {
+            $mP = "Tarjeta de Débito";
+        } else {
+            $mP = "Efectivo";
+        }
+
         if ($rec == "") {
             $rec = "NULL";
         }

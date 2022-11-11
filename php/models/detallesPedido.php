@@ -11,7 +11,6 @@ $variedad = new variedad_model();
 $ped = $pedido->getOnePedido($_POST["numP"]);
 $productos = $pedido->listarVariedades($ped["numPedido"]);
 
-
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -20,34 +19,58 @@ echo '
 <h3 class="pedidoInf-num">
 ' . $ped["numPedido"] . '
 </h3>
-<p class="pedidoInf-cont--estado">Lorem</p>
+<p class="pedidoInf-cont--estado">' .
+    'ESTADO DEL PEDIDO'
+    . '</p>
 <ul class="pedidoInf-cont--productos">
 ';
+echo '<h3>Productos:</h3>';
 // DATOS PRODUCTO
 foreach ($productos as $prod) {
-    $v = $variedad->getVariedad($prod["idVariedad"])[0];
-    $h = $hortaliza->getHortaliza($v["idHortaliza"])[0];
+    $v = $variedad->getVariedad($prod["idVariedad"]);
+    $h = $hortaliza->getHortaliza($v["idHortaliza"]);
+    $unidad = "KG";
+    if ($h["unidad"]) {
+        $unidad = "U";
+    }
+
 
     echo '<li>';
-    echo '<p class="nombreHortaliza">';
+    echo '<p class="nombre">';
     echo $h["nombre"];
     echo ' ';
     echo $v["nombreVariedad"];
     echo '</p>';
     echo '<p class="cantidad">';
-    echo '';
+    echo $prod["cantidad"] . $unidad;
     echo '</p>';
-    echo '<p class="precio">';
-    echo '';
+    echo '<p class="precio">$ ';
+    echo $prod["cantidad"] * $v["precio"];
     echo '</p>';
     echo '</li>';
 }
 
 echo '
 </ul>
-<p class="pedidoInf-cont--metodo">Lorem</p>
-<p class="pedidoInf-cont--fecha">Lorem</p>
-<p class="pedidoInf-cont--fecha">Lorem</p>
+<div>
+<p class="label">Método de Pago:</p>
+<p class="pedidoInf-cont--metodo">' .
+    $ped["metodoPago"]
+    . '</p>
+</div>
+<div>
+<p class="label">Pedido realizado el:</p>
+<p class="pedidoInf-cont--fecha">' .
+    $ped["fechaPedido"]
+    . '</p>
+</div>
+<div>
+<p class="label">Pedido entregado el:</p>
+<p class="pedidoInf-cont--fecha">' .
+    $ped["fechaEntrega"]
+    . '</p>
+</div>
+
 <p class="pedidoInf-cont--hora">Lorem</p>
 <p class="pedidoInf-cont--hora">Lorem</p>
 <p class="pedidoInf-cont--repartidor">Lorem</p>

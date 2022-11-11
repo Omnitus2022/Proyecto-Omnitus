@@ -9,15 +9,16 @@ class variedad_model
         $this->db = db::connect();
         $this->variedad = array();
     }
-    public function getVariedad($id)
+    public static function getVariedad($id)
     {
+        $db = db::connect();
         $sql = "SELECT * FROM Variedad WHERE idVariedad = $id";
-        $consulta = $this->db->query($sql);
+        $consulta = $db->query($sql);
 
         while ($filas = $consulta->fetch_assoc()) {
-            $this->variedad[] = $filas;
+            $variedad[] = $filas;
         }
-        return $this->variedad;
+        return $variedad[0];
     }
     public function insertVariedad($idH, $nV, $p, $img)
     {

@@ -1,7 +1,6 @@
 <?php
 
 include($PATH . '/php/header.php');
-$i = 0;
 ?>
 
 <div class="main-wrapper main-wrapper--bottomPadding" style="transform: scale(1); padding-top: 44.8px;">
@@ -25,10 +24,9 @@ $i = 0;
             <?php
             foreach ($dataStock as $dS) {
 
-                $v = $variedad->getVariedad(intval($dS["idVariedad"]))[$i];
-                $h = $hortaliza->getHortaliza(intval($v["idHortaliza"]))[$i];
+                $v = $variedad->getVariedad(intval($dS["idVariedad"]));
+                $h = $hortaliza->getHortaliza(intval($v["idHortaliza"]));
                 $stockLim = $stock->getOneStock($v["idVariedad"]);
-                $i++;
                 $unidad = "KG";
                 if ($h["unidad"]) {
                     $unidad = "U";

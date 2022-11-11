@@ -9,7 +9,6 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-
 $pedido = new pedido_model();
 $cliente = new cliente_model();
 $cli = $cliente->getOneCliente($_SESSION['idClienteAsociado']);

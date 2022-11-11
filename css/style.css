@@ -960,3 +960,14 @@ input {
 .main-wrapper--bottomPadding {
   padding-block-end: 22ch;
 }
+.pedidoInf-cont--productos li .nombre {
+  margin-right: auto;
+}
+
+.pedidoInf-cont > div {
+  display: flex;
+  flex-direction: row;
+}
+.pedidoInf-cont > div .label {
+  margin-right: auto;
+}
