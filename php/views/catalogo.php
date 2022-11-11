@@ -4,7 +4,7 @@ include($PATH . '/php/header.php');
 $i = 0;
 ?>
 
-<div class="main-wrapper" style="transform: scale(1); padding-top: 44.8px;">
+<div class="main-wrapper main-wrapper--bottomPadding" style="transform: scale(1); padding-top: 44.8px;">
     <div class="main-wrapper_container">
 
         <div class="front_page_cat">

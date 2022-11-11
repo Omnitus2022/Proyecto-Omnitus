@@ -101,6 +101,7 @@ class usuario_model
         echo $sql;
         $db->query($sql);
     }
+
     public function insertUsuario($idC, $nom, $pwd, $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf, $idH)
     {
         $pwdSec = MD5($pwd);

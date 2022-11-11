@@ -173,7 +173,6 @@ nav {
   transform-style: preserve-3d;
   transform: translateZ(-2.5px) scale(1.5) translateY(50vh);
   width: 100%;
-  padding-block-end: 20rem;
 }
 
 .button {
@@ -912,4 +911,52 @@ input {
 .main-wrapper__container--flexbox > div > div {
   flex: 1 1 0;
   width: 0;
+}
+
+.verPedidos-wrapper__container {
+  display: flex;
+  gap: 2rem;
+  height: 100%;
+  margin-bottom: 8rem;
+  margin: 4rem 16% 1rem 16%;
+}
+.pedidoInf {
+  width: 35%;
+  padding: 1rem;
+  background-color: var(--foregroundColor);
+}
+
+.pedidos {
+  width: 100%;
+}
+.verPedidos-wrapper {
+  height: calc(90vh - 5rem);
+}
+
+.pedidos-lista li {
+  color: var(--accentColor);
+  display: flex;
+  gap: 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.pedidoInf-cont--productos li {
+  display: flex;
+  gap: 1rem;
+}
+.pedidoInf {
+  display: flex;
+  flex-direction: column;
+}
+.pedidoInf-cont {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.pedidoInf-cont--total {
+  align-self: flex-end;
+  margin-top: auto;
+}
+.main-wrapper--bottomPadding {
+  padding-block-end: 22ch;
 }

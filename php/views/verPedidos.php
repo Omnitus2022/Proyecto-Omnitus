@@ -7,38 +7,54 @@ if (empty($_SESSION['usu'])) {
 
 
 <div class="main-wrapper" style="transform: scale(1); padding-top: 44.8px;">
-    <div class="main-wrapper_container">
-        <div class="pedidos">
-            <h2>Ver Pedidos</h2>
-            <ul class="pedidos-lista">
-                <?php
-                foreach ($clientePedidos as $pedido) {
-                    echo '<li>' . $pedido["numPedido"] . 'FECHA - ' . $pedido["fechaPedido"] . '$' . $pedido["importe"] .  '</li>';
-                }
-                ?>
-            </ul>
-        </div>
-        <div class="pedidoInf">
-            <h3 class="pedidoInf-num">
-            </h3>
-            <div class="pedidoInf-cont">
-                <p class="pedidoInf-cont--estado"></p>
-                <ul class="pedidoInf-cont--productos">
-
+    <div class="main-wrapper_container verPedidos-wrapper">
+        <div class="verPedidos-wrapper__container">
+            <div class="pedidos">
+                <h1>Pedidos</h1>
+                <ul class="pedidos-lista">
+                    <?php
+                    foreach ($clientePedidos as $pedido) {
+                        echo '<li>';
+                        echo '<p class="fechaPedido">';
+                        echo $pedido["fechaPedido"];
+                        echo '</p>';
+                        echo '<p class="numPedido">';
+                        echo $pedido["numPedido"];
+                        echo '</p>';
+                        echo '<p class="importe"> $ ';
+                        echo $pedido["importe"];
+                        echo '</p>';
+                        echo '</li>';
+                    }
+                    ?>
                 </ul>
-                <p class="pedidoInf-cont--metodo"></p>
-                <p class="pedidoInf-cont--fecha"></p>
-                <p class="pedidoInf-cont--fecha"></p>
-                <p class="pedidoInf-cont--hora"></p>
-                <p class="pedidoInf-cont--hora"></p>
-                <p class="pedidoInf-cont--repartidor"></p>
-                <h3 class="pedidoInf-cont--total">
+            </div>
+            <div class="pedidoInf">
+                <h2>
+                    Detalles del pedido
+                </h2>
 
-                </h3>
+                <div class="pedidoInf-cont">
+                    <!-- DETALLES PEDIDO -->
+
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    const verPedidos = () => {
+        $(".pedidos-lista li").click(function() {
+            let numP = $(".numPedido", this)[0].innerText;
+            let imp = $(".importe", this)[0].innerText;
+            $(".pedidoInf-cont").load("../models/detallesPedido.php", {
+                numP: numP
+            });
+        })
+
+    }
+    $(document).ready(verPedidos);
+</script>
 <script src="/Proyecto-Omnitus/js/script.js"></script>
 <script src="/Proyecto-Omnitus/js/LogUsu.js"></script>
 <?php include($PATH . '/php/footer.php') ?>

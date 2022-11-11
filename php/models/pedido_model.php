@@ -19,6 +19,16 @@ class pedido_model
         }
         return $this->pedido;
     }
+    public function getOnePedido($nP)
+    {
+        $sql = "SELECT * FROM Pedido WHERE numPedido = '$nP'";
+        $consulta = $this->db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $this->pedido[] = $filas;
+        }
+        return $this->pedido[0];
+    }
 
     public static function listarPedidosCliente($idCliente)
     {
@@ -31,6 +41,18 @@ class pedido_model
         }
         return $pedido;
     }
+    public static function listarVariedades($nP)
+    {
+        $db = db::connect();
+        $sql = "SELECT * FROM pedidoVariedad WHERE numPedido = '$nP'";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $pedido[] = $filas;
+        }
+        return $pedido;
+    }
+
     public static function insertVariedad($numP, $idV, $cant)
     {
         $db = db::connect();
