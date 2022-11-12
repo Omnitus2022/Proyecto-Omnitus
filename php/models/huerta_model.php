@@ -10,16 +10,35 @@ class huerta_model
         $this->huerta = array();
     }
 
-    public function listarHuertas()
+    public static function listarHuertas()
     {
+        $db = db::connect();
         $sql = "SELECT * FROM Huerta";
-        $consulta = $this->db->query($sql);
+        $consulta = $db->query($sql);
 
         while ($filas = $consulta->fetch_assoc()) {
-            $this->cWeb[] = $filas;
+            $huerta[] = $filas;
         }
-        return $this->cWeb;
+        return $huerta;
     }
+
+    public static function updateHuerta($idH, $nH, $tH)
+    {
+        $db = db::connect();
+        $sql = "UPDATE Huerta 
+        SET 
+            nombreHuerta = '$nH',
+            tamanoHuerta = '$tH'
+        WHERE
+            idHuerta = '$idH'";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $huerta[] = $filas;
+        }
+        return $huerta;
+    }
+
     public function getHuerta()
     {
         $sql = "SELECT * FROM Huerta";

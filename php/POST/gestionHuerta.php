@@ -15,21 +15,22 @@ if (isset($_POST['createHuerta'])) {
 
     if ($nomH != "") {
         $huerta->insertHuerta($nomH, $tamH);
-        echo "<script>alert(\"Datos ingresados con éxito.\");window.location='../controllers/gestionHortalizas_controller.php';</script>";
+        echo "<script>alert(\"Datos ingresados con éxito.\");window.location='../controllers/gestionHuerta_controller.php';</script>";
     } else {
-        echo "<script>alert(\"Asegúrese de que los datos sean correctos.\");window.location='../controllers/gestionHortalizas_controller.php';</script>";
+        echo "<script>alert(\"Asegúrese de que los datos sean correctos.\");window.location='../controllers/gestionHuerta_controller.php';</script>";
         exit;
     }
 }
 if (isset($_POST['updateHuerta'])) {
+    $idH = $_POST["idH_u"];
     $nomH = $_POST["nomH_u"];
     $tamH = $_POST["tamH_u"];
 
     if ($nomH != "") {
-        $huerta->updateHuerta($nomH, $tamH);
-        echo "<script>alert(\"Datos ingresados con éxito.\");window.location='../controllers/gestionHortalizas_controller.php';</script>";
+        $huerta->updateHuerta($idH, $nomH, $tamH);
+        echo "<script>alert(\"Datos ingresados con éxito.\");window.location='../controllers/gestionHuerta_controller.php';</script>";
     } else {
-        echo "<script>alert(\"Asegúrese de que los datos sean correctos.\");window.location='../controllers/gestionHortalizas_controller.php';</script>";
+        echo "<script>alert(\"Asegúrese de que los datos sean correctos.\");window.location='../controllers/gestionHuerta_controller.php';</script>";
         exit;
     }
 }
@@ -41,9 +42,9 @@ if (isset($_POST['deleteHuerta'])) {
 
     if ($idH != "") {
         $table->deleteValue($tableName, $primaryKey, $idH);
-        echo "<script>alert(\"Datos eliminados con éxito.\");window.location='../controllers/gestionUsuarios_controller.php';</script>";
+        echo "<script>alert(\"Datos eliminados con éxito.\");window.location='../controllers/gestionHuerta_controller.php';</script>";
     } else {
-        echo "<script>alert(\"Asegúrese de que los datos sean correctos.\");window.location='../controllers/gestionUsuarios_controller.php';</script>";
+        echo "<script>alert(\"Asegúrese de que los datos sean correctos.\");window.location='../controllers/gestionHuerta_controller.php';</script>";
         exit;
     }
 }

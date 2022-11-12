@@ -33,11 +33,13 @@ if (empty($_SESSION['usu'])) {
                         <?php
                         $hue = $huerta->listarHuertas();
 
-                        foreach ($hort as $h) {
-                            echo '<option value="' . $h["idHuerta"] . '">' . $h["idHortaliza"] . ' (' . $h["nombre"] . ')</option>';
+
+                        foreach ($hue as $h) {
+                            echo '<option value="' . $h["idHuerta"] . '">' . $h["idHuerta"] . ' (' . $h["nombreHuerta"] . ')</option>';
                         }
                         ?>
                     </select>
+
                     <input class="inputC" placeholder="Nombre de la huerta*" type="text" name="nomH_u">
                     <select class="formCombo" name="tamH_u">
                         <option value="Pequeña">Pequeña</option>
@@ -50,7 +52,17 @@ if (empty($_SESSION['usu'])) {
                 <h2>Eliminar Huerta</h2>
 
                 <form action="/Proyecto-Omnitus/php/POST/gestionHuerta.php" method="post">
-                    <input class="inputC" placeholder="Id de la huerta*" type="text" name="idH_d">
+                    <select class="formCombo" name="idH_d">
+                        <option value="">- - - Id de la Huerta - - -</option>
+                        <?php
+                        $hue = $huerta->listarHuertas();
+
+
+                        foreach ($hue as $h) {
+                            echo '<option value="' . $h["idHuerta"] . '">' . $h["idHuerta"] . ' (' . $h["nombreHuerta"] . ')</option>';
+                        }
+                        ?>
+                    </select>
                     <input class="formBtn clickable" type="submit" value="Enviar" name="deleteHuerta">
                 </form>
 
