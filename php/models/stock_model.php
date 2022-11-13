@@ -19,7 +19,21 @@ class stock_model
         }
         return $stock[0]["volumen"];
     }
-
+    public static function bajarStock($idV, $vol, $max)
+    {
+        $db = db::connect();
+        $calc = $max - $vol;
+        if ($vol >= $max) {
+            $sql = "DELETE FROM Stock WHERE idVariedad = $idV";
+        } else {
+            $sql = "UPDATE Stock 
+            SET 
+                volumen = '$calc'
+            WHERE
+                idVariedad = '$idV'";
+        }
+        $db->query($sql);
+    }
     public function getStock()
     {
         $sql = "SELECT * FROM Stock";

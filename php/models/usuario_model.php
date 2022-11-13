@@ -113,7 +113,6 @@ class usuario_model
             idHuerta = $idH
         WHERE
             nom = '$nom'";
-        echo $sql;
         $db->query($sql);
     }
 
