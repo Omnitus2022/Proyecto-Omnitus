@@ -1,6 +1,5 @@
 <?php
 $PATH = $_SERVER['DOCUMENT_ROOT'] . '/Proyecto-Omnitus/';
-$TITLE = "Gestión de Usuarios";
 require_once($PATH . 'php/db/db.php');
 require_once($PATH . 'php/models/table_model.php');
 require_once($PATH . 'php/models/usuario_model.php');

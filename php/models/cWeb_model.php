@@ -10,7 +10,18 @@ class cWeb_model
         $this->cWeb = array();
     }
 
-
+    public static function actualizarPerfil($idCliente, $cedula, $nombre, $apellido)
+    {
+        $db = db::connect();
+        $sql = "UPDATE cWeb 
+        SET 
+            CI = '$cedula',
+            nombre = '$nombre',
+            apellido = '$apellido'
+        WHERE
+            idCliente = '$idCliente'";
+        $db->query($sql);
+    }
     public function getCWeb($idC)
     {
         $sql = "SELECT * FROM cWeb WHERE idCliente = $idC";

@@ -30,6 +30,19 @@ class cliente_model
         }
         return $cliente;
     }
+    public static function actualizarPerfil($idCliente, $email, $calle, $puerta, $esq)
+    {
+        $db = db::connect();
+        $sql = "UPDATE Cliente 
+        SET 
+            email = '$email',
+            numeroPuerta = '$puerta',
+            calle = '$calle',
+            esquina = '$esq'
+        WHERE
+            idCliente = '$idCliente'";
+        $db->query($sql);
+    }
     public static function getOneCliente($id)
     {
         $db = db::connect();
@@ -49,16 +62,5 @@ class cliente_model
         } else {
             return false;
         }
-    }
-    public static function esEmpresa($id)
-    {
-        $db = db::connect();
-        $sql = "SELECT idCliente FROM cEmpresa WHERE idCliente = '$id'";
-        $consulta = $db->query($sql);
-
-        while ($filas = $consulta->fetch_assoc()) {
-            $cliente[] = $filas;
-        }
-        return $cliente[0];
     }
 }

@@ -17,7 +17,7 @@ $huertas = $huerta->listarHuertas();
         <div class="container__content gestionForm">
             <section>
                 <form action="/Proyecto-Omnitus/php/POST/gestionUsuarios.php" method="post">
-                    <h2>Usuario</h2>
+                    <h2>Crear usuario</h2>
                     <select class="formCombo" name="idC_c">
                         <option value="">- - - Id del Cliente - - -</option>
                         <?php

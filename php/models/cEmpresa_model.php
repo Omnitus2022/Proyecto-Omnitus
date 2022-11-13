@@ -9,6 +9,17 @@ class cEmpresa_model
         $this->db = db::connect();
         $this->cEmpresa = array();
     }
+    public static function actualizarPerfil($idCliente, $rut, $nombreEmpresa)
+    {
+        $db = db::connect();
+        $sql = "UPDATE cEmpresa 
+        SET 
+            RUT = '$rut',
+            nombreEmpresa = '$nombreEmpresa'
+        WHERE
+            idCliente = '$idCliente'";
+        $db->query($sql);
+    }
 
     public static function getOneCEmpresa($id)
     {

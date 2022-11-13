@@ -30,6 +30,17 @@ class usuario_model
         }
         return $usuario;
     }
+    public static function pendientes()
+    {
+        $db = db::connect();
+        $sql = "SELECT * FROM Usuario WHERE autorizado != '1'";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $usuario[] = $filas;
+        }
+        return $usuario;
+    }
     public static function getOneUsuario($nom)
     {
         $db = db::connect();
@@ -61,6 +72,7 @@ class usuario_model
             nom = '$nom'";
         $db->query($sql);
     }
+
     public static function updateUsuario($idC, $nom, $pwd, $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf, $idH)
     {
         $db = db::connect();
@@ -149,6 +161,12 @@ class usuario_model
         } else {
             $esInf = 1;
         }
+        if (!$idH) {
+            $idH = "NULL";
+        } else {
+            $idH = 1;
+        }
+
 
         $sql = "INSERT INTO `Usuario` (`idCliente`, `nom`, `pwd`, `esEmpresa`, `esDirectivo`, `esAdmin`, `esHuerta`, `esRepartidor`, `esInformatico`, `idHuerta`) VALUES ('$idC', '$nom', '$pwdSec', $esEmp, $esDir, $esAdm, $esHue, $esRep, $esInf, $idH) ";
         if ($this->db->query($sql)) {
