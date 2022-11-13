@@ -1,7 +1,4 @@
 <?php
-
-use PhpMyAdmin\Sql;
-
 class usuario_model
 {
     private $db;
@@ -22,7 +19,17 @@ class usuario_model
         }
         return $this->usuario;
     }
+    public static function listarUsuarios()
+    {
+        $db = db::connect();
+        $sql = "SELECT * FROM Usuario";
+        $consulta = $db->query($sql);
 
+        while ($filas = $consulta->fetch_assoc()) {
+            $usuario[] = $filas;
+        }
+        return $usuario;
+    }
     public static function getOneUsuario($nom)
     {
         $db = db::connect();
@@ -42,6 +49,14 @@ class usuario_model
         $sql = "UPDATE Usuario 
         SET 
             pwd = '$pwdSec'
+        WHERE
+            nom = '$nom'";
+        $db->query($sql);
+    }
+    public static function autorizarUsuario($nom)
+    {
+        $db = db::connect();
+        $sql = "UPDATE Usuario SET autorizado = '1'
         WHERE
             nom = '$nom'";
         $db->query($sql);

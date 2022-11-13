@@ -18,18 +18,22 @@ if (isset($_POST['login'])) {
 			$sqlperfil = "SELECT * FROM Usuario WHERE nom = '$usu'";
 			$result = $db->query($sqlperfil);
 			$data = $result->fetch_assoc();
-			if (!isset($_SESSION)) {
-				session_start();
+			if ($data["autorizado"]) {
+				if (!isset($_SESSION)) {
+					session_start();
+				}
+				$_SESSION['usu'] = $data['nom'];
+				$_SESSION['esEmpresa'] = $data['esEmpresa'];
+				$_SESSION['esDirectivo'] = $data['esDirectivo'];
+				$_SESSION['esAdmin'] = $data['esAdmin'];
+				$_SESSION['esHuerta'] = $data['esHuerta'];
+				$_SESSION['esRepartidor'] = $data['esRepartidor'];
+				$_SESSION['esInformatico'] = $data['esInformatico'];
+				$_SESSION['idClienteAsociado'] = $data['idCliente'];
+				require_once($PATH . 'php/controllers/redirect_controller.php');
+			} else {
+				echo "<script>alert(\"Usuario y/o contraseña incorrectos.\");window.location='/Proyecto-Omnitus/index.php';</script>";
 			}
-			$_SESSION['usu'] = $data['nom'];
-			$_SESSION['esEmpresa'] = $data['esEmpresa'];
-			$_SESSION['esDirectivo'] = $data['esDirectivo'];
-			$_SESSION['esAdmin'] = $data['esAdmin'];
-			$_SESSION['esHuerta'] = $data['esHuerta'];
-			$_SESSION['esRepartidor'] = $data['esRepartidor'];
-			$_SESSION['esInformatico'] = $data['esInformatico'];
-			$_SESSION['idClienteAsociado'] = $data['idCliente'];
-			require_once($PATH . 'php/controllers/redirect_controller.php');
 		} else {
 			echo "<script>alert(\"Usuario y/o contraseña incorrectos.\");window.location='/Proyecto-Omnitus/index.php';</script>";
 			exit;

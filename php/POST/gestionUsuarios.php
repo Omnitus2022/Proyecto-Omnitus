@@ -21,7 +21,7 @@ if (isset($_POST['createUsuario'])) {
     $esRep = isset($_POST["esRep_c"]);
     $esInf = isset($_POST["esInf_c"]);
     if ($esHue) {
-        $idHuerta = $_POST["idH_u"];
+        $idHuerta = $_POST["idH_c"];
     } else {
         $idHuerta = "";
     }

@@ -19,15 +19,16 @@ class cliente_model
         }
         return $this->cliente;
     }
-    public function listarClientes()
+    public static function listarClientes()
     {
-        $sql = "SELECT * FROM Cliente";
-        $consulta = $this->db->query($sql);
+        $db = db::connect();
+        $sql = "SELECT * FROM listaClientes";
+        $consulta = $db->query($sql);
 
         while ($filas = $consulta->fetch_assoc()) {
-            $this->cliente[] = $filas;
+            $cliente[] = $filas;
         }
-        return $this->cliente;
+        return $cliente;
     }
     public static function getOneCliente($id)
     {
@@ -51,7 +52,6 @@ class cliente_model
     }
     public static function esEmpresa($id)
     {
-        $esEmpresa = false;
         $db = db::connect();
         $sql = "SELECT idCliente FROM cEmpresa WHERE idCliente = '$id'";
         $consulta = $db->query($sql);

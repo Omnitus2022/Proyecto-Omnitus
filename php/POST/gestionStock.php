@@ -5,7 +5,7 @@ require_once($PATH . 'php/models/variedad_model.php');
 
 $variedad = new variedad_model();
 
-if (isset($_POST['stock'])) {
+if (isset($_POST['insertStock'])) {
     $idV = $_POST["idV"];
     $vol = $_POST["vol"];
 

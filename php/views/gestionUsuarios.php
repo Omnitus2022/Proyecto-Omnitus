@@ -9,8 +9,6 @@ if (empty($_SESSION['usu'])) {
         echo "<script>alert(\"No tienes los permisos para ver esta página.\");window.location='/Proyecto-Omnitus/php/views/redirect.php';</script>";
     }
 }
-$cli = $cliente->listarClientes();
-$clientesWeb = $cWeb->listarCWeb();
 $huertas = $huerta->listarHuertas();
 ?>
 
@@ -23,14 +21,9 @@ $huertas = $huerta->listarHuertas();
                     <select class="formCombo" name="idC_c">
                         <option value="">- - - Id del Cliente - - -</option>
                         <?php
-                        $Count = 0;
 
-                        foreach ($cli as $c) {
-                            $cliWeb = $cWeb->getCWeb($c["idCliente"])[$Count];
-                            $cliEmp = $cEmpresa->getCEmpresa($c["idCliente"])[$Count];
-                            $Count++;
-
-                            echo '<option value=' . $c["idCliente"] . '>' . $c["idCliente"] . ' - ' . $cliWeb["nombre"] . '</option>';
+                        foreach ($listaClientes as $c) {
+                            echo '<option value=' . $c["idCliente"] . '>' . $c["idCliente"] . ' - ' . $c["nombreCliente"] . '</option>';
                         }
                         ?>
 
@@ -45,11 +38,7 @@ $huertas = $huerta->listarHuertas();
                     <select class="formCombo idHuertaSelect" name="idH_c" style="display: none;">
                         <option value="">- - - Id de la Huerta - - -</option>
                         <?php
-
-                        $Count = 0;
-
                         foreach ($huertas as $h) {
-                            $Count++;
 
                             echo '<option value=' . $h["idHuerta"] . '>' . $h["idHuerta"] . ' - ' . $h["nombreHuerta"] . '</option>';
                         }
@@ -64,17 +53,20 @@ $huertas = $huerta->listarHuertas();
                 <form action="/Proyecto-Omnitus/php/POST/gestionUsuarios.php" method="post">
                     <h2>Actualizar Usuario</h2>
 
-                    <input class="inputC" placeholder="Nombre*" type="text" name="nomUsu_u">
+                    <select class="formCombo" name="nomUsu_u">
+                        <option value="">- - - Nombre de usuario - - -</option>
+                        <?php
+                        foreach ($listaUsuarios as $u) {
+
+                            echo '<option value=' . $u["nom"] . '>' . $u["nom"] . '</option>';
+                        }
+                        ?>
+                    </select>
                     <select class="formCombo" name="idC_u">
                         <option value="">- - - Id del Cliente - - -</option>
                         <?php
-
-                        $Count = 0;
-                        foreach ($cli as $c) {
-                            $cliWeb = $cWeb->getCWeb($c["idCliente"])[$Count];
-                            $cliEmp = $cEmpresa->getCEmpresa($c["idCliente"])[$Count];
-                            $Count++;
-                            echo '<option value=' . $c["idCliente"] . '>' . $c["idCliente"] . ' - ' . $cliWeb["nombre"] . $cliEmp["nombreEmpresa"] . '</option>';
+                        foreach ($listaClientes as $c) {
+                            echo '<option value=' . $c["idCliente"] . '>' . $c["idCliente"] . ' - ' . $c["nombreCliente"] . '</option>';
                         }
                         ?>
                     </select>
@@ -87,11 +79,7 @@ $huertas = $huerta->listarHuertas();
                         <option value="">- - - Id de la Huerta - - -</option>
                         <?php
 
-                        $Count = 0;
-
                         foreach ($huertas as $h) {
-                            $Count++;
-
                             echo '<option value=' . $h["idHuerta"] . '>' . $h["idHuerta"] . ' - ' . $h["nombreHuerta"] . '</option>';
                         }
                         ?>
@@ -104,9 +92,16 @@ $huertas = $huerta->listarHuertas();
 
                 </form>
                 <h2>Eliminar Usuario</h2>
-
                 <form action="/Proyecto-Omnitus/php/POST/gestionUsuarios.php" method="post">
-                    <input class="inputC" placeholder="Nombre*" type="text" name="nomUsu_d">
+                    <select class="formCombo" name="nomUsu_d">
+                        <option value="">- - - Nombre de usuario - - -</option>
+                        <?php
+                        foreach ($listaUsuarios as $u) {
+
+                            echo '<option value=' . $u["nom"] . '>' . $u["nom"] . '</option>';
+                        }
+                        ?>
+                    </select>
                     <input class="formBtn clickable" type="submit" value="Enviar" name="deleteUsuario">
                 </form>
             </section>
