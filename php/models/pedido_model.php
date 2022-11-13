@@ -30,7 +30,32 @@ class pedido_model
         }
         return $pedido[0];
     }
+    public static function aprobar($numPedido)
+    {
+        $db = db::connect();
+        $fechaActual = date('Y-m-d');
+        $sql = "UPDATE estadosPedido 
+        SET 
+            fechaFin = '$fechaActual'
+        WHERE
+            numPedido = '$numPedido'
+            AND
+            estado = 'Pendiente'";
+        $db->query($sql);
+        $sql = "INSERT INTO `estadosPedido` (`estado`, `numPedido`, `fechaInicio`) VALUES ('Aprobado', '$numPedido', '$fechaActual')";
+        $db->query($sql);
+    }
+    public static function pendientes()
+    {
+        $db = db::connect();
+        $sql = "SELECT numPedido FROM estadosPedido WHERE estado = 'Pendiente' AND ISNULL(fechaFin)";
+        $consulta = $db->query($sql);
 
+        while ($filas = $consulta->fetch_assoc()) {
+            $pedido[] = $filas;
+        }
+        return $pedido;
+    }
     public static function listarPedidosCliente($idCliente)
     {
         $db = db::connect();
@@ -60,9 +85,10 @@ class pedido_model
         $sql = "INSERT INTO `pedidoVariedad` (`idVariedad`, `numPedido`, `cantidad`) VALUES ('$idV', '$numP', '$cant') ";
         $db->query($sql);
     }
-    public static function insertPedido($numP, $idC, $rec, $imp, $mP, $fP, $fE, $hPrefI, $hPrefF,  $recib)
+    public static function insertPedido($numP, $idC, $rec, $imp, $mP, $fE, $hPrefI, $hPrefF,  $recib)
     {
         $db = db::connect();
+        $fP = date('Y-m-d');
         if ($mP == 0) {
             $mP = "Tarjeta de Crédito";
         } elseif ($mP == 1) {

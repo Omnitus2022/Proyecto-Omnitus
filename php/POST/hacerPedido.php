@@ -16,11 +16,10 @@ if (isset($_POST["hacerPedido"])) {
     $idCliente = $_SESSION["idClienteAsociado"];
     $importe = $_SESSION["importeTotal"];
     $metodoPago = $_POST["metodoPago"];
-    $fechaPedido = date('Y-m-d');
     $horaPrefInicio = $_POST["horaPrefInicio"];
     $horaPrefFinal = $_POST["horaPrefFinal"];
 
-    $pedido->insertPedido($numPedido, $idCliente, "", $importe, $metodoPago, $fechaPedido, "", $horaPrefInicio, $horaPrefFinal, "");
+    $pedido->insertPedido($numPedido, $idCliente, "", $importe, $metodoPago, "", $horaPrefInicio, $horaPrefFinal, "");
     foreach ($_SESSION["products"] as $variedad) {
         $stockLim = $stock->getOneStock($variedad["id"]);
         $stock->bajarStock($variedad["id"], $variedad["cantidad"], $stockLim);

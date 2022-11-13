@@ -10,7 +10,7 @@ if (empty($_SESSION['usu'])) {
     <div class="main-wrapper_container">
         <div class="container__content gestionForm">
             <form action="/Proyecto-Omnitus/php/POST/autorizarUsuario.php" method="post">
-                <h2>Autorizar usuario</h2>
+                <h2>Autorizar usuarios</h2>
                 <select class="formCombo" name="nomUsu">
                     <option value="">- - - Nombre de usuario - - -</option>
                     <?php
@@ -20,6 +20,7 @@ if (empty($_SESSION['usu'])) {
                     }
                     ?>
                 </select>
+
                 <input class="formBtn clickable" type="submit" value="Enviar" name="autorizarUsuario">
             </form>
         </div>

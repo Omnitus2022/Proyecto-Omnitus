@@ -46,7 +46,6 @@ if (empty($_SESSION['usu'])) {
     const verPedidos = () => {
         $(".pedidos-lista li").click(function() {
             let numP = $(".numPedido", this)[0].innerText;
-            let imp = $(".importe", this)[0].innerText;
             $(".pedidoInf-cont").load("../models/detallesPedido.php", {
                 numP: numP
             });
