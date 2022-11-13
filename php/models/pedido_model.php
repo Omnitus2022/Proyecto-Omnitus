@@ -67,6 +67,17 @@ class pedido_model
         }
         return $pedido;
     }
+    public static function listarPedidosSinTraslasdo()
+    {
+        $db = db::connect();
+        $sql = "SELECT * FROM estadosPedido WHERE estadosPedido.estado = 'Aprobado' ";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $pedido[] = $filas;
+        }
+        return $pedido;
+    }
     public static function listarVariedades($nP)
     {
         $db = db::connect();

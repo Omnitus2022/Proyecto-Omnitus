@@ -30,6 +30,17 @@ class cliente_model
         }
         return $cliente;
     }
+    public static function getNombreCliente($idCliente)
+    {
+        $db = db::connect();
+        $sql = "SELECT nombreCliente FROM listaClientes WHERE idCliente = idCliente";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $cliente[] = $filas;
+        }
+        return $cliente[0]["nombreCliente"];
+    }
     public static function actualizarPerfil($idCliente, $email, $calle, $puerta, $esq)
     {
         $db = db::connect();

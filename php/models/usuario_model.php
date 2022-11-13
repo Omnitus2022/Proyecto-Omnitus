@@ -19,6 +19,17 @@ class usuario_model
         }
         return $this->usuario;
     }
+    public static function listarRepartidores()
+    {
+        $db = db::connect();
+        $sql = "SELECT nom FROM Usuario WHERE esRepartidor = '1'";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $usuario[] = $filas;
+        }
+        return $usuario;
+    }
     public static function listarUsuarios()
     {
         $db = db::connect();
