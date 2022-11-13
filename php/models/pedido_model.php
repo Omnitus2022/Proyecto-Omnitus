@@ -60,8 +60,9 @@ class pedido_model
         $sql = "INSERT INTO `pedidoVariedad` (`idVariedad`, `numPedido`, `cantidad`) VALUES ('$idV', '$numP', '$cant') ";
         $db->query($sql);
     }
-    public function insertPedido($numP, $idC, $rec, $imp, $mP, $fP, $fE, $hPrefI, $hPrefF,  $recib)
+    public static function insertPedido($numP, $idC, $rec, $imp, $mP, $fP, $fE, $hPrefI, $hPrefF,  $recib)
     {
+        $db = db::connect();
         if ($mP == 0) {
             $mP = "Tarjeta de Crédito";
         } elseif ($mP == 1) {
@@ -92,10 +93,8 @@ class pedido_model
             $recib = "'$recib'";
         }
         $sql = "INSERT INTO `Pedido` (`numPedido`, `idCliente`, `reclamo`, `importe`, `metodoPago`, `fechaPedido`, `fechaEntrega`, `horaPrefInicio`, `horaPrefFinal`, `recibidor`) VALUES ('$numP', '$idC', $rec, $imp, '$mP', '$fP', $fE, $hPrefI, $hPrefF, $recib) ";
-        if ($this->db->query($sql)) {
-            return true;
-        } else {
-            return false;
-        }
+        $db->query($sql);
+        $sql = "INSERT INTO `estadosPedido` (`numPedido`,`fechaInicio`) VALUES ('$numP', '$fP')";
+        $db->query($sql);
     }
 }

@@ -69,8 +69,8 @@ include($PATH . 'php/header.php');
         $(".actualizarPerfil").click(function() {
             document.querySelector(".confirmarCambios").showModal();
         })
-        $(".close_modal").click(function() {
-
+        $(".confirmarCambios .close_modal").click(function() {
+            document.querySelector(".confirmarCambios").close();
         });
     }
     $(document).ready(perfil);
