@@ -42,7 +42,7 @@ class pedido_model
             AND
             estado = 'Pendiente'";
         $db->query($sql);
-        $sql = "INSERT INTO `estadosPedido` (`estado`, `numPedido`, `fechaInicio`) VALUES ('Aprobado', '$numPedido', '$fechaActual')";
+        $sql = "INSERT INTO `estadosPedido` (`estado`, `numPedido`, `fechaInicio`) VALUES ('Armado', '$numPedido', '$fechaActual')";
         $db->query($sql);
     }
     public static function pendientes()
@@ -70,13 +70,29 @@ class pedido_model
     public static function listarPedidosSinTraslasdo()
     {
         $db = db::connect();
-        $sql = "SELECT * FROM estadosPedido WHERE estadosPedido.estado = 'Aprobado' ";
+        $sql = "SELECT * FROM Pedido, estadosPedido WHERE Pedido.numPedido NOT IN(SELECT numPedido FROM pedidoTraslado) AND estadosPedido.estado = 'Armado' AND Pedido.numPedido = estadosPedido.numPedido ";
         $consulta = $db->query($sql);
 
         while ($filas = $consulta->fetch_assoc()) {
             $pedido[] = $filas;
         }
         return $pedido;
+    }
+    public static function ruta($numPedido)
+    {
+        $db = db::connect();
+        $fechaActual = date('Y-m-d');
+        $sql = "UPDATE estadosPedido 
+        SET 
+            fechaFin = '$fechaActual'
+        WHERE
+            numPedido = '$numPedido'
+            AND
+            estado = 'Armado'";
+        $db->query($sql);
+        $sql = "INSERT INTO `estadosPedido` (`estado`, `numPedido`, `fechaInicio`) VALUES ('Ruta', '$numPedido', '$fechaActual')";
+
+        $db->query($sql);
     }
     public static function listarVariedades($nP)
     {
