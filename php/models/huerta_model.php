@@ -49,6 +49,13 @@ class huerta_model
         }
         return $this->huerta;
     }
+    public static function insertVariedadCultivo($idCultivo, $idHuerta, $idVariedad, $cantidadPlantada, $metaCantidad)
+    {
+        $db = db::connect();
+        $fecha = date('Y-m-d');
+        $sql = "INSERT INTO `huertaCultivo` (`idCultivo`, `idHuerta`, `idVariedad`, `fecha`, `cantidadPlantada`, `estadoCultivo`, `metaCantidad`) VALUES ('$idCultivo', '$idHuerta', '$idVariedad', '$fecha', '$cantidadPlantada', '$metaCantidad') ";
+        $db->query($sql);
+    }
     public function insertHuerta($nH, $tH)
     {
         $sql = "INSERT INTO Huerta (`idHuerta`, `nombreHuerta`, `tamanoHuerta`) VALUES (NULL, '$nH', '$tH') ";

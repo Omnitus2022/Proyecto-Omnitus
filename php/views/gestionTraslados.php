@@ -26,7 +26,7 @@ if (empty($_SESSION['usu'])) {
 
             </form>
             <form action="/Proyecto-Omnitus/php/POST/gestionTraslados.php" method="post">
-                <h2>Iniciar traslado</h2>
+                <h2>Asignar pedidos</h2>
 
                 <select class="formCombo" name="idTraslado">
                     <option value="">- - - Id del traslado - - -</option>

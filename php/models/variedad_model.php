@@ -12,13 +12,33 @@ class variedad_model
     public static function getVariedad($id)
     {
         $db = db::connect();
-        $sql = "SELECT * FROM Variedad WHERE idVariedad = $id";
+        $sql = "SELECT * FROM infoVariedad WHERE idVariedad = $id";
         $consulta = $db->query($sql);
 
         while ($filas = $consulta->fetch_assoc()) {
             $variedad[] = $filas;
         }
         return $variedad[0];
+    }
+    public static function limpiarNombre($nombre)
+    {
+        if (substr($nombre, -1) == " ") {
+            return substr($nombre, 0, -1);
+        } else {
+            return $nombre;
+        }
+    }
+
+    public static function listarInfoVariedad()
+    {
+        $db = db::connect();
+        $sql = "SELECT * FROM infoVariedad";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $variedad[] = $filas;
+        }
+        return $variedad;
     }
     public function insertVariedad($idH, $nV, $p, $img)
     {
