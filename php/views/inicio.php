@@ -169,38 +169,20 @@ include($PATH . 'php/header.php') ?>
     </div>
     <div class="main-wrapper__container">
       <h1 class="main-wrapper__container--title invisible">
-        Envíos directo a tu casa
+
       </h1>
       <h3 class="main-wrapper__container--subtitle invisible">
-        This is how we do it
+        Rápido y seguro
       </h3>
       <br />
       <p class="invisible">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-        maiores perferendis tempora exercitationem eaque ducimus eius,
-        doloremque dolorem, ipsam dolores quis. Recusandae non ipsa tempore
-        deleniti necessitatibus laudantium debitis iste molestiae sapiente
-        similique, eos, beatae reprehenderit cupiditate cumque. Fugit quidem
-        minus voluptas nostrum cupiditate eum labore deserunt neque
-        similique expedita necessitatibus, temporibus, delectus, dignissimos
-        numquam in. Voluptate soluta nihil sed distinctio repudiandae?
-        Voluptate, facilis ratione.
+        Dowse es una cooperativa de huertas orgánicas que trabaja con productos 100% naturales, sin ningún tipo de modificación genética, tampoco utilizamos productos químicos para el cuidado de nuestras plantas. Siempre hemos estado orgullosos de nuestros productos, con trabajadores de confianza y personas con solidaridad, desde hace más de 10 años que venimos sembrando y cultivando el futuro, no solo de nuestra empresa, sino de el país, siempre dejando un mensaje desde el punto de vista saludable para las demás personas.
+
       </p>
       <br />
       <p class="invisible">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci
-        expedita vero provident assumenda numquam hic ratione reprehenderit,
-        quod vel nam architecto ad asperiores odit eum officiis culpa
-        nostrum incidunt et fuga blanditiis velit. Labore assumenda ullam
-        dolorem molestias nihil quis maiores corrupti, corporis totam ad
-        architecto nemo recusandae explicabo qui blanditiis debitis! Quos
-        iure quis aut quia voluptas porro, magnam doloremque incidunt vitae
-        excepturi ad odit velit assumenda? Modi ea, officia cum nobis
-        impedit illo quis, distinctio officiis fuga, natus eum consequuntur.
-        Sit est illo ipsum non, labore officia ex! Veniam, corrupti
-        quibusdam et ex deserunt obcaecati! Pariatur similique beatae at
-        consequuntur. Consequuntur assumenda quibusdam laboriosam iste modi
-        architecto. Ullam a voluptatem enim consequuntur sapiente.
+        Y ahora, tratando de darte lo mejor, lo más saludable, a la puerta de tu casa, porque vos lo mereces. Con el mejor equipo de repartos de todo el país, la confidencialidad y seguridad increíbles, a un precio que no te podes permitir perder, con el cuidado adecuado y sano de nuestros productos podemos asegurarte que lo mejor está por llegar a tu casa.
+
       </p>
       <br />
       <div class="main-wrapper__container--button invisible">

@@ -65,6 +65,12 @@ class cliente_model
         }
         return $cliente[0];
     }
+    public function registroCliente($idCliente, $email, $numeroPuerta, $calle, $esquina)
+    {
+        $db = db::connect();
+        $sql = "INSERT INTO `Cliente` (`idCliente`,`email`, `numeroPuerta`, `calle`, `esquina`) VALUES ('$idCliente', '$email', '$numeroPuerta', '$calle', '$esquina')";
+        $db->query($sql);
+    }
     public function insertCliente($m, $nP, $c, $esq)
     {
         $sql = "INSERT INTO `Cliente` (`idCliente`, `email`, `numeroPuerta`, `calle`, `esquina`) VALUES (NULL, '$m', $nP, '$c', '$esq')";

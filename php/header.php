@@ -43,7 +43,7 @@
       </svg>
     </a>
     <ul class="nav__box">
-      <li class="nav__box--item nav__box--item__index"><a href="/Proyecto-Omnitus/index.php">Inicio</a></li>
+      <li class="nav__box--item"><a href="/Proyecto-Omnitus/index.php">Inicio</a></li>
 
 
       <li class="nav__box--item"><a href="/Proyecto-Omnitus/php/controllers/catalogo_controller.php">Catálogo</a></li>

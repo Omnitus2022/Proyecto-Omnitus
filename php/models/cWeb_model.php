@@ -44,7 +44,7 @@ class cWeb_model
     }
     public function insertCWeb($idC, $CI, $nom, $ape)
     {
-        $sql = "INSERT INTO `cWeb` (`idCliente`, `CI`, `nombre`, `apellido`) VALUES ($idC, $CI, '$nom', '$ape')";
+        $sql = "INSERT INTO `cWeb` (`idCliente`, `CI`, `nombre`, `apellido`) VALUES ('$idC', '$CI', '$nom', '$ape')";
         if ($this->db->query($sql)) {
             return true;
         } else {

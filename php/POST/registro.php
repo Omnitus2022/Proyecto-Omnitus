@@ -2,10 +2,20 @@
 $PATH = $_SERVER['DOCUMENT_ROOT'] . '/Proyecto-Omnitus/';
 
 require($PATH . "php/db/db.php");
+require($PATH . "php/models/usuario_model.php");
+require($PATH . "php/models/cliente_model.php");
+require($PATH . "php/models/cWeb_model.php");
+require($PATH . "php/models/cEmpresa_model.php");
+
+$usuario = new usuario_model();
+$cliente = new cliente_model();
+$cWeb = new cWeb_model();
+$cEmpresa = new cEmpresa_model();
 if (isset($_POST['registro'])) {
 
+    $idCliente = uniqid("CLI_");
     $nom = $_POST['nom'];
-    $pwd = MD5($_POST['pwd']);
+    $pwd = $_POST['pwd'];
     $pwdVerif = $_POST['pwdVerif'];
     $email = $_POST['email'];
     $nombre = $_POST['nombre'];
@@ -15,41 +25,32 @@ if (isset($_POST['registro'])) {
     $esquina = $_POST['esquina'];
     $CI = $_POST['CI'];
     $RUT = $_POST['RUT'];
-
     $esEmpresa = $_POST['esEmpresa'];
+    if ($pwd == $pwdVerif && $pwd != "" && $nom != "" && $email != "" && $nombre != "" && $numeroPuerta != "" && $calle != "" && $esquina != "") {
+        if ((isset($CI) && $apellido != "") || isset($RUT)) {
+            $cliente->registroCliente($idCliente, $email, $numeroPuerta, $calle, $esquina);
+            $usuario->insertUsuario($idCliente, $nom, MD5($pwd), $esEmpresa, '', '', '', '', '', '');
 
-    if ($nom != "" && $pwd != "") {
 
-        $db = db::connect();
-
-        $sql = "SELECT * FROM Usuario WHERE nom = '$usu' AND pwd ='$pwd'";
-        $numfilas = mysqli_num_rows($db->query($sql));
-
-        if ($numfilas > 0) {
-
-            $sqlperfil = "SELECT * FROM Usuario WHERE nom = '$usu'";
-            $result = $db->query($sqlperfil);
-            $data = $result->fetch_assoc();
-            if ($data["autorizado"]) {
-                if (!isset($_SESSION)) {
-                    session_start();
+            if ($esEmpresa) {
+                if ($RUT != "") {
+                    $cEmpresa->insertCEmpresa($idCliente, $RUT, $nombre);
+                    $stringAlert = "Petición de usuario generada con éxito.";
+                    echo "<script>alert(\"$stringAlert\");window.location='/Proyecto-Omnitus/index.php';</script>";
+                } else {
+                    echo "<script>alert(\"Asegúrese de ingresar todos los datos.\");window.location='/Proyecto-Omnitus/index.php';</script>";
                 }
-                $_SESSION['usu'] = $data['nom'];
-                $_SESSION['esEmpresa'] = $data['esEmpresa'];
-                $_SESSION['esDirectivo'] = $data['esDirectivo'];
-                $_SESSION['esAdmin'] = $data['esAdmin'];
-                $_SESSION['esHuerta'] = $data['esHuerta'];
-                $_SESSION['esRepartidor'] = $data['esRepartidor'];
-                $_SESSION['esInformatico'] = $data['esInformatico'];
-                $_SESSION['idClienteAsociado'] = $data['idCliente'];
-                $_SESSION['idHuertaAsociada'] = $data['idHuerta'];
-                require_once($PATH . 'php/controllers/redirect_controller.php');
             } else {
-                echo "<script>alert(\"Usuario y/o contraseña incorrectos.\");window.location='/Proyecto-Omnitus/index.php';</script>";
+                if ($apellido != "" && $CI != "") {
+                    $cWeb->insertCWeb($idCliente, $CI, $nombre, $apellido);
+                    $stringAlert = "Petición de usuario generada con éxito.";
+                    echo "<script>alert(\"$stringAlert\");window.location='/Proyecto-Omnitus/index.php';</script>";
+                } else {
+                    echo "<script>alert(\"Asegúrese de ingresar todos los datos.\");window.location='/Proyecto-Omnitus/index.php';</script>";
+                }
             }
         } else {
-            echo "<script>alert(\"Usuario y/o contraseña incorrectos.\");window.location='/Proyecto-Omnitus/index.php';</script>";
-            exit;
+            echo "<script>alert(\"Asegúrese de ingresar todos los datos y que sean correctos.\");window.location='/Proyecto-Omnitus/index.php';</script>";
         }
     }
 }

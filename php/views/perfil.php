@@ -60,6 +60,7 @@ include($PATH . 'php/header.php');
 
 
             </form>
+            <a href="/Proyecto-Omnitus/php/controllers/verPedidos_controller.php">Ver mis pedidos</a>
         </div>
     </div>
 </div>

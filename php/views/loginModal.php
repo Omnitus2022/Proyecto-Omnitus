@@ -14,16 +14,23 @@
         <form action="/Proyecto-Omnitus/php/POST/registro.php" method="post" class="form_log">
             <input type="text" name="nom" class="log-input" placeholder="Nombre de usuario">
 
-            <input type="text" name="pwd" class="log-input" placeholder="Contraseña">
-            <input type="text" name="pwdVerif" class="log-input" placeholder="Repetir contraseña">
+            <input type="password" name="pwd" class="log-input" placeholder="Contraseña">
+            <input type="password" name="pwdVerif" class="log-input" placeholder="Repetir contraseña">
             <input type="text" name="email" class="log-input" placeholder="Email">
-            <input type="text" name="nombre" class="log-input" placeholder="Nombre del cliente">
-            <input type="text" name="apellido" class="log-input" placeholder="Apellido">
-            <input type="text" name="CI" class="log-input" placeholder="Cédula">
-            <span>Dirección <input type="text" name="RUT" class="log-input" placeholder="RUT">
+            <span>
+                ¿Es empresa? <input type="checkbox" name="esEmpresa" class="log-input input-checkbox" value="1">
+            </span>
+            <input type="text" name="nombre" class="log-input input-reg-nomCliente" placeholder="Nombre del cliente">
+
+            <input type="text" name="apellido" class="log-input input-reg-apellido" placeholder="Apellido">
+            <input type="text" name="CI" class="log-input input-reg-cedula" placeholder="Cédula">
+
+            <input type="text" name="RUT" class="log-input input-reg-rut" style="display:none;" placeholder="RUT">
+            <span>Dirección
                 <input type="text" name="calle" class="log-input" placeholder="Calle">
-                <input type="text" name="esquina" class="log-input" placeholder="Esquina"></span>
-            <input type="text" name="numeroPuerta" class="log-input" placeholder="Número de puerta">
+                <input type="text" name="esquina" class="log-input" placeholder="Esquina">
+                <input type="text" name="numeroPuerta" class="log-input" placeholder="Número de puerta">
+            </span>
 
             <label>
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="434.002px" height="434.002px" viewBox="0 0 434.002 434.002" style="enable-background:new 0 0 434.002 434.002;" xml:space="preserve">
@@ -65,7 +72,7 @@
                     <g>
                     </g>
                 </svg>
-                <input type="submit" name="enviarDatos" class="env-reg">
+                <input type="submit" name="registro" class="env-reg">
             </label>
 
         </form>
@@ -132,3 +139,21 @@
     <h3 class="title_modal"><a href="#" class="btn-log clickable">LOGIN</a> <a href="#" class="btn-registro clickable">REGISTRO</a></h3>
 
 </dialog>
+
+<script>
+    const loginModal = () => {
+
+        $(".input-checkbox").click(function(event) {
+            $(".input-reg-apellido").toggle();
+            $(".input-reg-rut").toggle();
+            $(".input-reg-cedula").toggle();
+            if (this.checked) {
+                $(".input-reg-nomCliente").attr("placeholder", "Nombre de la empresa");
+            } else {
+                $(".input-reg-nomCliente").attr("placeholder", "Nombre del cliente");
+            }
+        });
+
+    }
+    $(document).ready(loginModal);
+</script>
