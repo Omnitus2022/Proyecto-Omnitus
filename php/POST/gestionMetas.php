@@ -14,7 +14,6 @@ if (isset($_POST['actualizarMeta'])) {
     $idHuerta = $_POST["idHuerta_u"];
     $metaAnual = $_POST["metaAnual_u"];
 
-
     if ($idHuerta != "" && $metaAnual != "") {
         $huerta->updateMeta($idHuerta, $metaAnual);
         echo "<script>alert(\"Meta anual actualizada con éxito.\");window.location='../controllers/gestionMetas_controller.php';</script>";
