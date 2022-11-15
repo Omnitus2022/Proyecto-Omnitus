@@ -326,7 +326,7 @@ nav {
 
 .form_log {
   margin: 1.5rem;
-  width: 20ch;
+  width: fit-content;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -971,4 +971,13 @@ input {
 }
 .pedidoInf-cont > div .label {
   margin-right: auto;
+}
+
+footer {
+  background-color: var(--backgroundColor);
+  transform: translateZ(1.25px) scale(0.8);
+  transform-style: preserve-3d;
+  z-index: 3;
+  width: 100vw;
+  margin: auto;
 }

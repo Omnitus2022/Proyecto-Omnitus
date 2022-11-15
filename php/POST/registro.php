@@ -9,13 +9,16 @@ if (isset($_POST['registro'])) {
     $pwdVerif = $_POST['pwdVerif'];
     $email = $_POST['email'];
     $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
     $numeroPuerta = $_POST['numeroPuerta'];
     $calle = $_POST['calle'];
     $esquina = $_POST['esquina'];
+    $CI = $_POST['CI'];
+    $RUT = $_POST['RUT'];
 
     $esEmpresa = $_POST['esEmpresa'];
 
-    if ($usu != "" && $pwd != "") {
+    if ($nom != "" && $pwd != "") {
 
         $db = db::connect();
 
