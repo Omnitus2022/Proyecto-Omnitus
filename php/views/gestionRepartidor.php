@@ -32,7 +32,7 @@ if (empty($_SESSION['usu'])) {
 
                 <form action="/Proyecto-Omnitus/php/POST/gestionRepartidor.php" method="post">
                     <h2>Entregar pedido</h2>
-                    <select class="formCombo" name="numPedido">
+                    <select class="formCombo combo-gestionRepartidor" name="numPedido">
                         <option value="">- - - Número de pedido - - -</option>
                         <?php
                         foreach ($listaEnRuta as $ped) {
@@ -45,10 +45,32 @@ if (empty($_SESSION['usu'])) {
 
                     <input class="formBtn clickable" type="submit" value="Cambiar estado" name="entregarPedido">
                 </form>
+                <div class="pedidoInf" style="width:100%;">
+                    <h2>
+                        Detalles del pedido
+                    </h2>
+
+                    <div class="pedidoInf-cont">
+                        <!-- DETALLES PEDIDO -->
+
+                    </div>
+                </div>
             </section>
         </div>
     </div>
 </div>
+<script>
+    const gestionRepartidor = () => {
+        $(".combo-gestionRepartidor").change(function() {
+            let numP = this.value;
+            $(".pedidoInf-cont").load("../models/detallesPedido.php", {
+                numP: numP
+            });
+        })
+
+    }
+    $(document).ready(gestionRepartidor);
+</script>
 <script src="/Proyecto-Omnitus/js/script.js"></script>
 <script src="/Proyecto-Omnitus/js/LogUsu.js"></script>
 <?php include($PATH . '/php/footer.php') ?>

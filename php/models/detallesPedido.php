@@ -10,6 +10,8 @@ $hortaliza = new hortaliza_model();
 $variedad = new variedad_model();
 $ped = $pedido->getOnePedido($_POST["numP"]);
 $productos = $pedido->listarVariedades($ped["numPedido"]);
+$estado = $pedido->ultimoEstado($ped["numPedido"]);
+$repartidor = $pedido->getRepartidor($ped["numPedido"]);
 
 if (!isset($_SESSION)) {
     session_start();
@@ -19,8 +21,8 @@ echo '
 <h3 class="pedidoInf-num">
 ' . $ped["numPedido"] . '
 </h3>
-<p class="pedidoInf-cont--estado">' .
-    'ESTADO DEL PEDIDO'
+<p class="pedidoInf-cont--estado">Estado del pedido: ' .
+    $estado
     . '</p>
 <ul class="pedidoInf-cont--productos">
 ';
@@ -28,18 +30,15 @@ echo '<h3>Productos:</h3>';
 // DATOS PRODUCTO
 foreach ($productos as $prod) {
     $v = $variedad->getVariedad($prod["idVariedad"]);
-    $h = $hortaliza->getHortaliza($v["idHortaliza"]);
     $unidad = "KG";
-    if ($h["unidad"]) {
+    if ($v["unidad"]) {
         $unidad = "U";
     }
 
 
     echo '<li>';
     echo '<p class="nombre">';
-    echo $h["nombre"];
-    echo ' ';
-    echo $v["nombreVariedad"];
+    echo $v["nombre"];
     echo '</p>';
     echo '<p class="cantidad">';
     echo $prod["cantidad"] . $unidad;
@@ -71,9 +70,8 @@ echo '
     . '</p>
 </div>
 
-<p class="pedidoInf-cont--hora">Lorem</p>
-<p class="pedidoInf-cont--hora">Lorem</p>
-<p class="pedidoInf-cont--repartidor">Lorem</p>
+<p class="pedidoInf-cont--hora">Horas de entrega: ' . $ped["horaPrefInicio"] . ' - ' . $ped["horaPrefFinal"] . '</p>
+<p class="pedidoInf-cont--repartidor">Repartidor encargado: ' . $repartidor . '</p>
 <h3 class="pedidoInf-cont--total">$ 
 ' . $ped["importe"]  . '
 </h3>';

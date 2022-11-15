@@ -101,6 +101,32 @@ class pedido_model
         }
         return $pedido;
     }
+    public static function ultimoEstado($numPedido)
+    {
+        $db = db::connect();
+        $sql = "SELECT estado FROM estadosPedido WHERE numPedido = '$numPedido' AND ISNULL(fechaFin)";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $pedido[] = $filas;
+        }
+        if (!is_null($pedido)) {
+            return $pedido[0]["estado"];
+        } else {
+            return 'Entregado';
+        }
+    }
+    public static function getRepartidor($numPedido)
+    {
+        $db = db::connect();
+        $sql = "SELECT repartidor FROM Traslado, pedidoTraslado WHERE numPedido = '$numPedido' AND Traslado.idTraslado = pedidoTraslado.idTraslado";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $pedido[] = $filas;
+        }
+        return $pedido[0]["repartidor"];
+    }
     public static function ruta($numPedido)
     {
         $db = db::connect();
