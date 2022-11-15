@@ -25,6 +25,8 @@ if (isset($_POST["hacerPedido"])) {
         $stock->bajarStock($variedad["id"], $variedad["cantidad"], $stockLim);
         $pedido->insertVariedad($numPedido, $variedad["id"], $variedad["cantidad"]);
     }
+
     $_SESSION["products"] = [];
-    echo "<script>alert(\"Pedido generado con éxito.\");window.location='../controllers/verPedidos_controller.php';</script>";
+    $stringAlert = "Pedido generado con éxito, su número de pedido es: " . $numPedido . "\\n\\nDebe esperar a que su pedido sea verificado y aprobado.";
+    echo "<script>alert(\"$stringAlert\");window.location='../controllers/verPedidos_controller.php';</script>";
 }

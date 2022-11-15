@@ -14,7 +14,7 @@ if (empty($_SESSION['usu'])) {
                     <div style="display:flex; flex-direction:column; gap: .5rem;">
                         <h2>Insertar cultivo</h2>
 
-                        <select class="formCombo select-variedad-gestionCultivos" name="idVariedad">
+                        <select class="formCombo select-variedad-gestionCultivos">
                             <option value="">- - - Verdura a cultivar - - -</option>
                             <?php
                             foreach ($listaVariedades as $var) {

@@ -7,7 +7,7 @@ require_once($PATH . 'php/models/variedad_model.php');
 if (!isset($_SESSION)) {
     session_start();
 }
-
+$_SESSION["variedadesCultivo"] = [];
 $huerta = new huerta_model();
 $variedad = new variedad_model();
 $listaVariedades = $variedad->listarInfoVariedad();
