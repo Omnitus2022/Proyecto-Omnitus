@@ -17,7 +17,7 @@ if (empty($_SESSION['usu'])) {
         <div class="container__content gestionForm">
             <section>
                 <form action="/Proyecto-Omnitus/php/POST/gestionRepartidor.php" method="post">
-                    <h2>Pedido en camino</h2>
+                    <h2>Traslado en ruta</h2>
                     <select class="formCombo" name="idTraslado_r">
                         <option value="">- - - Id del traslado - - -</option>
                         <?php

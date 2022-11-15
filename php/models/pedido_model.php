@@ -177,7 +177,7 @@ class pedido_model
     public static function listarPedidosRepartidor($nom)
     {
         $db = db::connect();
-        $sql = "SELECT numPedido FROM Traslado, pedidoTraslado WHERE repartidor = '$nom' AND Traslado.idTraslado = pedidoTraslado.idTraslado AND estadoTraslado != 'Finalizado'";
+        $sql = "SELECT pedidoTraslado.numPedido FROM Traslado, pedidoTraslado, estadosPedido WHERE repartidor = '$nom' AND Traslado.idTraslado = pedidoTraslado.idTraslado AND pedidoTraslado.numPedido = estadosPedido.numPedido AND ISNULL(fechaFin)";
         $consulta = $db->query($sql);
 
         while ($filas = $consulta->fetch_assoc()) {
@@ -186,10 +186,10 @@ class pedido_model
         return $pedido;
     }
 
-    public static function listarEnRuta()
+    public static function listarEnRuta($nom)
     {
         $db = db::connect();
-        $sql = "SELECT * FROM estadosPedido WHERE estado = 'Ruta'";
+        $sql = "SELECT pedidoTraslado.numPedido FROM Traslado, pedidoTraslado, estadosPedido WHERE repartidor = '$nom' AND Traslado.idTraslado = pedidoTraslado.idTraslado AND pedidoTraslado.numPedido = estadosPedido.numPedido AND ISNULL(fechaFin) AND estadosPedido.estado = 'Ruta'";
         $consulta = $db->query($sql);
 
         while ($filas = $consulta->fetch_assoc()) {

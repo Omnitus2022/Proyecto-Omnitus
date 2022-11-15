@@ -2,6 +2,16 @@
   .nav__box--item {
     display: none;
   }
+  .main-wrapper__container--flexbox div {
+    flex-direction: column;
+  }
+  .main-wrapper__container--flexbox {
+    max-height: fit-content;
+    margin: 3rem;
+  }
+  .main-wrapper__container--flexbox > div > div {
+    width: 100%;
+  }
   nav {
     padding: 0.4rem 4rem;
   }

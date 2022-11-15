@@ -1,5 +1,4 @@
 <?php
-
 include($PATH . 'php/header.php') ?>
 <!--    CUERPO DE LA PÁGINA    -->
 <section class="main">

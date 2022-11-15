@@ -1,5 +1,6 @@
 <?php
 $PATH = $_SERVER['DOCUMENT_ROOT'] . '/Proyecto-Omnitus/';
+
 require($PATH . "php/db/db.php");
 if (isset($_POST['login'])) {
 
