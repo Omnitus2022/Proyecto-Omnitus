@@ -18,7 +18,7 @@ if (!isset($_SESSION)) {
 }
 
 echo '
-<h3 class="pedidoInf-num">
+<h3 class="pedidoInf-num">N° de pedido: 
 ' . $ped["numPedido"] . '
 </h3>
 <p class="pedidoInf-cont--estado">Estado del pedido: ' .
