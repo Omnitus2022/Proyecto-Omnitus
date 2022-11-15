@@ -53,7 +53,7 @@ class huerta_model
     {
         $db = db::connect();
         $fecha = date('Y-m-d');
-        $sql = "INSERT INTO `huertaCultivo` (`idCultivo`, `idHuerta`, `idVariedad`, `fecha`, `cantidadPlantada`, `estadoCultivo`, `metaCantidad`) VALUES ('$idCultivo', '$idHuerta', '$idVariedad', '$fecha', '$cantidadPlantada', '$metaCantidad') ";
+        $sql = "INSERT INTO `huertaCultivo` (`idCultivo`, `idHuerta`, `idVariedad`, `fecha`, `cantidadPlantada`, `estadoCultivo`, `metaCantidad`) VALUES ('$idCultivo', '$idHuerta', '$idVariedad', '$fecha', '$cantidadPlantada', 'Trasplante','$metaCantidad') ";
         $db->query($sql);
     }
     public function insertHuerta($nH, $tH)

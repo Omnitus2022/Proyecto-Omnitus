@@ -45,17 +45,30 @@ if (empty($_SESSION['usu'])) {
 
                     <input class="formBtn clickable" type="submit" value="Cambiar estado" name="entregarPedido">
                 </form>
-                <div class="pedidoInf" style="width:100%;">
-                    <h2>
-                        Detalles del pedido
-                    </h2>
 
-                    <div class="pedidoInf-cont">
-                        <!-- DETALLES PEDIDO -->
 
-                    </div>
-                </div>
+
             </section>
+            <div class="pedidoInf" style="width:100%;">
+                <h2>
+                    Detalles del pedido
+                </h2>
+
+                <div class="pedidoInf-cont">
+                    <!-- DETALLES PEDIDO -->
+
+                </div>
+            </div>
+            <h2>Pedidos a entregar</h2>
+            <ul>
+                <?php
+                foreach ($listaPedidos as $ped) {
+                    echo '<li>';
+                    echo $ped["numPedido"];
+                    echo '</li>';
+                }
+                ?>
+            </ul>
         </div>
     </div>
 </div>

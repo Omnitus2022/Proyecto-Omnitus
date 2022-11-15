@@ -238,6 +238,7 @@ nav {
   position: absolute;
   width: 100vw;
   height: 100vh;
+  scale: 1.08;
 }
 
 .main-carousel__slide img {

@@ -143,6 +143,17 @@ class pedido_model
 
         $db->query($sql);
     }
+    public static function listarPedidosRepartidor($nom)
+    {
+        $db = db::connect();
+        $sql = "SELECT numPedido FROM Traslado, pedidoTraslado WHERE repartidor = '$nom' AND Traslado.idTraslado = pedidoTraslado.idTraslado AND estadoTraslado != 'Finalizado'";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $pedido[] = $filas;
+        }
+        return $pedido;
+    }
 
     public static function listarEnRuta()
     {

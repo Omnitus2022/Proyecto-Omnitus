@@ -13,5 +13,6 @@ $traslado = new traslado_model();
 $pedido = new pedido_model();
 $listaTraslados = $traslado->listarTraslados();
 $listaEnRuta = $pedido->listarEnRuta();
+$listaPedidos = $pedido->listarPedidosRepartidor($_SESSION["usu"]);
 
 require_once($PATH . 'php/views/gestionRepartidor.php');
