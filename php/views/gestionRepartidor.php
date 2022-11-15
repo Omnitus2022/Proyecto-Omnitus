@@ -29,6 +29,22 @@ if (empty($_SESSION['usu'])) {
                     </select>
                     <input class="formBtn clickable" type="submit" value="Cambiar estado" name="estadoRuta">
                 </form>
+
+                <form action="/Proyecto-Omnitus/php/POST/gestionRepartidor.php" method="post">
+                    <h2>Entregar pedido</h2>
+                    <select class="formCombo" name="numPedido">
+                        <option value="">- - - Número de pedido - - -</option>
+                        <?php
+                        foreach ($listaEnRuta as $ped) {
+
+                            echo '<option value=' . $ped["numPedido"] . '>' . $ped["numPedido"] . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <input class="inputC" placeholder="Recibidor" type="text" name="recibidor">
+
+                    <input class="formBtn clickable" type="submit" value="Cambiar estado" name="entregarPedido">
+                </form>
             </section>
         </div>
     </div>

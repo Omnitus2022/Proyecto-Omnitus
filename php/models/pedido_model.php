@@ -30,6 +30,29 @@ class pedido_model
         }
         return $pedido[0];
     }
+    public static function entregar($numPedido, $recibidor)
+    {
+        $db = db::connect();
+        $fechaActual = date('Y-m-d');
+
+        $sql = "UPDATE Pedido 
+        SET 
+            fechaEntrega = '$fechaActual',
+            recibidor = '$recibidor'
+        WHERE
+            numPedido = '$numPedido'";
+        $db->query($sql);
+        $sql = "UPDATE estadosPedido 
+        SET 
+            fechaFin = '$fechaActual'
+        WHERE
+            numPedido = '$numPedido'
+            AND
+            estado = 'Ruta'";
+        $db->query($sql);
+        $sql = "INSERT INTO `estadosPedido` (`estado`, `numPedido`, `fechaInicio`,`fechaFin`) VALUES ('Entregado', '$numPedido', '$fechaActual','$fechaActual')";
+        $db->query($sql);
+    }
     public static function aprobar($numPedido)
     {
         $db = db::connect();
@@ -94,6 +117,19 @@ class pedido_model
 
         $db->query($sql);
     }
+
+    public static function listarEnRuta()
+    {
+        $db = db::connect();
+        $sql = "SELECT * FROM estadosPedido WHERE estado = 'Ruta'";
+        $consulta = $db->query($sql);
+
+        while ($filas = $consulta->fetch_assoc()) {
+            $pedido[] = $filas;
+        }
+        return $pedido;
+    }
+
     public static function listarVariedades($nP)
     {
         $db = db::connect();

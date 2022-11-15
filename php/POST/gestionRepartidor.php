@@ -28,3 +28,17 @@ if (isset($_POST['estadoRuta'])) {
         exit;
     }
 }
+if (isset($_POST['entregarPedido'])) {
+    $numPedido = $_POST["numPedido"];
+    $recibidor = $_POST["recibidor"];
+
+
+    if ($numPedido != "" && $recibidor != "" && $recibidor != " ") {
+        $pedido->entregar($numPedido, $recibidor);
+
+        echo "<script>alert(\"Pedido entregado.\");window.location='../controllers/gestionRepartidor_controller.php';</script>";
+    } else {
+        echo "<script>alert(\"Asegúrese de ingresar los datos.\");window.location='../controllers/gestionRepartidor_controller.php';</script>";
+        exit;
+    }
+}
