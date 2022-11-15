@@ -10,7 +10,8 @@ if (empty($_SESSION['usu'])) {
     <div class="main-wrapper_container verPedidos-wrapper">
         <div class="verPedidos-wrapper__container">
             <div class="pedidos">
-                <h1>Pedidos</h1>
+                <h1>Mis pedidos</h1>
+                <br>
                 <ul class="pedidos-lista">
                     <?php
                     foreach ($clientePedidos as $pedido) {

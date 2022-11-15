@@ -35,6 +35,7 @@ class pedido_model
         $db = db::connect();
         $fechaActual = date('Y-m-d');
 
+
         $sql = "UPDATE Pedido 
         SET 
             fechaEntrega = '$fechaActual',
@@ -52,6 +53,36 @@ class pedido_model
         $db->query($sql);
         $sql = "INSERT INTO `estadosPedido` (`estado`, `numPedido`, `fechaInicio`,`fechaFin`) VALUES ('Entregado', '$numPedido', '$fechaActual','$fechaActual')";
         $db->query($sql);
+        // VERIFICAR SI ES EL ÚLTIMO PEDIDO A ENTREGAR EN EL TRASLADO
+
+        // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+        // SELECCIONA LOS PEDIDOS ASOCIADOS AL TRASLADO QUE NO SE HAN ENTREGADO
+        $sql = "SELECT * FROM pedidoTraslado, estadosPedido WHERE pedidoTraslado.numPedido = estadosPedido.numPedido AND ISNULL(fechaFin)";
+
+        $query = $db->query($sql);
+        while ($filas = $query->fetch_assoc()) {
+            $traslado[] = $filas;
+        }
+        // SI NO SE ENCONTRARON PEDIDOS POR ENTREGAR EN EL TRASLADO
+        if (is_null($traslado)) {
+
+            //SELECCIONA EL ID DEL TRASLADO ASOCIADO AL PEDIDO
+
+            $fetchIdTraslado = $db->query("SELECT idTraslado FROM pedidoTraslado WHERE numPedido = '$numPedido'");
+            while ($filas = $fetchIdTraslado->fetch_assoc()) {
+                $traslado[] = $filas;
+            }
+            $idTraslado = $traslado[0]["idTraslado"];
+
+            //ACTUALIZA EL ESTADO DEL TRASLADO A "Finalizado"
+            $sql = "UPDATE Traslado 
+            SET 
+                estadoTraslado = 'Finalizado'
+            WHERE
+                idTraslado = '$idTraslado'";
+            $db->query($sql);
+        }
     }
     public static function aprobar($numPedido)
     {

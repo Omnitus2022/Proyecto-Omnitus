@@ -12,10 +12,10 @@ if (empty($_SESSION['usu'])) {
             <form action="/Proyecto-Omnitus/php/POST/gestionCultivos.php" method="post">
                 <section>
                     <div style="display:flex; flex-direction:column; gap: .5rem;">
-                        <h2>Insertar cultivo</h2>
+                        <h2>Registrar cultivo</h2>
 
                         <select class="formCombo select-variedad-gestionCultivos">
-                            <option value="">- - - Verdura a cultivar - - -</option>
+                            <option value="">- - - Hortaliza a cultivar - - -</option>
                             <?php
                             foreach ($listaVariedades as $var) {
 
@@ -23,8 +23,8 @@ if (empty($_SESSION['usu'])) {
                             }
                             ?>
                         </select>
-                        <input class="inputC input-cantidadPlantada-gestionCultivos" placeholder="Cantidad plantada - KG / U" type="text" name="cantidadPlantada_c">
-                        <input class="inputC input-cantidadMeta-gestionCultivos" placeholder="Meta de la cosecha (cantidad) - KG / U" type="text" name="metaCosecha_c">
+                        <input class="inputC input-cantidadPlantada-gestionCultivos" placeholder="Cantidad plantada - KG / U" type="text">
+                        <input class="inputC input-cantidadMeta-gestionCultivos" placeholder="Meta de la cosecha (cantidad) - KG / U" type="text">
                         <input class="formBtn clickable button-variedad-gestionCultivos" type="button" value="Añadir hortaliza">
 
                     </div>
@@ -33,7 +33,7 @@ if (empty($_SESSION['usu'])) {
                     </div>
 
                 </section>
-                <input class="formBtn clickable" type="submit" value="Añadir cultivo" name="crearCultivo">
+                <input class="formBtn clickable" type="submit" value="Registrar cultivo" name="crearCultivo">
 
             </form>
 
@@ -49,7 +49,6 @@ if (empty($_SESSION['usu'])) {
             let nombre = $(".select-variedad-gestionCultivos")[0][$(".select-variedad-gestionCultivos")[0].options.selectedIndex].getAttribute("nombre");
             let unidad = $(".select-variedad-gestionCultivos")[0][$(".select-variedad-gestionCultivos")[0].options.selectedIndex].getAttribute("unidad");
             let cantidadPlantada = $(".input-cantidadPlantada-gestionCultivos").val();
-
             let metaCantidad = $(".input-cantidadMeta-gestionCultivos").val();
             if (id != "" && cantidadPlantada != 0 && metaCantidad != 0) {
                 $(".variedadesCultivo").load("../models/agregarVariedadCultivo.php", {

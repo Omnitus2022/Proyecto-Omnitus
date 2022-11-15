@@ -21,7 +21,16 @@ class huerta_model
         }
         return $huerta;
     }
-
+    public static function updateMeta($idHuerta, $metaAnual)
+    {
+        $db = db::connect();
+        $sql = "UPDATE Huerta 
+        SET 
+            metaAnual = '$metaAnual'
+        WHERE
+            idHuerta = '$idHuerta'";
+        $db->query($sql);
+    }
     public static function updateHuerta($idH, $nH, $tH)
     {
         $db = db::connect();
@@ -31,12 +40,7 @@ class huerta_model
             tamanoHuerta = '$tH'
         WHERE
             idHuerta = '$idH'";
-        $consulta = $db->query($sql);
-
-        while ($filas = $consulta->fetch_assoc()) {
-            $huerta[] = $filas;
-        }
-        return $huerta;
+        $db->query($sql);
     }
 
     public function getHuerta()
@@ -54,6 +58,13 @@ class huerta_model
         $db = db::connect();
         $fecha = date('Y-m-d');
         $sql = "INSERT INTO `huertaCultivo` (`idCultivo`, `idHuerta`, `idVariedad`, `fecha`, `cantidadPlantada`, `estadoCultivo`, `metaCantidad`) VALUES ('$idCultivo', '$idHuerta', '$idVariedad', '$fecha', '$cantidadPlantada', 'Trasplante','$metaCantidad') ";
+        $db->query($sql);
+    }
+    public static function insertVariedadCosecha($idCosecha, $idHuerta, $idVariedad, $cantidadCosecha)
+    {
+        $db = db::connect();
+        $fecha = date('Y-m-d');
+        $sql = "INSERT INTO `huertaCosecha` (`idCosecha`, `idHuerta`, `idVariedad`, `fecha`, `cantidadCosecha`) VALUES ('$idCosecha', '$idHuerta', '$idVariedad', '$fecha', '$cantidadCosecha') ";
         $db->query($sql);
     }
     public function insertHuerta($nH, $tH)

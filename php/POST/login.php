@@ -30,6 +30,7 @@ if (isset($_POST['login'])) {
 				$_SESSION['esRepartidor'] = $data['esRepartidor'];
 				$_SESSION['esInformatico'] = $data['esInformatico'];
 				$_SESSION['idClienteAsociado'] = $data['idCliente'];
+				$_SESSION['idHuertaAsociada'] = $data['idHuerta'];
 				require_once($PATH . 'php/controllers/redirect_controller.php');
 			} else {
 				echo "<script>alert(\"Usuario y/o contraseña incorrectos.\");window.location='/Proyecto-Omnitus/index.php';</script>";
