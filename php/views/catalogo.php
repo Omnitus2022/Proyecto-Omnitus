@@ -108,5 +108,3 @@ include($PATH . '/php/header.php');
 <script src="/Proyecto-Omnitus/js/script.js"></script>
 <script src="/Proyecto-Omnitus/js/LogUsu.js"></script>
 <script src="/Proyecto-Omnitus/js/search.js"></script>
-
-<?php include($PATH . 'php/footer.php') ?>

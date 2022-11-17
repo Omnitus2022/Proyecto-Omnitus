@@ -57,4 +57,3 @@ if (empty($_SESSION['usu'])) {
 </script>
 <script src="/Proyecto-Omnitus/js/script.js"></script>
 <script src="/Proyecto-Omnitus/js/LogUsu.js"></script>
-<?php include($PATH . '/php/footer.php') ?>

@@ -185,9 +185,7 @@ include($PATH . 'php/header.php') ?>
 
       </p>
       <br />
-      <div class="main-wrapper__container--button invisible">
-        <button class="button">Take It</button>
-      </div>
+      <br><br><br><br><br>
     </div>
     <?php include($PATH . 'php/footer.php') ?>
   </div>
