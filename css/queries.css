@@ -1,6 +1,14 @@
 @media screen and (max-width: 720px) {
-  .nav__box--item {
+  .nav__box--item > a {
     display: none;
+  }
+  li.nav__box--item > svg {
+    display: block;
+  }
+
+  .nav__box--item:hover::after {
+    transform: scaleX(0);
+    opacity: 0;
   }
   .main-wrapper__container--flexbox div {
     flex-direction: column;
@@ -29,6 +37,11 @@
   }
   .logoPaths {
     display: none;
+    position: absolute;
+  }
+  .verPedidos-wrapper__container {
+    flex-direction: column;
+    width: 100%;
   }
 }
 

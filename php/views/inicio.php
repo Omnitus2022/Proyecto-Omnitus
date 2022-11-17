@@ -169,7 +169,7 @@ include($PATH . 'php/header.php') ?>
     </div>
     <div class="main-wrapper__container">
       <h1 class="main-wrapper__container--title invisible">
-
+        De la huerta a tu casa
       </h1>
       <h3 class="main-wrapper__container--subtitle invisible">
         Rápido y seguro
@@ -189,9 +189,10 @@ include($PATH . 'php/header.php') ?>
         <button class="button">Take It</button>
       </div>
     </div>
+    <?php include($PATH . 'php/footer.php') ?>
   </div>
+
 </section>
 <script src="/Proyecto-Omnitus/js/script.js"></script>
 <script src="/Proyecto-Omnitus/js/LogUsu.js"></script>
 <script src="/Proyecto-Omnitus/js/inicio.js"></script>
-<?php include($PATH . 'php/footer.php') ?>

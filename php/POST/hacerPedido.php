@@ -17,8 +17,8 @@ if (isset($_POST["hacerPedido"])) {
     $idCliente = $_SESSION["idClienteAsociado"];
     $importe = $_SESSION["importeTotal"];
     $metodoPago = $_POST["metodoPago"];
-    $horaPrefInicio = $_POST["horaPrefInicio"];
-    $horaPrefFinal = $_POST["horaPrefFinal"];
+    $horaPrefInicio = substr($_POST["horaPref"], 0, strpos($_POST["horaPref"], " "));
+    $horaPrefFinal = substr($_POST["horaPref"], strpos($_POST["horaPref"], " "));
 
     $pedido->insertPedido($numPedido, $idCliente, "", $importe, $metodoPago, "", $horaPrefInicio, $horaPrefFinal, "");
     foreach ($_SESSION["products"] as $variedad) {

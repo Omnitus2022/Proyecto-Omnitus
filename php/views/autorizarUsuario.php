@@ -1,6 +1,6 @@
 <?php include($PATH . '/php/header.php');
 
-if (empty($_SESSION['usu'])) {
+if (empty($_SESSION['usu'] || !$_SESSION('esAdmin'))) {
     echo "<script>window.location='/Proyecto-Omnitus/index.php';</script>";
 }
 ?>

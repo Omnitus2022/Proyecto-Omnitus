@@ -62,6 +62,7 @@ nav {
 }
 
 .nav__box--item {
+  height: min-content;
   align-self: center;
   cursor: pointer;
   user-select: none;
@@ -922,7 +923,7 @@ input {
   margin: 4rem 16% 1rem 16%;
 }
 .pedidoInf {
-  width: 35%;
+  width: 50%;
   padding: 1rem;
   background-color: var(--foregroundColor);
 }
@@ -974,10 +975,68 @@ input {
 }
 
 footer {
+  color: var(--textColor);
   background-color: var(--backgroundColor);
   transform: translateZ(1.25px) scale(0.8);
   transform-style: preserve-3d;
-  z-index: 3;
-  width: 100vw;
+  width: 100%;
   margin: auto;
+}
+footer > div {
+  width: 60%;
+  margin: auto;
+}
+
+.shoppingCart-content > span,
+.confirmarCompra .modal-content > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.confirmarCompra {
+  color: var(--textColor);
+}
+.shoppingCart-content > span {
+  gap: 0.5rem;
+  margin-top: auto;
+  color: var(--lightColor);
+}
+.shoppingCart-content > span :first-child {
+  margin-right: auto;
+}
+.shoppingCart--btn {
+  height: 3rem;
+  cursor: pointer;
+  border-radius: 18%;
+  padding: 0.2rem;
+  fill: var(--lightColor);
+  transition: scale 400ms cubic-bezier(0, 3.44, 0.89, -0.6);
+}
+.shoppingCart--btn:hover {
+  scale: 1.07;
+  transition: scale 340ms cubic-bezier(0.84, 0.23, 0.11, 0.79);
+}
+.shoppingCart-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.confirmarCompra-btn {
+  width: 100%;
+  font-size: large;
+}
+
+.registro {
+  color: var(--textColor);
+}
+.registro > form:nth-child(2) > span:nth-child(5) {
+  width: fit-content;
+  margin: auto;
+}
+
+li.nav__box--item > svg {
+  height: 2rem;
+  fill: var(--lightColor);
+  display: none;
 }

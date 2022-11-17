@@ -39,14 +39,16 @@ const catalogo = () => {
       });
     }
   });
-  $(".shoppingCart--btn").click(function () {
+  $(".bottomArea").on("click", ".shoppingCart--btn", function () {
     $.ajax({
       url: "/Proyecto-Omnitus/php/controllers/session.php",
       type: "POST",
       success: function (result) {
         if (result == "success") {
           document.querySelector(".confirmarCompra").showModal();
-          $(".confirmarCompra > .modal-content").load("../models/carrito.php");
+          $(".confirmarCompra > .modal-content").load("../models/carrito.php", {
+            checkout: true,
+          });
         } else {
           document.querySelector(".modal").showModal();
         }
