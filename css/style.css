@@ -994,7 +994,7 @@ footer > div {
   justify-content: space-between;
 }
 .confirmarCompra {
-  color: var(--textColor);
+  color: white;
 }
 .shoppingCart-content > span {
   gap: 0.5rem;

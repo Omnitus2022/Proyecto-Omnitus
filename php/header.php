@@ -17,9 +17,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
 </head>
 
 <body>
+  <script>
+    let dark = false;
+
+    const darkMode = getComputedStyle(document.body).getPropertyValue("--darkMode");
+
+    function switchTheme() {
+      dark = !dark;
+      document.body.classList.toggle("dark");
+    }
+
+    function osPreferedTheme() {
+      if (darkMode == "true") {
+        switchTheme();
+        darkMode = "";
+      }
+    }
+    osPreferedTheme();
+    if (!localStorage.getItem("firstLoad")) {
+      localStorage.setItem("firstLoad", true);
+
+      osPreferedTheme();
+      if (!localStorage.getItem("darkModeLS")) {
+        dark = !dark;
+      }
+    }
+  </script>
   <!--    NAVBAR    -->
   <nav>
     <a href="/Proyecto-Omnitus/index.php" class="logo nav__box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.09 19.75">
@@ -220,6 +248,7 @@
       <img name="switchTheme" src="/Proyecto-Omnitus/svg/moon.svg" />
     </button>
   </nav>
+
 
   <?php
   include($PATH . "php/views/loginModal.php");

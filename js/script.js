@@ -1,9 +1,6 @@
 var z = 1;
 var d = 0;
 
-var dark = false;
-var darkMode = getComputedStyle(document.body).getPropertyValue("--darkMode");
-
 const arrowScroll = document.querySelector(".arrowScroll");
 const container = document.querySelector(".main-wrapper__container");
 const target = document.querySelectorAll(".invisible");
@@ -23,12 +20,6 @@ target.forEach((element) => {
   observer.observe(element);
 });
 
-function osPreferedTheme() {
-  if (darkMode == "true") {
-    switchTheme();
-    darkMode = "";
-  }
-}
 function switchTheme() {
   chThemeIcon();
   document.body.classList.toggle("dark");
@@ -36,23 +27,22 @@ function switchTheme() {
 function chThemeIcon() {
   if (dark == false) {
     document.switchTheme.src = "/Proyecto-Omnitus/svg/sun.svg";
+    localStorage.setItem("darkModeLS", false);
+
     dark = true;
   } else {
     document.switchTheme.src = "/Proyecto-Omnitus/svg/moon.svg";
+    localStorage.setItem("darkModeLS", true);
     dark = false;
   }
 }
-//scroll arrow
+
 function scrollDown() {
   container.scrollIntoView(true, { block: "end", behavior: "smooth" });
 }
-//change image auto-slides
-
 function onLoad() {
   chThemeIcon();
-  osPreferedTheme();
 }
-
 document
   .querySelector(".nav__switchTheme")
   .addEventListener("click", switchTheme);
