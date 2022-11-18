@@ -27,7 +27,7 @@ if ($TOTAL > 0) {
     echo '<span>';
     echo '<h2 class="shoppingCart--total">TOTAL:</h2>';
     echo '<h2 class="shoppingCart--total">$' . $TOTAL . '</h2>';
- if(!isset($_POST['checkout'])){
+    if (!isset($_POST['checkout'])) {
         echo '
     <svg class="shoppingCart--btn" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve">
@@ -96,7 +96,9 @@ if ($TOTAL > 0) {
     </g>
     <g>
     </g>
-    </svg>';}
+    </svg>';
+    }
 
     echo '</span>';
 }
+$_SESSION["importeTotal"] = $TOTAL;
