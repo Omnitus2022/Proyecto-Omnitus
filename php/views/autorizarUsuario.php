@@ -3,6 +3,7 @@
 if (empty($_SESSION['usu'] || !$_SESSION('esAdmin'))) {
     echo "<script>window.location='/Proyecto-Omnitus/index.php';</script>";
 }
+
 ?>
 
 

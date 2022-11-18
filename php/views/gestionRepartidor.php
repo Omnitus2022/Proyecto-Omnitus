@@ -5,7 +5,9 @@ if (empty($_SESSION['usu'])) {
     echo "<script>window.location='/Proyecto-Omnitus/index.php';</script>";
 } else {
 
-    if (!$_SESSION['esDirectivo']) {
+
+    
+        if (!$_SESSION['esRepartidor']) {
         echo "<script>alert(\"No tienes los permisos para ver esta página.\");window.location='/Proyecto-Omnitus/php/views/redirect.php';</script>";
     }
 }

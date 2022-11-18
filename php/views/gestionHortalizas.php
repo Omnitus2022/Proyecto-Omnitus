@@ -7,6 +7,9 @@ if (empty($_SESSION['usu'])) {
     if (!$_SESSION['esInformatico']) {
         echo "<script>alert(\"No tienes los permisos para ver esta página.\");window.location='/Proyecto-Omnitus/php/views/redirect.php';</script>";
     }
+        if (!$_SESSION['esAdmin']) {
+        echo "<script>alert(\"No tienes los permisos para ver esta página.\");window.location='/Proyecto-Omnitus/php/views/redirect.php';</script>";
+    }
 }
 ?>
 

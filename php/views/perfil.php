@@ -60,7 +60,7 @@ include($PATH . 'php/header.php');
 
             </form>
             <label>
-                <a href="/Proyecto-Omnitus/php/controllers/verPedidos_controller.php">Ver mis pedidos</a></label>
+                <a href="/Proyecto-Omnitus/php/controllers/verPedidos_controller.php" style="color: var(--accentColor);">Ver mis pedidos</a></label>
         </div>
     </div>
 </div>
@@ -78,6 +78,3 @@ include($PATH . 'php/header.php');
 </script>
 <script src="/Proyecto-Omnitus/js/script.js"></script>
 <script src="/Proyecto-Omnitus/js/LogUsu.js"></script>
-<?php
-include($PATH . 'php/footer.php');
-?>

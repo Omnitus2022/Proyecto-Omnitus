@@ -1,7 +1,6 @@
 <?php
 $PATH = $_SERVER['DOCUMENT_ROOT'] . '/Proyecto-Omnitus/';
 
-require_once($PATH . 'php/views/empty.php');
 require_once($PATH . 'php/db/db.php');
 require_once($PATH . 'php/models/usuario_model.php');
 require_once($PATH . 'php/models/cliente_model.php');
@@ -20,6 +19,7 @@ $cWeb = new cWeb_model();
 $cEmpresa = new cEmpresa_model();
 if (isset($_POST['actualizarPerfil'])) {
     $pwdV = MD5($_POST["pwd_verif"]);
+
     if ($pwdV == $currUser["pwd"]) {
         $nomUsu = $_POST["nomUsu"];
         $email = $_POST["email"];

@@ -974,15 +974,24 @@ input {
   margin-right: auto;
 }
 
-footer {
+footer 
+{
+    
   color: var(--textColor);
   background-color: var(--backgroundColor);
   transform: translateZ(1.25px) scale(0.8);
   transform-style: preserve-3d;
+  text-align: center;
   width: 100%;
   margin: auto;
 }
-footer > div {
+footer > div 
+{
+    padding-top: 1rem;
+    border-top: solid var(--placeholderColor) 2px;
+    display:flex;
+    flex-direction:column;
+    gap: 1rem;
   width: 60%;
   margin: auto;
 }
@@ -1039,4 +1048,18 @@ li.nav__box--item > svg {
   height: 2rem;
   fill: var(--lightColor);
   display: none;
+}
+footer span
+{
+    display:flex;
+    gap: 1rem;
+    margin: auto;
+    width: fit-content;
+}
+footer svg
+{
+    height: 2rem;
+    cursor: pointer;
+    fill: var(--textColor);
+    border-radius: 20%;
 }

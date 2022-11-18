@@ -3,6 +3,10 @@
 if (empty($_SESSION['usu'])) {
     echo "<script>window.location='/Proyecto-Omnitus/index.php';</script>";
 }
+
+    if (!$_SESSION['esInformatico']) {
+        echo "<script>alert(\"No tienes los permisos para ver esta página.\");window.location='/Proyecto-Omnitus/php/views/redirect.php';</script>";
+    }
 ?>
 
 

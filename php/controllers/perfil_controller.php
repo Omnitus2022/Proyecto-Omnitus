@@ -20,7 +20,12 @@ if (!isset($_SESSION)) {
 $cId = $_SESSION['idClienteAsociado'];
 $cli = $cliente->getOneCliente($cId);
 
-$cW = $cWeb->getOneCWeb($cId);
+if($_SESSION["esEmpresa"]){
 $cE = $cEmpresa->getOneCEmpresa($cId);
+}else{
+$cW = $cWeb->getOneCWeb($cId);
+}
+
+
 
 require_once($PATH . 'php/views/perfil.php');

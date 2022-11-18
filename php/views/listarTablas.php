@@ -15,10 +15,8 @@ if (empty($_SESSION['usu'])) {
     <div class="main-wrapper_container">
         <div class="container__content">
 
-
-
             <?php
-            $tNames = ["Usuario", "Cliente", "cWeb", "cEmpresa", "Hortaliza", "Variedad", "Stock", "Asocia", "Huerta", "huertaCosecha", "huertaCultivo", "Traslado", "Pedido", "clienteHacePedido", "pedidoTraslado", "pedidoVariedad", "Feria", "feriaVende"];
+            $tNames = ["Usuario", "Cliente", "Feria", "Hortaliza", "Huerta", "Pedido", "Stock", "Traslado", "Variedad", "cEmpresa", "cWeb", "estadoPedido", "feriaVende", "huertaCosecha", "huertaCultivo", "infoVariedad", "listaClientes", "pedidoTraslado", "pedidoVariedad","productosPedido","totalCooperativa"];
             foreach ($tNames as $tName) {
                 $table = new table_model();
                 $t = $table->getTable($tName);
